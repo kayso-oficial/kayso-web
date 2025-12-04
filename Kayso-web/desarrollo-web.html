@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollo Web en Córdoba | KA&SO Marketing Digital e IA</title>
+    <meta name="description" content="Desarrollo web en Córdoba para negocios que necesitan sitios rápidos y claros, listos para convertir visitas en clientes, optimizados para SEO con KA&SO.">
+    <link rel="canonical" href="https://kayso-oficial.com/desarrollo-web" />
+    <!-- Fonts: Nunito Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+    
+  
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LCYKNW5QD4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LCYKNW5QD4');
+</script>
+   
+
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body class="font-sans antialiased overflow-x-hidden selection:bg-brand-red selection:text-white">
+
+<!-- Header - DESARROLLO WEB -->
+<header class="fixed top-0 w-full z-50 transition-all duration-300">
+    <div class="crystal-glass rounded-b-2xl mx-2 md:mx-6 px-6 py-4 flex justify-between items-center mx-auto">
+        
+        <a href="index.html#inicio" aria-label="Volver al inicio" class="text-2xl font-bold tracking-tighter hover:text-brand-red transition-colors flex items-center gap-2 group">
+            <img src="IMG/LOGOLETRA.webp" alt="KA&SO - Agencia de Marketing & IA" class="h-4 w-auto">
+        </a>
+
+        <nav class="hidden md:flex items-center gap-8 text-sm font-semibold tracking-wide">
+            
+            <button id="theme-toggle" aria-label="Cambiar tema" class="p-2 rounded-full hover:bg-white/10 transition-colors">
+                <i class="fas fa-moon hidden dark-icon"></i>
+                <i class="fas fa-sun hidden light-icon text-yellow-500"></i>
+            </button>
+
+            <a href="index.html#inicio" class="hover:text-brand-red transition-colors">Inicio</a>
+
+            <div class="relative group cursor-pointer h-full flex items-center">
+                <span class="text-brand-red py-2">Servicios</span>
+                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-red"></span>
+                
+                <div class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
+                    <div class="crystal-glass rounded-xl p-4 w-48 flex flex-col gap-2 text-sm text-[var(--text-main)]">
+                        <a href="desarrollo-web.html" class="block px-3 py-2 rounded bg-brand-red text-white cursor-default">Desarrollo Web</a>
+                        <a href="branding.html" class="block px-3 py-2 rounded hover:bg-brand-red hover:text-white transition-colors">Branding Digital</a>
+                        <a href="redes-sociales.html" class="block px-3 py-2 rounded hover:bg-brand-red hover:text-white transition-colors">Redes Sociales</a>
+                        <a href="publicidad.html" class="block px-3 py-2 rounded hover:bg-brand-red hover:text-white transition-colors">Publicidad</a>
+                    </div>
+                </div>
+            </div>
+
+            <a href="index.html#somos" class="group hover:text-brand-red transition-colors">Nosotros</a>
+            
+            <a href="contacto.html" class="bg-white text-black px-6 py-2.5 rounded-lg font-bold hover:shadow-[0_0_15px_rgba(255,255,255,0.4)] transition-all transform hover:-translate-y-0.5">
+                Contacto
+            </a>
+        </nav>
+        
+        <button id="mobile-menu-btn" aria-label="Abrir menú" class="md:hidden text-2xl">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+
+    <div id="mobile-menu" class="md:hidden fixed inset-0 bg-black/95 backdrop-blur-xl z-40 transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center gap-8">
+        
+        <button id="close-mobile-menu" aria-label="Cerrar menú" class="absolute top-8 right-8 text-3xl text-white">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <a href="index.html#inicio" class="text-2xl font-bold text-white mobile-link">Inicio</a>
+
+        <div class="flex flex-col items-center gap-2">
+            <span class="text-2xl font-bold text-white">Servicios</span>
+            <a href="desarrollo-web.html" class="text-lg text-brand-red mobile-link">Desarrollo Web</a>
+            <a href="branding.html" class="text-lg text-white/80 mobile-link">Branding Digital</a>
+            <a href="redes-sociales.html" class="text-lg text-white/80 mobile-link">Redes Sociales</a>
+            <a href="publicidad.html" class="text-lg text-white/80 mobile-link">Publicidad</a>
+        </div>
+
+        <a href="index.html#somos" class="text-2xl font-bold text-white mobile-link">Nosotros</a>
+        
+        <a href="contacto.html" class="text-2xl font-bold text-brand-red mobile-link">Contacto</a>
+
+        <button id="mobile-theme-toggle" aria-label="Cambiar tema" class="text-xl text-white border border-white/20 px-6 py-2 rounded-full">
+            Cambiar tema
+        </button>
+    </div>
+</header>
+
+<section class="relative min-h-screen flex items-center pt-28 pb-12 overflow-hidden section-bg">
+    <!-- Fondo liso según el tema -->
+    <div class="absolute inset-0 bg-[var(--bg-body)] z-0"></div>
+        <div class="max-w-7xl mx-auto px-6 w-full relative z-10 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left Column: Text (60%) -->
+            <div class="md:col-span-7 flex flex-col justify-center text-left reveal-up">
+                <h1 class="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight leading-tight text-[var(--text-main)]">
+    Desarrollo <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-red-400">Web</span>
+                </h1>
+                
+                <h2 class="text-lg md:text-xl text-[var(--text-muted)] font-light leading-relaxed mb-10 max-w-lg">
+                    Diseñamos sitios web y landing pages rápidas y claras, con SEO, para convertir visitas en clientes reales.
+                </h2>
+                
+                <div class="flex flex-wrap gap-4">
+                    <a href="contacto.html" class="bg-brand-red text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-red-700 hover:shadow-[0_0_25px_rgba(190,24,37,0.4)] hover:scale-105 transition-all duration-300 inline-flex items-center gap-2">
+                        Crear mi sitio web <i class="fas fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Column: 3D Glass Card (40%) -->
+            <div class="md:col-span-5 tilt-container h-[300px] md:h-[400px] flex items-center justify-center reveal-up delay-100">
+                <div id="hero-card" class="tilt-card w-full aspect-video crystal-glass rounded-2xl relative flex items-center justify-center border border-white/10 group cursor-default">
+                    <!-- Ambient Glow behind card -->
+                    <div class="absolute inset-0 rounded-2xl bg-brand-red/5 blur-xl -z-10 group-hover:bg-brand-red/10 transition-colors duration-500"></div>
+                    
+                    <!-- Card Content with Depth -->
+                    <div class="tilt-card-content text-center p-8 w-full h-full flex flex-col items-center justify-center relative overflow-hidden rounded-2xl">
+                        <!-- Placeholder for Mockup/Image -->
+                        <div class="absolute inset-0 bg-gradient-to-tr from-black/80 to-transparent z-0"></div>
+                        <i class="fas fa-code text-6xl text-brand-red/20 absolute top-4 right-6 transform rotate-12"></i>
+                        
+                        <!-- Simple visual representation -->
+                        <div class="relative z-10 w-3/4 h-3/4 bg-gray-900/50 backdrop-blur-sm rounded-lg border border-white/5 shadow-2xl flex flex-col overflow-hidden transform transition-transform duration-500 group-hover:scale-105 group-hover:-translate-y-2">
+                            <!-- Mockup Header -->
+                            <div class="h-6 bg-gray-800 border-b border-white/5 flex items-center px-3 gap-1.5">
+                                <div class="w-2 h-2 rounded-full bg-red-500"></div>
+                                <div class="w-2 h-2 rounded-full bg-yellow-500"></div>
+                                <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                            </div>
+                            <!-- Mockup Body -->
+                            <div class="flex-1 p-4 flex flex-col gap-3">
+                                <div class="w-2/3 h-4 bg-gray-700/50 rounded animate-pulse"></div>
+                                <div class="w-full h-20 bg-gray-800/50 rounded border border-white/5 flex items-center justify-center">
+                                    <span class="text-xs text-gray-500 font-mono">&lt;ka&so /&gt;</span>
+                                </div>
+                                <div class="w-1/2 h-3 bg-brand-red/20 rounded"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4.2 Pillars Section -->
+    <section class="py-24 bg-[var(--bg-body)] relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal-up">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gradient">Lo que hacemos por tu presencia digital</h2>
+                <p class="text-[var(--text-muted)] text-lg max-w-3xl mx-auto">
+                    Nos encargamos de crear y optimizar la presencia digital de tu marca. Diseñamos webs claras, modernas y fáciles de usar, pensadas para convertir visitas en clientes.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="crystal-glass hover-glow p-8 rounded-2xl flex flex-col h-full reveal-up">
+                    <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-6 text-brand-red text-xl">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-[var(--text-main)] mb-4">Sitios rápidos y adaptados a celular</h3>
+                    <p class="text-[var(--text-muted)] leading-relaxed">
+                        Desarrollamos sitios livianos y optimizados para que carguen rápido y funcionen perfecto en cualquier dispositivo: celular, tablet o computadora.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="crystal-glass hover-glow p-8 rounded-2xl flex flex-col h-full reveal-up delay-100">
+                    <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-6 text-brand-red text-xl">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-[var(--text-main)] mb-4">Diseño alineado con tu marca</h3>
+                    <p class="text-[var(--text-muted)] leading-relaxed">
+                        Creamos una web clara, moderna y fácil de navegar, respetando tu identidad visual: colores, tipografías y estilo de comunicación.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="crystal-glass hover-glow p-8 rounded-2xl flex flex-col h-full reveal-up delay-200">
+                    <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-6 text-brand-red text-xl">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-[var(--text-main)] mb-4">Listos para aparecer en Google</h3>
+                    <p class="text-[var(--text-muted)] leading-relaxed">
+                        Pensamos la estructura y los contenidos para que Google pueda entender tu sitio y tus potenciales clientes te encuentren más fácil.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4.3 Benefits / Timeline Section -->
+<section class="py-24 section-bg relative overflow-hidden">
+        <!-- Background Ambience -->
+        <div class="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-brand-red/5 to-transparent pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+                
+                <!-- Left Column: Timeline (60%) -->
+                <div class="lg:col-span-7 reveal-up">
+                    <h2 class="text-4xl font-bold text-[var(--text-main)] mb-6">Un sitio estratégico convierte más</h2>
+                    <p class="text-[var(--text-muted)] text-lg mb-12">
+                        Tu sitio web es muchas veces el primer contacto que alguien tiene con tu marca. Un buen desarrollo hace la diferencia:
+                    </p>
+
+<div class="crystal-glass rounded-3xl p-8 md:p-10 relative">
+    <!-- Vertical Dotted Line centrada y ajustada -->
+    <div
+  class="absolute
+         left-[48px] md:left-[60px]
+         top-[3rem]
+         bottom-[4rem] md:bottom-[3.2rem]
+         w-px border-l-2 border-dotted border-gray-400/70
+         z-0 pointer-events-none">
+</div>
+
+    <div class="space-y-10 relative z-10">
+        <!-- Benefit 1 -->
+        <div class="flex gap-6 group">
+            <div
+              class="w-8 h-8 md:w-10 md:h-10
+                     rounded-full border-2 border-brand-red
+                     bg-[var(--section-bg)]
+                     shrink-0 relative z-10
+                     group-hover:shadow-[0_0_15px_rgba(190,24,37,0.5)]
+                     transition-shadow duration-300">
+            </div>
+                                            <div>
+                                    <h4 class="text-xl font-bold text-[var(--text-main)] mb-2 group-hover:text-brand-red transition-colors">Primera impresión profesional</h4>
+                                    <p class="text-[var(--text-muted)]">Transmití confianza desde el primer segundo.</p>
+                                </div>
+                            </div>
+
+                            <!-- Benefit 2 -->
+                            <div class="flex gap-6 group">
+                                <div
+  class="w-8 h-8 md:w-10 md:h-10
+         rounded-full border-2 border-brand-red
+         bg-[var(--section-bg)]
+         shrink-0 relative z-10
+         group-hover:shadow-[0_0_15px_rgba(190,24,37,0.5)]
+         transition-shadow duration-300">
+</div>
+
+                                <div>
+                                    <h4 class="text-xl font-bold text-[var(--text-main)] mb-2 group-hover:text-brand-red transition-colors">Más consultas y ventas</h4>
+                                    <p class="text-[var(--text-muted)]">Diseñamos cada sección con un objetivo: que el usuario sepa qué hacer y cómo contactarte.</p>
+                                </div>
+                            </div>
+
+                            <!-- Benefit 3 -->
+                            <div class="flex gap-6 group">
+                                <div
+  class="w-8 h-8 md:w-10 md:h-10
+         rounded-full border-2 border-brand-red
+         bg-[var(--section-bg)]
+         shrink-0 relative z-10
+         group-hover:shadow-[0_0_15px_rgba(190,24,37,0.5)]
+         transition-shadow duration-300">
+</div>
+
+                                <div>
+                                    <h4 class="text-xl font-bold text-[var(--text-main)] mb-2 group-hover:text-brand-red transition-colors">Optimización para Google (SEO básico)</h4>
+                                    <p class="text-[var(--text-muted)]">Estructura y contenidos preparados para que te encuentren más fácil.</p>
+                                </div>
+                            </div>
+
+                            <!-- Benefit 4 -->
+                            <div class="flex gap-6 group">
+                                <div
+  class="w-8 h-8 md:w-10 md:h-10
+         rounded-full border-2 border-brand-red
+         bg-[var(--section-bg)]
+         shrink-0 relative z-10
+         group-hover:shadow-[0_0_15px_rgba(190,24,37,0.5)]
+         transition-shadow duration-300">
+</div>
+
+                                <div>
+                                    <h4 class="text-xl font-bold text-[var(--text-main)] mb-2 group-hover:text-brand-red transition-colors">Adaptado a celulares y tablets</h4>
+                                    <p class="text-[var(--text-muted)]">Más del 70% del tráfico viene desde el móvil: tu web se tiene que ver bien ahí primero.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Image Placeholder (40%) -->
+                <div class="lg:col-span-5 h-full min-h-[400px] reveal-up delay-100">
+                    <div class="w-full h-full rounded-3xl bg-gray-900 border border-white/5 relative overflow-hidden shadow-2xl group">
+                        <!-- Placeholder Content -->
+                        <div class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-800 to-black">
+                            <i class="fas fa-laptop-code text-6xl text-gray-700 group-hover:text-brand-red/50 transition-colors duration-500"></i>
+                            <span class="absolute bottom-10 text-sm text-gray-500 font-mono opacity-60">IMAGEN MOCKUP PENDIENTE</span>
+                        </div>
+                        
+                        <!-- Decorative overlay -->
+                        <div class="absolute inset-0 bg-brand-red/5 mix-blend-overlay"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4.4 Closing CTA -->
+    <section id="cta-final" class="py-32 bg-[var(--bg-body)] relative">
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div class="w-[800px] h-[800px] bg-brand-red/5 rounded-full blur-[150px]"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10 reveal-up">
+            <h2 class="text-5xl md:text-6xl font-bold text-[var(--text-main)] mb-10 tracking-tight">¿Listo para crear tu sitio web?</h2>
+            
+            <a href="contacto.html" class="inline-block bg-brand-red text-white px-12 py-5 rounded-full font-bold text-xl hover:bg-red-700 hover:shadow-[0_0_40px_rgba(190,24,37,0.5)] hover:scale-105 transition-all duration-300">
+                Contactanos
+            </a>
+            
+            <p class="mt-6 text-[var(--text-muted)] text-sm">Sin compromiso. Hablemos de tu proyecto.</p>
+        </div>
+    </section>
+
+<!-- Footer (Consistent with Main Site) -->
+<footer class="section-bg border-t border-white/10 pt-20 pb-10">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+            <!-- Brand Column -->
+            
+                <div>
+                    <div class="flex items-center gap-2 mb-6">
+                        <img src="IMG/isologokayso.webp" alt="KA&SO" class="h-10 w-auto object-contain">
+                    </div>
+                <p class="text-[var(--text-muted)] mb-8 max-w-sm">
+                    Agencia de marketing digital enfocada en datos y creatividad. Transformamos tu presencia digital en resultados medibles.
+                </p>
+                <h4 class="font-bold text-[var(--text-main)] mb-4">¡Seguinos!</h4>
+                <div class="flex gap-4">
+                    <a href="https://instagram.com/Kayso_marketingdecontenidos" class="w-12 h-12 rounded-full crystal-glass flex items-center justify-center text-xl text-[var(--text-main)] hover:text-brand-red hover:border-brand-red transition-all" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/5493517064753" target="_blank" class="w-12 h-12 rounded-full crystal-glass flex items-center justify-center text-xl text-[var(--text-main)] hover:text-green-500 hover:border-green-500 transition-all" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contact Column -->
+            <div>
+                <h3 class="text-xl font-bold text-[var(--text-main)] mb-8">Contacto</h3>
+                <ul class="space-y-6">
+                    <li class="flex items-start gap-4">
+                        <i class="far fa-envelope mt-1 text-brand-red"></i>
+                        <a href="mailto:info@kayso-oficial.com" class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors">info@kayso-oficial.com</a>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <i class="fab fa-whatsapp mt-1 text-brand-red"></i>
+                        <a href="https://wa.me/5493517064753" target="_blank" class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors">+54 9 351 706-4753 ↗</a>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <i class="fas fa-map-marker-alt mt-1 text-brand-red"></i>
+                        <span class="text-[var(--text-muted)]">Blvd. Pte. Arturo Umberto Illia 343,<br>X5000ASC Córdoba</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Nav Column -->
+            <div>
+                <h3 class="text-xl font-bold text-[var(--text-main)] mb-8">Servicios</h3>
+                <ul class="space-y-4">
+                    <li><a href="index.html" class="text-[var(--text-muted)] hover:text-brand-red transition-colors">Inicio</a></li>
+                    <li><a href="desarrollo-web.html" class="text-[var(--text-main)] font-bold cursor-default">Desarrollo Web</a></li>
+                    <li><a href="branding.html" class="text-[var(--text-muted)] hover:text-brand-red transition-colors">Branding Digital</a></li>
+                    <li><a href="redes-sociales.html" class="text-[var(--text-muted)] hover:text-brand-red transition-colors">Redes Sociales</a></li>
+                    <li><a href="publicidad.html" class="text-[var(--text-muted)] hover:text-brand-red transition-colors">Publicidad</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-t border-white/5 pt-8 text-center text-sm text-[var(--text-muted)]">
+            <p>&copy; KA&SO 2025 · Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+    <!-- Scripts -->
+<script>
+    // --- 1. Shared Logic (Theme, Mobile Menu, Scroll) ---
+
+    // THEME TOGGLE (desktop + mobile)
+    const themeToggleBtn = document.getElementById('theme-toggle');              // botón desktop
+    const mobileThemeToggleBtn = document.getElementById('mobile-theme-toggle'); // botón mobile
+    const darkIcon = document.querySelector('.dark-icon');
+    const lightIcon = document.querySelector('.light-icon');
+
+    function setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+
+        // Proteger por si no hay iconos en alguna página
+        if (darkIcon && lightIcon) {
+            if (theme === 'light') {
+                darkIcon.classList.remove('hidden');
+                lightIcon.classList.add('hidden');
+            } else {
+                lightIcon.classList.remove('hidden');
+                darkIcon.classList.add('hidden');
+            }
+        }
+    }
+
+    // Tema inicial (usa el guardado o dark por defecto)
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    setTheme(savedTheme);
+
+    function toggleTheme() {
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+        setTheme(currentTheme === 'light' ? 'dark' : 'light');
+    }
+
+    // Conectar botones si existen
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', toggleTheme);
+    }
+    if (mobileThemeToggleBtn) {
+        mobileThemeToggleBtn.addEventListener('click', toggleTheme);
+    }
+
+    // MOBILE MENU
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const closeMobileMenuBtn = document.getElementById('close-mobile-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    function toggleMenu() {
+        if (!mobileMenu) return;
+        mobileMenu.classList.toggle('translate-x-full');
+    }
+
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+    }
+    if (closeMobileMenuBtn) {
+        closeMobileMenuBtn.addEventListener('click', toggleMenu);
+    }
+
+    // Cerrar menú al hacer click en un link del menú mobile
+    document.querySelectorAll('#mobile-menu .mobile-link').forEach(link => {
+        link.addEventListener('click', () => {
+            if (!mobileMenu) return;
+            mobileMenu.classList.add('translate-x-full');
+        });
+    });
+
+    // REVEAL-UP con IntersectionObserver
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal-up').forEach(el => revealObserver.observe(el));
+
+        // --- 2. Page Specific: 3D Tilt Effect for Hero Card ---
+        
+        const heroCard = document.getElementById('hero-card');
+        const tiltContainer = document.querySelector('.tilt-container');
+
+        if(heroCard && tiltContainer) {
+            tiltContainer.addEventListener('mousemove', (e) => {
+                const rect = tiltContainer.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                // Calculate center
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                // Calculate rotation (Max 10 degrees)
+                const rotateX = ((y - centerY) / centerY) * -10;
+                const rotateY = ((x - centerX) / centerX) * 10;
+
+                heroCard.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+
+            // Reset on mouse leave
+            tiltContainer.addEventListener('mouseleave', () => {
+                heroCard.style.transform = `rotateX(0deg) rotateY(0deg)`;
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,270 @@
+@import "tailwindcss";
+
+/* === 1. CONFIGURACIÓN DE TU MARCA (Colores y Fuentes) === */
+@theme {
+  /* Tus colores personalizados */
+  --color-brand-red: #BE1825;
+  --color-brand-dark: #050505;
+  --color-brand-gray: #1A1A1A;
+  --color-brand-light: #F5F5F7;
+
+  /* Tu fuente */
+  --font-sans: "Nunito Sans", sans-serif;
+
+  /* Tus animaciones personalizadas */
+  --animate-blob: blob 10s infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-scroll-left: scrollLeft 30s linear infinite;
+  --animate-scroll-right: scrollRight 30s linear infinite;
+  --animate-scroll-up: scrollUp 40s linear infinite;
+  --animate-scroll-down: scrollDown 40s linear infinite;
+
+  @keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+  @keyframes scrollLeft { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+  @keyframes scrollRight { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+  @keyframes scrollUp { 0% { transform: translateY(0); } 100% { transform: translateY(-50%); } }
+  @keyframes scrollDown { 0% { transform: translateY(-50%); } 100% { transform: translateY(0); } }
+}
+
+/* === 2. VARIABLES DE TEMA (Oscuro/Claro) === */
+:root {
+  --bg-body: #050505;
+  --text-main: #ffffff;
+  --text-muted: #9ca3af;
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-highlight: rgba(255, 255, 255, 0.15);
+  --glass-shadow: rgba(0, 0, 0, 0.5);
+  --glass-blur: 16px;
+  --section-bg: #050505;
+  --input-bg: rgba(255, 255, 255, 0.05);
+  --input-border: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="light"] {
+  --bg-body: #F5F5F7;
+  --text-main: #111827;
+  --text-muted: #4b5563;
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.6);
+  --glass-highlight: rgba(255, 255, 255, 0.8);
+  --glass-shadow: rgba(0, 0, 0, 0.05);
+  --glass-blur: 20px;
+  --section-bg: #F5F5F7;
+  --input-bg: rgba(0, 0, 0, 0.03);
+  --input-border: rgba(0, 0, 0, 0.1);
+}
+
+/* === 3. ESTILOS BASE === */
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  transition: background-color 0.5s ease, color 0.5s ease;
+  font-family: var(--font-sans);
+}
+
+/* Selección de texto roja */
+::selection {
+  background-color: var(--color-brand-red);
+  color: #ffffff;
+}
+
+/* === 4. EFECTOS ESPECIALES === */
+
+/* Efecto Vidrio (Crystal Glass) */
+.crystal-glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-top: 1px solid var(--glass-highlight);
+  box-shadow: 0 4px 30px var(--glass-shadow), inset 0 0 20px rgba(255, 255, 255, 0.02);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.crystal-glass:hover, .hover-card:hover {
+  box-shadow: 0 10px 40px rgba(190, 24, 37, 0.15), inset 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+/* Neón Badge (Para el "24hs") */
+.neon-badge {
+    background-color: rgba(190, 24, 37, 0.1);
+    border: 1px solid rgba(190, 24, 37, 0.3);
+    color: var(--color-brand-red);
+    box-shadow: 0 0 10px rgba(190, 24, 37, 0.2);
+}
+
+/* Hover Glow */
+.hover-glow:hover {
+    box-shadow: 0 0 20px rgba(190, 24, 37, 0.4);
+    border-color: rgba(190, 24, 37, 0.3);
+}
+
+/* Animación de aparición (Reveal) */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === 5. OTROS DETALLES === */
+.glass-separator { border-right: 1px solid var(--input-border); }
+@media (max-width: 1024px) {
+  .glass-separator { border-right: none; border-bottom: 1px solid var(--input-border); padding-bottom: 1.5rem; margin-bottom: 1.5rem; }
+  .glass-separator:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+}
+
+/* Formularios */
+.form-input {
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  color: var(--text-main);
+  transition: all 0.3s ease;
+}
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-brand-red);
+  box-shadow: 0 0 0 4px rgba(190, 24, 37, 0.1);
+  background-color: rgba(190, 24, 37, 0.02);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-body); }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-brand-red); }
+
+/* Clases de utilidad extra */
+.marquee-mask { mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); }
+.accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out; opacity: 0; }
+.accordion-item.active .accordion-content { max-height: 200px; opacity: 1; }
+/* Título del acordeón con subrayado rojo fijo */
+.accordion-title {
+  position: relative;
+  display: inline-block;        /* la línea sigue el ancho del texto */
+  padding-bottom: 0.25rem;      /* espacio para la línea */
+  color: var(--text-main);
+  transition: color 0.25s ease;
+}
+
+/* Subrayado SIEMPRE rojo */
+.accordion-underline {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;                  /* ocupa todo el ancho del título */
+  border-radius: 9999px;
+  background: var(--color-brand-red);  /* rojo fijo */
+}
+
+/* Hover suave (opcional) */
+.accordion-item:hover .accordion-title {
+  color: var(--text-main);
+}
+
+/* Activo: título también rojo */
+.accordion-item.active .accordion-title {
+  color: var(--color-brand-red);
+}
+
+/* Marco del slider (opcional, solo detalles visuales extra) */
+.slider-frame {
+    position: relative;
+    isolation: isolate; /* ayuda con filtros/blur si usás más cosas */
+}
+
+/* Cada imagen del slider */
+.slider-image {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: sliderFade 12s infinite;
+}
+
+/* Tiempos para cada una de las 3 imágenes */
+.slider-image:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.slider-image:nth-child(2) {
+    animation-delay: 4s;
+}
+
+.slider-image:nth-child(3) {
+    animation-delay: 8s;
+}
+
+/* Animación de fade continuo */
+@keyframes sliderFade {
+    0% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    30% {
+        opacity: 1;
+    }
+    35% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+/* Texto rotativo: "más visibilidad / más interacción / ..." */
+.rotate-text {
+  display: inline-block;
+  opacity: 0;                      /* por defecto oculto */
+  transition: opacity 0.5s ease;   /* controla qué tan suave es el cambio */
+}
+
+/* Estado visible: el JS agrega / saca esta clase */
+.rotate-text.visible {
+  opacity: 1;
+}
+/* Acordeón bios Karen / Agustín */
+.bio-panel {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, opacity 0.25s ease;
+}
+
+/* Cuando está abierto */
+.bio-panel.open {
+  max-height: 500px;   /* suficiente para el texto */
+  opacity: 1;
+}
+
+/* Botón "Sobre mí" estilo link (sin borde) */
+.bio-toggle {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* Cuando está abierto, lo subrayamos un poco */
+.bio-toggle[aria-expanded="true"] {
+  text-decoration: underline;
+}
+
