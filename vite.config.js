@@ -7,7 +7,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         contacto: resolve(__dirname, 'contacto.html'),
-        branding: resolve(__dirname, 'branding.html'),
+        branding: resolve(__dirname, 'branding-digital.html'),
         desarrollo: resolve(__dirname, 'desarrollo-web.html'),
         publicidad: resolve(__dirname, 'publicidad.html'),
         redes: resolve(__dirname, 'redes-sociales.html'),

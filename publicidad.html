@@ -15,15 +15,7 @@
     
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LCYKNW5QD4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-LCYKNW5QD4');
-</script>
     
 
 <link rel="stylesheet" href="./styles.css">
@@ -32,77 +24,122 @@
 
 <!-- Header - PUBLICIDAD -->
 <header class="fixed top-0 w-full z-50 transition-all duration-300">
-    <div class="crystal-glass rounded-b-2xl mx-2 md:mx-6 px-6 py-4 flex justify-between items-center mx-auto">
+  <div class="crystal-glass rounded-b-2xl mx-2 md:mx-6 px-4 md:px-6 py-3 md:py-4 flex justify-between items-center">
+    
+    <!-- LOGO -->
+    <a href="index.html#inicio" aria-label="Volver al inicio"
+       class="flex items-center gap-2 group hover:opacity-80 transition-opacity">
+      <img src="IMG/LOGOLETRA.webp" alt="KA&SO - Agencia de Marketing & IA" class="h-4 w-auto">
+    </a>
+
+    <!-- LADO DERECHO -->
+    <div class="flex items-center gap-3">
+      
+      <!-- TOGGLE TEMA MOBILE (pill sol/luna) -->
+      <button
+        id="mobile-theme-toggle"
+        aria-label="Cambiar tema oscuro o claro"
+        class="md:hidden theme-pill"
+      >
+        <i class="fas fa-moon theme-toggle-icon theme-toggle-icon--moon"></i>
+        <i class="fas fa-sun theme-toggle-icon theme-toggle-icon--sun text-yellow-500"></i>
+      </button>
+
+      <!-- BOTÓN CONTACTO MOBILE -->
+      <a
+        href="contacto.html"
+        class="md:hidden text-xs font-semibold px-4 py-1.5 rounded-full bg-white text-black shadow-sm hover:shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all"
+      >
+        Contacto
+      </a>
+
+      <!-- NAV DESKTOP -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold tracking-wide">
         
-        <a href="index.html#inicio" aria-label="Volver al inicio" class="text-2xl font-bold tracking-tighter hover:text-brand-red transition-colors flex items-center gap-2 group">
-            <img src="IMG/LOGOLETRA.webp" alt="KA&SO - Agencia de Marketing & IA" class="h-4 w-auto">
+        <!-- Theme toggle desktop (luna / sol amarillo) -->
+        <button id="theme-toggle" aria-label="Cambiar tema" class="p-2 rounded-full hover:bg-white/10 transition-colors">
+          <i class="fas fa-moon dark-icon"></i>
+          <i class="fas fa-sun light-icon hidden text-yellow-500"></i>
+        </button>
+
+        <a href="index.html#inicio" class="hover:text-brand-red transition-colors">
+          Inicio
         </a>
 
-        <nav class="hidden md:flex items-center gap-8 text-sm font-semibold tracking-wide">
-            
-            <button id="theme-toggle" aria-label="Cambiar tema" class="p-2 rounded-full hover:bg-white/10 transition-colors">
-                <i class="fas fa-moon hidden dark-icon"></i>
-                <i class="fas fa-sun hidden light-icon text-yellow-500"></i>
-            </button>
-
-            <a href="index.html#inicio" class="hover:text-brand-red transition-colors">Inicio</a>
-
-            <div class="relative group cursor-pointer h-full flex items-center">
-                <span class="text-brand-red py-2">Servicios</span>
-                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-red"></span>
-                
-                <div class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
-                    <div class="crystal-glass rounded-xl p-4 w-48 flex flex-col gap-2 text-sm text-[var(--text-main)]">
-                        <a href="desarrollo-web.html" class="block px-3 py-2 rounded hover:bg-brand-red hover:text-white transition-colors">Desarrollo Web</a>
-                        <a href="branding.html" class="block px-3 py-2 rounded hover:bg-brand-red hover:text-white transition-colors">Branding Digital</a>
-                        <a href="redes-sociales.html" class="block px-3 py-2 rounded hover:bg-brand-red hover:text-white transition-colors">Redes Sociales</a>
-                        <a href="publicidad.html" class="block px-3 py-2 rounded bg-brand-red text-white cursor-default">Publicidad</a>
-                    </div>
-                </div>
+        <!-- Dropdown de Servicios – PUBLICIDAD activa -->
+        <div class="relative group cursor-pointer h-full flex items-center">
+          <span class="text-brand-red py-2">Servicios</span>
+          <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-red"></span>
+          
+          <div class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
+            <div class="crystal-glass rounded-xl p-4 w-48 flex flex-col gap-2 text-sm text-[var(--text-main)]">
+              <a href="desarrollo-web.html"
+                 class="block px-3 py-2 rounded hover:bg-brand-red hover:text-white transition-colors">
+                Desarrollo Web
+              </a>
+              <a href="branding-digital.html"
+                 class="block px-3 py-2 rounded hover:bg-brand-red hover:text-white transition-colors">
+                Branding Digital
+              </a>
+              <a href="redes-sociales.html"
+                 class="block px-3 py-2 rounded hover:bg-brand-red hover:text-white transition-colors">
+                Redes Sociales
+              </a>
+              <!-- Página actual -->
+              <span aria-current="page"
+                    class="block px-3 py-2 rounded bg-brand-red text-white cursor-default">
+                Publicidad
+              </span>
             </div>
-
-            <a href="index.html#somos" class="group hover:text-brand-red transition-colors">Nosotros</a>
-            
-            <a href="contacto.html" class="bg-white text-black px-6 py-2.5 rounded-lg font-bold hover:shadow-[0_0_15px_rgba(255,255,255,0.4)] transition-all transform hover:-translate-y-0.5">
-                Contacto
-            </a>
-        </nav>
-        
-        <button id="mobile-menu-btn" aria-label="Abrir menú" class="md:hidden text-2xl">
-            <i class="fas fa-bars"></i>
-        </button>
-    </div>
-
-    <div id="mobile-menu" class="md:hidden fixed inset-0 bg-black/95 backdrop-blur-xl z-40 transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center gap-8">
-        
-        <button id="close-mobile-menu" aria-label="Cerrar menú" class="absolute top-8 right-8 text-3xl text-white">
-            <i class="fas fa-times"></i>
-        </button>
-
-        <a href="index.html#inicio" class="text-2xl font-bold text-white mobile-link">Inicio</a>
-
-        <div class="flex flex-col items-center gap-2">
-            <span class="text-2xl font-bold text-white">Servicios</span>
-            <a href="desarrollo-web.html" class="text-lg text-white/80 mobile-link">Desarrollo Web</a>
-            <a href="branding.html" class="text-lg text-white/80 mobile-link">Branding Digital</a>
-            <a href="redes-sociales.html" class="text-lg text-white/80 mobile-link">Redes Sociales</a>
-            <a href="publicidad.html" class="text-lg text-brand-red mobile-link">Publicidad</a>
+          </div>
         </div>
 
-        <a href="index.html#somos" class="text-2xl font-bold text-white mobile-link">Nosotros</a>
+        <a href="index.html#somos" class="group hover:text-brand-red transition-colors">
+          Nosotros
+        </a>
         
-        <a href="contacto.html" class="text-2xl font-bold text-brand-red mobile-link">Contacto</a>
+        <!-- Contacto NORMAL (blanco) en esta página -->
+        <a href="contacto.html"
+           class="bg-white text-black px-6 py-2.5 rounded-lg font-bold hover:shadow-[0_0_15px_rgba(255,255,255,0.4)] transition-all transform hover:-translate-y-0.5">
+          Contacto
+        </a>
+      </nav>
 
-        <button id="mobile-theme-toggle" aria-label="Cambiar tema" class="text-xl text-white border border-white/20 px-6 py-2 rounded-full">
-            Cambiar tema
-        </button>
+      <!-- BOTÓN HAMBURGUESA MOBILE -->
+      <button id="mobile-menu-btn" aria-label="Abrir menú" class="md:hidden text-2xl">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
+  </div>
+
+  <!-- MENÚ MOBILE -->
+  <div id="mobile-menu" class="md:hidden fixed inset-0 bg-black/95 backdrop-blur-xl z-40 transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center gap-8">
+    
+    <button id="close-mobile-menu" aria-label="Cerrar menú" class="absolute top-8 right-8 text-3xl text-white">
+      <i class="fas fa-times"></i>
+    </button>
+
+    <a href="index.html#inicio" class="text-2xl font-bold text-white mobile-link">Inicio</a>
+
+    <div class="flex flex-col items-center gap-2">
+      <span class="text-2xl font-bold text-white">Servicios</span>
+      <a href="desarrollo-web.html" class="text-lg text-white/80 mobile-link">Desarrollo Web</a>
+      <a href="branding-digital.html" class="text-lg text-white/80 mobile-link">Branding Digital</a>
+      <a href="redes-sociales.html" class="text-lg text-white/80 mobile-link">Redes Sociales</a>
+      <a href="publicidad.html" class="text-lg text-brand-red mobile-link">Publicidad</a>
+    </div>
+
+    <a href="index.html#somos" class="text-2xl font-bold text-white mobile-link">Nosotros</a>
+    
+    <a href="contacto.html" class="text-2xl font-bold text-brand-red mobile-link">Contacto</a>
+  </div>
 </header>
 
 
 
  <!-- HERO SECTION -->
-<section class="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden bg-[var(--section-bg)]">
+<section class="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden section-bg">
+
     <!-- 🔴 Blob rojo suave -->
     <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-brand-red/8 rounded-full blur-[100px] animate-blob pointer-events-none"></div>
 
@@ -125,22 +162,19 @@
             </div>
 
             <!-- 👇 Título adaptado al tema -->
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight text-[var(--text-main)]">
+            <h1 class="heading-hero mb-6">
                 Publicidad en <br/>
                 <span class="text-brand-red">Google y Meta Ads</span>
             </h1>
             
-            <p class="text-lg md:text-xl text-[var(--text-muted)] font-light leading-relaxed mb-10 max-w-lg mx-auto lg:mx-0">
+            <p class="subheading-hero max-w-lg mb-10">
                 Gestionamos campañas publicitarias en Google Ads y Meta Ads para maximizar el alcance, las conversiones y el retorno de inversión de tu marca.
             </p>
-            <a
-  href="contacto.html"
-  class="inline-block bg-brand-red text-white px-10 py-4 rounded-full font-bold text-lg
-         hover:bg-red-700 hover:shadow-[0_0_30px_rgba(190,24,37,0.5)]
-         hover:scale-105 transition-all duration-300"
->
+            
+ <a href="contacto.html" class="btn-cta btn-cta--primary">
   Quiero mejorar mis anuncios
 </a>
+
 <p class="mt-3 text-[var(--text-muted)] text-sm">
 </p>
         </div>
@@ -225,19 +259,19 @@
 </section>
 
 <!-- SECTION 1: 4 KEY CARDS -->
-<section class="py-24 bg-[var(--section-bg)] relative">
+<section class="section-block bg-[var(--section-bg)] relative">
     <div class="max-w-7xl mx-auto px-6">
         
         <!-- Título de la sección -->
         <div class="text-center mb-12 reveal-up">
-           
-            <h2 class="text-3xl md:text-4xl font-bold text-[var(--text-main)] mb-3">
-                Cómo gestionamos tus campañas
-            </h2>
-            <p class="text-[var(--text-muted)] max-w-2xl mx-auto text-sm md:text-base">
-                Las piezas clave que usamos para que tus anuncios rindan mejor.
-            </p>
-        </div>
+    <h2 class="heading-hero mb-4">
+        Cómo gestionamos tus campañas
+    </h2>
+    <p class="subheading-hero max-w-2xl mx-auto">
+        Las piezas clave que usamos para que tus anuncios rindan mejor.
+    </p>
+</div>
+
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
             <!-- Card 1 -->
@@ -319,7 +353,7 @@
 
 
 <!-- SECTION 2: GOOGLE ADS BLOCK + ACCORDIONS -->
-<section class="py-24 bg-[var(--bg-body)] relative overflow-hidden">
+<section class="section-block bg-[var(--bg-body)] relative overflow-hidden">
     <!-- (Opcional) Decor muy suave, si no lo querés podés borrar este div -->
     <!-- <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-white/40 to-transparent pointer-events-none"></div> -->
 
@@ -328,12 +362,13 @@
         <!-- Left: Accordions -->
         <div class="reveal-up">
             <div class="mb-10">
-                <h2 class="text-4xl font-bold text-[var(--text-main)] mb-4">
-                    Campañas en Google Ads
-                </h2>
-                <p class="text-[var(--text-muted)] text-lg">
-                    Aparecé cuando tus clientes te buscan y pagá solo por resultados medibles.
-                </p>
+                <h2 class="heading-hero mb-4">
+    Campañas en Google Ads
+</h2>
+<p class="subheading-hero">
+    Aparecé cuando tus clientes te buscan y pagá solo por resultados medibles.
+</p>
+
             </div>
 
             <div class="space-y-6">
@@ -423,7 +458,8 @@
         <div class="relative h-[500px] lg:h-[600px] w-full reveal-up delay-100">
             <div class="absolute inset-0 crystal-glass rounded-2xl overflow-hidden border border-white/5 group">
                 <!-- Background Image SIEMPRE a color -->
-                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-80"></div>
+                <!-- 🔽 ACÁ SOLO CAMBIÁS EL NOMBRE Y LA EXTENSIÓN DEL ARCHIVO -->
+                <div class="absolute inset-0 bg-[url('IMG/publicidad-google.webp')] bg-cover bg-center opacity-80"></div>
                 <!-- Overlay suave sólo para contraste de texto -->
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 
@@ -447,15 +483,17 @@
 
     </div>
 </section>
+
 <!-- SECTION 3: META ADS BLOCK + ACCORDIONS -->
-<section class="py-24 bg-[var(--bg-body)] relative overflow-hidden">
+<section class="section-block bg-[var(--bg-body)] relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
         
         <!-- Left: Image Composition (Meta) -->
         <div class="relative h-[500px] lg:h-[600px] w-full reveal-up delay-100">
             <div class="absolute inset-0 crystal-glass rounded-2xl overflow-hidden border border-white/5 group">
                 <!-- Background Image SIEMPRE a color -->
-                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-80"></div>
+                <!-- 🔽 ACÁ SOLO CAMBIÁS EL NOMBRE DEL ARCHIVO -->
+                <div class="absolute inset-0 bg-[url('IMG/publicidadd-meta.webp')] bg-cover bg-center opacity-80"></div>
                 <!-- Overlay para contraste -->
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 
@@ -481,12 +519,12 @@
         <!-- Right: Accordions (Meta Ads) -->
         <div class="reveal-up">
             <div class="mb-10">
-                <h2 class="text-4xl font-bold text-[var(--text-main)] mb-4">
-                    Campañas en Meta Ads (Facebook &amp; Instagram)
-                </h2>
-                <p class="text-[var(--text-muted)] text-lg">
-                    Creamos campañas en Facebook e Instagram pensadas para atraer, retener y convertir a tu audiencia ideal.
-                </p>
+                <h2 class="heading-hero mb-4">
+    Campañas en Meta Ads (Facebook &amp; Instagram)
+</h2>
+<p class="subheading-hero">
+    Creamos campañas en Facebook e Instagram pensadas para atraer, retener y convertir a tu audiencia ideal.
+</p>
             </div>
 
             <div class="space-y-6">
@@ -529,7 +567,7 @@
                             Reconocimiento (Awareness)
                             <span class="accordion-underline"></span>
                         </h3>
-                        <i class="fas fa-chevron-down text-[var(--text-muted)] transition-transform duration-300 group-[.active]:rotate-180"></i>
+                        <i class="fas fa-chevron-down text-[var(--text-muted)] transition-transform duración-300 group-[.active]:rotate-180"></i>
                     </div>
                     <div class="accordion-content">
                         <p class="text-[var(--text-muted)] pt-2 leading-relaxed">
@@ -545,7 +583,7 @@
                             Leads
                             <span class="accordion-underline"></span>
                         </h3>
-                        <i class="fas fa-chevron-down text-[var(--text-muted)] transition-transform duration-300 group-[.active]:rotate-180"></i>
+                        <i class="fas fa-chevron-down text-[var(--text-muted)] transition-transform duración-300 group-[.active]:rotate-180"></i>
                     </div>
                     <div class="accordion-content">
                         <p class="text-[var(--text-muted)] pt-2 leading-relaxed">
@@ -561,7 +599,7 @@
                             Remarketing
                             <span class="accordion-underline"></span>
                         </h3>
-                        <i class="fas fa-chevron-down text-[var(--text-muted)] transition-transform duration-300 group-[.active]:rotate-180"></i>
+                        <i class="fas fa-chevron-down text-[var(--text-muted)] transition-transform duración-300 group-[.active]:rotate-180"></i>
                     </div>
                     <div class="accordion-content">
                         <p class="text-[var(--text-muted)] pt-2 leading-relaxed">
@@ -575,48 +613,48 @@
     </div>
 </section>
 
+
 <!-- SECTION 3: ROTATING TEXT -->
-<section class="py-20 bg-[var(--bg-body)] relative flex items-center justify-center text-center overflow-hidden">
+<section class="section-block bg-[var(--bg-body)] relative flex items-center justify-center text-center overflow-hidden">
     <div class="absolute inset-0 bg-brand-red/5 mix-blend-overlay pointer-events-none"></div>
     
     <div class="max-w-4xl mx-auto px-6 relative z-10 reveal-up">
         <h2
-            class="text-3xl md:text-5xl font-bold text-[var(--text-main)]
-                   flex flex-col md:flex-row items-center justify-center
-                   gap-3 md:gap-4 leading-tight md:whitespace-nowrap"
-        >
-            <span>Con KA&SO tu marca obtiene</span>
+  class="heading-hero
+         flex flex-col md:flex-row items-center justify-center
+         gap-3 md:gap-4 leading-tight md:whitespace-nowrap
+         text-center md:text-left"
+>
+  <span>Con KA&SO tu marca obtiene</span>
 
-            <span class="text-brand-red inline-block md:ml-2 md:min-w-[260px] text-center md:text-left">
-                <span id="rotating-text" class="rotate-text visible">
-                    más visibilidad
-                </span>
-            </span>
-        </h2>
+  <span class="text-brand-red inline-block md:ml-2 md:min-w-[260px] text-center md:text-left">
+    <span id="rotating-text" class="rotate-text visible heading-hero-highlight">
+      más visibilidad
+    </span>
+  </span>
+</h2>
+
+
     </div>
 </section>
 <!-- SECTION 4: FINAL CTA -->
-<section id="contacto" class="py-16 bg-[var(--bg-body)] relative border-t border-white/5">
+<section id="contacto" class="section-block bg-[var(--bg-body)] relative border-t border-white/5">
     <div class="max-w-4xl mx-auto px-6 text-center reveal-up">
         <!-- Título tipo pregunta -->
-        <h2 class="text-3xl md:text-4xl font-bold text-[var(--text-main)] mb-6">
-            ¿Listo para hacer que tus anuncios rindan más?
-        </h2>
+        <h2 class="heading-section text-[var(--text-main)]">
+    ¿Listo para hacer que tus anuncios rindan más?
+</h2>
 
         <!-- Botón principal -->
-        <a
-            href="contacto.html"
-            class="inline-block bg-brand-red text-white px-12 py-5 rounded-full
-                   font-bold text-xl hover:bg-red-700 hover:shadow-[0_0_40px_rgba(190,24,37,0.5)]
-                   hover:scale-105 transition-all duration-300"
-        >
-            Quiero mejorar mis anuncios
-        </a>
+      <a href="contacto.html" class="btn-cta btn-cta--primary mt-7">
+  Hablemos
+</a>
+
 
         <!-- Nota pequeña -->
         <p class="mt-4 text-[var(--text-muted)] text-sm">
-            Diagnóstico inicial gratuito.
-        </p>
+    Diagnóstico inicial gratuito.
+</p>
     </div>
 </section>
 
@@ -669,7 +707,7 @@
                     <ul class="space-y-4">
                         <li><a href="index.html" class="text-[var(--text-muted)] hover:text-brand-red transition-colors">Inicio</a></li>
                         <li><a href="desarrollo-web.html" class="text-[var(--text-muted)] hover:text-brand-red transition-colors">Desarrollo Web</a></li>
-                        <li><a href="branding.html" class="text-[var(--text-muted)] hover:text-brand-red transition-colors">Branding Digital</a></li>
+                        <li><a href="branding-digital.html" class="text-[var(--text-muted)] hover:text-brand-red transition-colors">Branding Digital</a></li>
                         <li><a href="redes-sociales.html" class="text-[var(--text-muted)] hover:text-brand-red transition-colors">Redes Sociales</a></li>
                         <li><a href="publicidad.html" class="text-[var(--text-main)] font-bold cursor-default">Publicidad</a></li>
                     </ul>
@@ -682,126 +720,22 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
-<script>
-    // --- 1. Shared Logic (Theme, Mobile Menu, Scroll) ---
+    
 
-    // THEME TOGGLE (desktop + mobile)
-    const themeToggleBtn = document.getElementById('theme-toggle');              // botón desktop
-    const mobileThemeToggleBtn = document.getElementById('mobile-theme-toggle'); // botón mobile
-    const darkIcon = document.querySelector('.dark-icon');
-    const lightIcon = document.querySelector('.light-icon');
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LCYKNW5QD4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LCYKNW5QD4');
+    </script>
 
-    function setTheme(theme) {
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
-
-        if (darkIcon && lightIcon) {
-            if (theme === 'light') {
-                darkIcon.classList.remove('hidden');
-                lightIcon.classList.add('hidden');
-            } else {
-                lightIcon.classList.remove('hidden');
-                darkIcon.classList.add('hidden');
-            }
-        }
-    }
-
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    setTheme(savedTheme);
-
-    function toggleTheme() {
-        const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-        setTheme(currentTheme === 'light' ? 'dark' : 'light');
-    }
-
-    if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', toggleTheme);
-    }
-    if (mobileThemeToggleBtn) {
-        mobileThemeToggleBtn.addEventListener('click', toggleTheme);
-    }
-
-    // MOBILE MENU
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const closeMobileMenuBtn = document.getElementById('close-mobile-menu');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    function toggleMenu() {
-        if (!mobileMenu) return;
-        mobileMenu.classList.toggle('translate-x-full');
-    }
-
-    if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener('click', toggleMenu);
-    }
-    if (closeMobileMenuBtn) {
-        closeMobileMenuBtn.addEventListener('click', toggleMenu);
-    }
-
-    document.querySelectorAll('#mobile-menu .mobile-link').forEach(link => {
-        link.addEventListener('click', () => {
-            if (!mobileMenu) return;
-            mobileMenu.classList.add('translate-x-full');
-        });
-    });
-
-    // REVEAL-UP con IntersectionObserver
-    const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                revealObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.reveal-up').forEach(el => revealObserver.observe(el));
-
-
-    // --- 2. Page Specific Logic (Acordeones + texto rotativo) ---
-
-    // Accordion Toggle (para los onclick="toggleAccordion(this)")
-    function toggleAccordion(element) {
-        const isActive = element.classList.contains('active');
-
-        document.querySelectorAll('.accordion-item').forEach(item => {
-            item.classList.remove('active');
-        });
-
-        if (!isActive) {
-            element.classList.add('active');
-        }
-    }
-
-    // Rotating Text Animation
-    const words = [
-        "más visibilidad",
-        "más interacción",
-        "más conversión",
-        "más crecimiento",
-        "más retorno"
-    ];
-    let wordIndex = 0;
-    const textElement = document.getElementById('rotating-text');
-
-    if (textElement) {
-        function rotateWord() {
-            textElement.classList.remove('visible');
-
-            setTimeout(() => {
-                wordIndex = (wordIndex + 1) % words.length;
-                textElement.textContent = words[wordIndex];
-                textElement.classList.add('visible');
-            }, 500);
-        }
-
-        setInterval(rotateWord, 3000);
-    }
-</script>
+    <!-- Botón flotante de WhatsApp -->
     <a href="https://wa.me/5493517064753?text=Hola,%20vi%20su%20web%20y%20me%20interesa%20mejorar%20mis%20redes." 
    target="_blank"
    rel="noopener noreferrer"
+   aria-label="Contactar por WhatsApp" 
    class="fixed bottom-6 right-5 md:bottom-10 md:right-8 z-[9999] group flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-[#25D366] rounded-full shadow-[0_4px_14px_0_rgba(37,211,102,0.39)] transition-all duration-300 hover:scale-110 hover:shadow-[0_6px_20px_rgba(37,211,102,0.23)] focus:outline-none focus:ring-4 focus:ring-green-300">
     
     <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-20 animate-ping group-hover:animate-none"></span>
@@ -810,5 +744,51 @@
         <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-4-10.5-6.7z"/>
     </svg>
 </a>
+
+    <!-- JS compartido para TODO el sitio (tema, menú, reveal, etc.) -->
+    <script type="module" src="/src/main.js"></script>
+
+    <!-- JS específico de esta página: texto rotativo + acordeones -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const words = [
+          "más visibilidad",
+          "más interacción",
+          "más conversión",
+          "más crecimiento",
+          "más retorno"
+        ];
+
+        let wordIndex = 0;
+        const textElement = document.getElementById('rotating-text');
+
+        if (textElement) {
+          function rotateWord() {
+            textElement.classList.remove('visible');
+
+            setTimeout(() => {
+              wordIndex = (wordIndex + 1) % words.length;
+              textElement.textContent = words[wordIndex];
+              textElement.classList.add('visible');
+            }, 500);
+          }
+
+          setInterval(rotateWord, 3000);
+        }
+      });
+
+      // Acordeones globales (onclick="toggleAccordion(this)")
+      function toggleAccordion(element) {
+        const isActive = element.classList.contains('active');
+
+        document.querySelectorAll('.accordion-item').forEach(item => {
+          item.classList.remove('active');
+        });
+
+        if (!isActive) {
+          element.classList.add('active');
+        }
+      }
+    </script>
 </body>
 </html>

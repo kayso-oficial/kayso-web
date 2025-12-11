@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es-AR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Branding Digital | KA&SO</title>
+    <meta name="description" content="Creamos identidades visuales que comunican con fuerza, personalidad y propósito real. Agencia de Branding en Córdoba.">
+    <link rel="canonical" href="https://kayso-oficial.com/branding-digital" />
+    <!-- Fonts: Nunito Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LCYKNW5QD4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-LCYKNW5QD4');
+    </script>
+
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="branding-page font-sans antialiased overflow-x-hidden selection:bg-brand-red selection:text-white">
+
+<!-- HEADER BRANDING -->
+<header class="fixed top-0 w-full z-50 transition-all duration-300">
+  <div class="crystal-glass rounded-b-2xl mx-2 md:mx-6 px-4 md:px-6 py-3 md:py-4 flex justify-between items-center">
+    
+    <!-- LOGO -->
+    <a href="index.html#inicio" aria-label="Volver al inicio"
+       class="flex items-center gap-2 group hover:opacity-80 transition-opacity">
+      <img src="IMG/LOGOLETRA.webp" alt="KA&SO - Agencia de Marketing & IA" class="h-4 w-auto">
+    </a>
+
+    <!-- LADO DERECHO -->
+    <div class="flex items-center gap-3">
+      
+      <!-- TOGGLE TEMA MOBILE (pill sol/luna) -->
+      <button
+        id="mobile-theme-toggle"
+        aria-label="Cambiar tema oscuro o claro"
+        class="md:hidden theme-pill"
+      >
+        <i class="fas fa-moon theme-toggle-icon theme-toggle-icon--moon"></i>
+        <i class="fas fa-sun theme-toggle-icon theme-toggle-icon--sun text-yellow-500"></i>
+      </button>
+
+      <!-- BOTÓN CONTACTO MOBILE -->
+      <a
+        href="contacto.html"
+        class="md:hidden text-xs font-semibold px-4 py-1.5 rounded-full bg-white text-black shadow-sm hover:shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all"
+      >
+        Contacto
+      </a>
+
+      <!-- NAV DESKTOP -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold tracking-wide">
+        
+        <!-- Theme toggle desktop (luna / sol amarillo) -->
+        <button id="theme-toggle"
+                aria-label="Cambiar tema oscuro o claro"
+                class="p-2 rounded-full hover:bg-white/10 transition-colors">
+          <i class="fas fa-moon dark-icon"></i>
+          <i class="fas fa-sun light-icon hidden text-yellow-500"></i>
+        </button>
+
+        <a href="index.html#inicio" class="hover:text-brand-red transition-colors">
+          Inicio
+        </a>
+
+        <!-- Dropdown de Servicios -->
+        <div class="relative group cursor-pointer h-full flex items-center">
+          <!-- En BRANDING lo dejamos ya marcado en rojo -->
+          <span class="text-brand-red py-2">Servicios</span>
+          <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-red"></span>
+          
+          <div class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
+            <div class="crystal-glass rounded-xl p-4 w-48 flex flex-col gap-2 text-sm text-[var(--text-main)]">
+              <a href="desarrollo-web.html"
+                 class="block px-3 py-2 rounded hover:bg-brand-red hover:text-white transition-colors">
+                Desarrollo Web
+              </a>
+              <!-- Página actual -->
+              <span aria-current="page"
+                    class="block px-3 py-2 rounded bg-brand-red text-white cursor-default">
+                Branding Digital
+              </span>
+              <a href="redes-sociales.html"
+                 class="block px-3 py-2 rounded hover:bg-brand-red hover:text-white transition-colors">
+                Redes Sociales
+              </a>
+              <a href="publicidad.html"
+                 class="block px-3 py-2 rounded hover:bg-brand-red hover:text-white transition-colors">
+                Publicidad
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <a href="index.html#somos" class="group hover:text-brand-red transition-colors">
+          Nosotros
+        </a>
+        
+        <a href="contacto.html"
+           class="bg-white text-black px-6 py-2.5 rounded-lg font-bold hover:shadow-[0_0_15px_rgba(255,255,255,0.4)] transition-all transform hover:-translate-y-0.5">
+          Contacto
+        </a>
+      </nav>
+
+      <!-- BOTÓN HAMBURGUESA MOBILE -->
+      <button id="mobile-menu-btn" aria-label="Abrir menú" class="md:hidden text-2xl">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- MENÚ MOBILE -->
+  <div id="mobile-menu"
+       class="md:hidden fixed inset-0 bg-black/95 backdrop-blur-xl z-40 transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center gap-8">
+    
+    <button id="close-mobile-menu" aria-label="Cerrar menú"
+            class="absolute top-8 right-8 text-3xl text-white">
+      <i class="fas fa-times"></i>
+    </button>
+
+    <a href="index.html#inicio" class="text-2xl font-bold text-white mobile-link">
+      Inicio
+    </a>
+
+    <div class="flex flex-col items-center gap-2">
+      <span class="text-2xl font-bold text-white">Servicios</span>
+      <a href="desarrollo-web.html" class="text-lg text-white/80 mobile-link">
+        Desarrollo Web
+      </a>
+      <span class="text-lg text-brand-red">
+        Branding Digital
+      </span>
+      <a href="redes-sociales.html" class="text-lg text-white/80 mobile-link">
+        Redes Sociales
+      </a>
+      <a href="publicidad.html" class="text-lg text-white/80 mobile-link">
+        Publicidad
+      </a>
+    </div>
+
+    <a href="index.html#somos" class="text-2xl font-bold text-white mobile-link">
+      Nosotros
+    </a>
+    
+    <a href="contacto.html" class="text-2xl font-bold text-brand-red mobile-link">
+      Contacto
+    </a>
+  </div>
+</header>
+
+
+<section
+  id="branding-hero"
+  class="section-block relative w-full flex items-start justify-center overflow-hidden section-bg"
+>
+
+    
+    <div class="absolute top-20 left-1/2 -translate-x-1/2 md:left-20 md:translate-x-0 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-brand-red/10 rounded-full blur-[80px] md:blur-[100px] animate-blob pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10 w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        
+        <div class="flex flex-col items-center md:items-start text-center md:text-left reveal-up">
+            <h1 class="heading-hero text-[var(--text-main)] mb-6">
+                Tu Marca Contada de <br/> 
+                <span class="text-brand-red">Manera Correcta</span>
+            </h1>
+            
+            <p class="subtitle-muted max-w-lg mb-10">
+                  Creamos identidades visuales que comunican con fuerza, personalidad y propósito real para negocios que necesitan una marca clara y consistente.
+            </p>
+            
+            <a href="contacto.html" class="btn-cta btn-cta--primary">
+                Quiero trabajar mi marca
+            </a>
+        </div>
+
+      <div
+  class="flex justify-center items-center h-[400px] w-full reveal-up delay-100
+         mt-10 md:mt-16 lg:mt-20">
+
+
+            
+            <div class="slideshow">
+                
+                <div class="slide" style="--i:0;">
+                    <h2>Identidad<span>definida</span></h2>
+                    <img src="IMG/mockup1.webp" alt="Branding Slide 1" />
+                </div>
+
+                <div class="slide" style="--i:1;">
+                    <h2>Visuales<span>medibles</span></h2>
+                    <img src="IMG/mockup2.webp" alt="Branding Slide 2" />
+                </div>
+
+                <div class="slide" style="--i:2;">
+                    <h2>Branding<span>eficiente</span></h2>
+                    <img src="IMG/mockup3.webp" alt="Branding Slide 3" />
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- SECTION 2: GLASS TRIO (Key Aspects) -->
+<section class="section-block relative section-bg">
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <!-- Unified Glass Container -->
+        <div class="crystal-glass rounded-[2rem] p-0 overflow-hidden reveal-up">
+            <div class="grid grid-cols-1 md:grid-cols-3">
+                
+                <!-- Card 1 -->
+                <div class="p-10 md:p-12 glass-divider group hover:bg-white/5 transition-colors duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-gray-800 to-black border border-white/10 flex items-center justify-center mb-6 group-hover:border-brand-red/50 transition-colors">
+                        <i class="fas fa-pen-nib text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-[var(--text-main)] mb-4 text-center md:text-left">
+                        Diseño vectorial profesional
+                    </h3>
+                    <p class="text-[var(--text-muted)] leading-relaxed text-center md:text-left">
+                        Trabajamos con Adobe Illustrator y herramientas profesionales para crear archivos 100% vectoriales, ideales para uso empresarial: escalables, listos para impresión, web y cualquier pieza corporativa.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="p-10 md:p-12 glass-divider group hover:bg-white/5 transition-colors duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-gray-800 to-black border border-white/10 flex items-center justify-center mb-6 group-hover:border-brand-red/50 transition-colors">
+                        <i class="fas fa-fingerprint text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-[var(--text-main)] mb-4 text-center md:text-left">
+                        Identidad visual a tu medida
+                    </h3>
+                    <p class="text-[var(--text-muted)] leading-relaxed text-center md:text-left">
+                        Diseñamos piezas que nacen de tu identidad visual: coherentes con tu marca, tu personalidad y tu público. Cada recurso está pensado para reforzar lo que te hace único.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="p-10 md:p-12 group hover:bg-white/5 transition-colors duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-gray-800 to-black border border-white/10 flex items-center justify-center mb-6 group-hover:border-brand-red/50 transition-colors">
+                        <i class="fas fa-layer-group text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-[var(--text-main)] mb-4 text-center md:text-left">
+                        Sistema visual coherente
+                    </h3>
+                    <p class="text-[var(--text-muted)] leading-relaxed text-center md:text-left">
+                        Desarrollamos una marca sólida, aplicable y consistente en todos los formatos y plataformas: redes sociales, web, presentaciones, papelería y campañas de comunicación.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 3: INTERACTIVE PROCESS -->
+<!-- SECTION 3: PROCESO CON ACORDEÓN -->
+<section class="section-block bg-[var(--bg-body)] relative overflow-hidden">
+  <div class="max-w-5xl mx-auto px-6 lg:px-4">
+
+    <!-- HEAD: título + bajada a todo el ancho -->
+    <div class="reveal-up mb-10 text-center lg:text-center">
+      <h2 class="heading-section text-[var(--text-main)] mb-4">
+        Así trabajamos tu marca
+      </h2>
+      <p class="subtitle-muted">
+        Un proceso claro, paso a paso, para que sepas qué esperar en cada etapa.
+      </p>
+    </div>
+
+    <!-- CUERPO: foto izquierda / pasos derecha -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+
+      <!-- Columna izquierda: foto 3:4 -->
+      <div class="order-1 flex justify-center lg:justify-start">
+        <div class="relative w-full max-w-[220px] sm:max-w-[260px] md:max-w-[300px] lg:max-w-[320px] aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl">
+          <img 
+            src="IMG/KAYSO-FOTO-PROFESIONAL.webp" 
+            alt="Proceso de branding KA&SO"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+
+<!-- Columna derecha: acordeón de pasos -->
+<div class="order-2 reveal-up delay-100">
+  <div class="space-y-3">
+
+    <!-- ITEM 1 -->
+    <div class="accordion-item active crystal-glass rounded-2xl p-3 md:p-4">
+      <button type="button" class="accordion-trigger w-full flex items-center justify-between text-left gap-3">
+        <div class="flex flex-col gap-1">
+          <!-- PASO 1 arriba, sin subrayado -->
+          <span class="text-[0.75rem] md:text-xs font-semibold text-brand-red uppercase tracking-[0.18em]">
+            Paso 1
+          </span>
+          <!-- Título con subrayado solo en el texto principal -->
+          <span class="accordion-title text-sm md:text-base font-semibold">
+            Diagnóstico y entendimiento
+            <span class="accordion-underline"></span>
+          </span>
+        </div>
+        <span class="text-xs md:text-sm text-[var(--text-muted)]">▼</span>
+      </button>
+      <div class="accordion-content mt-2">
+        <p class="text-[var(--text-muted)] text-xs md:text-sm leading-relaxed">
+          Analizamos tu presencia digital actual (redes sociales, contenido, anuncios si los hay), tu mercado, competencia y objetivos comerciales. Definimos una base clara de cómo está hoy tu marca y su contexto antes de proponer cualquier cambio en comunicación y contenido.
+        </p>
+      </div>
+    </div>
+
+    <!-- ITEM 2 -->
+    <div class="accordion-item crystal-glass rounded-2xl p-3 md:p-4">
+      <button type="button" class="accordion-trigger w-full flex items-center justify-between text-left gap-3">
+        <div class="flex flex-col gap-1">
+          <span class="text-[0.75rem] md:text-xs font-semibold text-brand-red uppercase tracking-[0.18em]">
+            Paso 2
+          </span>
+          <span class="accordion-title text-sm md:text-base font-semibold">
+            Estrategia de comunicación y contenido
+            <span class="accordion-underline"></span>
+          </span>
+        </div>
+        <span class="text-xs md:text-sm text-[var(--text-muted)]">▼</span>
+      </button>
+      <div class="accordion-content mt-2">
+        <p class="text-[var(--text-muted)] text-xs md:text-sm leading-relaxed">
+          Definimos el tono de voz, los mensajes clave y los pilares de contenido para tus redes. También alineamos un estilo visual coherente para piezas digitales (colores, uso de tu logo actual, tipos de piezas), trabajando sobre la identidad que ya tenés, sin rediseñar tu marca desde cero.
+        </p>
+      </div>
+    </div>
+
+    <!-- ITEM 3 -->
+    <div class="accordion-item crystal-glass rounded-2xl p-3 md:p-4">
+      <button type="button" class="accordion-trigger w-full flex items-center justify-between text-left gap-3">
+        <div class="flex flex-col gap-1">
+          <span class="text-[0.75rem] md:text-xs font-semibold text-brand-red uppercase tracking-[0.18em]">
+            Paso 3
+          </span>
+          <span class="accordion-title text-sm md:text-base font-semibold">
+            Producción y diseño de piezas digitales
+            <span class="accordion-underline"></span>
+          </span>
+        </div>
+        <span class="text-xs md:text-sm text-[var(--text-muted)]">▼</span>
+      </button>
+      <div class="accordion-content mt-2">
+        <p class="text-[var(--text-muted)] text-xs md:text-sm leading-relaxed">
+          Planificamos y diseñamos el contenido que tu marca necesita en redes: posts, carruseles, reels, historias y creatividades para anuncios. Todo pensado para verse profesional, coherente y adaptado a tus objetivos de negocio.
+        </p>
+      </div>
+    </div>
+
+    <!-- ITEM 4 -->
+    <div class="accordion-item crystal-glass rounded-2xl p-3 md:p-4">
+      <button type="button" class="accordion-trigger w-full flex items-center justify-between text-left gap-3">
+        <div class="flex flex-col gap-1">
+          <span class="text-[0.75rem] md:text-xs font-semibold text-brand-red uppercase tracking-[0.18em]">
+            Paso 4
+          </span>
+          <span class="accordion-title text-sm md:text-base font-semibold">
+            Implementación y seguimiento
+            <span class="accordion-underline"></span>
+          </span>
+        </div>
+        <span class="text-xs md:text-sm text-[var(--text-muted)]">▼</span>
+      </button>
+      <div class="accordion-content mt-2">
+        <p class="text-[var(--text-muted)] text-xs md:text-sm leading-relaxed">
+          Preparamos y entregamos el contenido listo para publicar y, si lo necesitás, te acompañamos en la organización del calendario y el uso diario en redes. Revisamos resultados, aprendemos de las métricas y ajustamos la estrategia para seguir mejorando.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+    </div>
+  </div>
+</section>
+
+    <!-- SECTION 4: FINAL CTA -->
+    <section id="contacto" class="section-block section-bg relative">
+
+        <div class="max-w-4xl mx-auto px-6 text-center reveal-up">
+            <!-- Título CTA con heading-section -->
+            <h2 class="heading-section text-[var(--text-main)] mb-8">
+                ¿Empezamos hoy?
+            </h2>           
+            <a href="contacto.html" class="btn-cta btn-cta--primary">
+    Contactanos
+</a>
+            <p class="mt-6 text-[var(--text-muted)]">Llevamos tu imagen al siguiente nivel.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="section-bg border-t border-white/10 pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+                <!-- Brand Column -->
+                
+                <div>
+                    <div class="flex items-center gap-2 mb-6">
+                        <img src="IMG/isologokayso.webp" alt="KA&SO" class="h-10 w-auto object-contain">
+                    </div>
+                    <p class="text-[var(--text-muted)] mb-8 max-w-sm">
+                        Agencia de marketing digital enfocada en datos y creatividad. Transformamos tu presencia digital en resultados medibles.
+                    </p>
+                    <h4 class="font-bold text-[var(--text-main)] mb-4">¡Seguinos!</h4>
+                    <div class="flex gap-4">
+                        <a href="https://instagram.com/Kayso_marketingdecontenidos" class="w-12 h-12 rounded-full crystal-glass flex items-center justify-center text-xl text-[var(--text-main)] hover:text-brand-red hover:border-brand-red transition-all" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/5493517064753" target="_blank" class="w-12 h-12 rounded-full crystal-glass flex items-center justify-center text-xl text-[var(--text-main)] hover:text-green-500 hover:border-green-500 transition-all" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Column -->
+                <div>
+                    <h3 class="text-xl font-bold text-[var(--text-main)] mb-8">Contacto</h3>
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4">
+                            <i class="far fa-envelope mt-1 text-brand-red"></i>
+                            <a href="mailto:info@kayso-oficial.com" class="text-[var(--text-muted)] hover:text-white transition-colors">info@kayso-oficial.com</a>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <i class="fab fa-whatsapp mt-1 text-brand-red"></i>
+                            <a href="https://wa.me/5493517064753" target="_blank" class="text-[var(--text-muted)] hover:text-white transition-colors">+54 9 351 706-4753 ↗</a>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <i class="fas fa-map-marker-alt mt-1 text-brand-red"></i>
+                            <span class="text-[var(--text-muted)]">Blvd. Pte. Arturo Umberto Illia 343,<br>X5000ASC Córdoba</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Nav Column -->
+                <div>
+                    <h3 class="text-xl font-bold text-[var(--text-main)] mb-8">Servicios</h3>
+                    <ul class="space-y-4">
+                        <li><a href="index.html" class="text-[var(--text-muted)] hover:text-brand-red transition-colors">Inicio</a></li>
+                        <li><a href="desarrollo-web.html" class="text-[var(--text-muted)] hover:text-brand-red transition-colors">Desarrollo Web</a></li>
+                        <li><a href="branding-digital.html" class="text-[var(--text-main)] font-bold cursor-default">Branding Digital</a></li>
+                        <li><a href="redes-sociales.html" class="text-[var(--text-muted)] hover:text-brand-red transition-colors">Redes Sociales</a></li>
+                        <li><a href="publicidad.html" class="text-[var(--text-muted)] hover:text-brand-red transition-colors">Publicidad</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/5 pt-8 text-center text-sm text-[var(--text-muted)]">
+                <p>&copy; KA&SO 2025 · Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+<a href="https://wa.me/5493517064753?text=Hola,%20vi%20su%20web%20y%20me%20interesa%20mejorar%20mis%20redes." 
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Contactar por WhatsApp" 
+   class="fixed bottom-6 right-5 md:bottom-10 md:right-8 z-[9999] group flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-[#25D366] rounded-full shadow-[0_4px_14px_0_rgba(37,211,102,0.39)] transition-all duration-300 hover:scale-110 hover:shadow-[0_6px_20px_rgba(37,211,102,0.23)] focus:outline-none focus:ring-4 focus:ring-green-300">
+    
+    <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-20 animate-ping group-hover:animate-none"></span>
+
+    <svg class="w-7 h-7 md:w-8 md:h-8 text-white fill-current relative z-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-4-10.5-6.7z"/>
+    </svg>
+</a>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

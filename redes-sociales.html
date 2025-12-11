@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manejo de Redes Sociales en Córdoba | KA&SO</title>
-    <meta name="description" content="Impulsamos tu presencia en redes con contenido estratégico en Instagram, TikTok y WhatsApp con servicio de community manager y edición de videos."">
+    <meta name="description" content="Impulsamos tu presencia en redes con contenido estratégico en Instagram, TikTok y WhatsApp con servicio de community manager y edición de videos.">
     <link rel="canonical" href="https://kayso-oficial.com/redes-sociales" />
     <!-- Fonts: Nunito Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,158 +33,183 @@
 
 <!-- Header - REDES SOCIALES -->
 <header class="fixed top-0 w-full z-50 transition-all duration-300">
-    <div class="crystal-glass rounded-b-2xl mx-2 md:mx-6 px-6 py-4 flex justify-between items-center mx-auto">
-        
-        <a href="index.html#inicio" aria-label="Volver al inicio" class="text-2xl font-bold tracking-tighter hover:text-brand-red transition-colors flex items-center gap-2 group">
-            <img src="IMG/LOGOLETRA.webp" alt="KA&SO - Agencia de Marketing & IA" class="h-4 w-auto">
+  <div class="crystal-glass rounded-b-2xl mx-2 md:mx-6 px-4 md:px-6 py-3 md:py-4 flex justify-between items-center">
+
+    <!-- LOGO -->
+    <a href="index.html#inicio"
+       aria-label="Volver al inicio"
+       class="flex items-center gap-2 group hover:opacity-80 transition-opacity">
+      <img
+        src="IMG/LOGOLETRA.webp"
+        alt="KA&SO - Agencia de Marketing & IA"
+        class="h-4 w-auto"
+      >
+    </a>
+
+    <!-- LADO DERECHO -->
+    <div class="flex items-center gap-3">
+
+      <!-- TOGGLE TEMA MOBILE (pill sol/luna) -->
+      <button
+        id="mobile-theme-toggle"
+        aria-label="Cambiar tema oscuro o claro"
+        class="md:hidden theme-pill"
+      >
+        <i class="fas fa-moon theme-toggle-icon theme-toggle-icon--moon"></i>
+        <i class="fas fa-sun  theme-toggle-icon theme-toggle-icon--sun text-yellow-500"></i>
+      </button>
+
+      <!-- BOTÓN CONTACTO MOBILE -->
+      <a
+        href="contacto.html"
+        class="md:hidden text-xs font-semibold px-4 py-1.5 rounded-full bg-white text-black shadow-sm hover:shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all"
+      >
+        Contacto
+      </a>
+
+      <!-- NAV DESKTOP -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold tracking-wide">
+
+        <!-- Theme toggle desktop -->
+        <button id="theme-toggle"
+                aria-label="Cambiar tema oscuro o claro"
+                class="p-2 rounded-full hover:bg-white/10 transition-colors">
+          <i class="fas fa-moon dark-icon"></i>
+          <i class="fas fa-sun light-icon hidden text-yellow-500"></i>
+        </button>
+
+        <a href="index.html#inicio" class="hover:text-brand-red transition-colors">
+          Inicio
         </a>
 
-        <nav class="hidden md:flex items-center gap-8 text-sm font-semibold tracking-wide">
-            
-            <button id="theme-toggle" aria-label="Cambiar tema" class="p-2 rounded-full hover:bg-white/10 transition-colors">
-                <i class="fas fa-moon hidden dark-icon"></i>
-                <i class="fas fa-sun hidden light-icon text-yellow-500"></i>
-            </button>
+        <!-- Dropdown de Servicios -->
+        <div class="relative group cursor-pointer h-full flex items-center">
+          <span class="text-brand-red py-2">Servicios</span>
+          <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-red"></span>
 
-            <a href="index.html#inicio" class="hover:text-brand-red transition-colors">Inicio</a>
-
-            <div class="relative group cursor-pointer h-full flex items-center">
-                <span class="text-brand-red py-2">Servicios</span>
-                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-red"></span>
-                
-                <div class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
-                    <div class="crystal-glass rounded-xl p-4 w-48 flex flex-col gap-2 text-sm text-[var(--text-main)]">
-                        <a href="desarrollo-web.html" class="block px-3 py-2 rounded hover:bg-brand-red hover:text-white transition-colors">Desarrollo Web</a>
-                        <a href="branding.html" class="block px-3 py-2 rounded hover:bg-brand-red hover:text-white transition-colors">Branding Digital</a>
-                        <a href="redes-sociales.html" class="block px-3 py-2 rounded bg-brand-red text-white cursor-default">Redes Sociales</a>
-                        <a href="publicidad.html" class="block px-3 py-2 rounded hover:bg-brand-red hover:text-white transition-colors">Publicidad</a>
-                    </div>
-                </div>
+          <div class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
+            <div class="crystal-glass rounded-xl p-4 w-48 flex flex-col gap-2 text-sm text-[var(--text-main)]">
+              <a href="desarrollo-web.html"
+                 class="block px-3 py-2 rounded hover:bg-brand-red hover:text-white transition-colors">
+                Desarrollo Web
+              </a>
+              <a href="branding-digital.html"
+                 class="block px-3 py-2 rounded hover:bg-brand-red hover:text-white transition-colors">
+                Branding Digital
+              </a>
+              <!-- Página actual -->
+              <span aria-current="page"
+                    class="block px-3 py-2 rounded bg-brand-red text-white cursor-default">
+                Redes Sociales
+              </span>
+              <a href="publicidad.html"
+                 class="block px-3 py-2 rounded hover:bg-brand-red hover:text-white transition-colors">
+                Publicidad
+              </a>
             </div>
-
-            <a href="index.html#somos" class="group hover:text-brand-red transition-colors">Nosotros</a>
-            
-            <a href="contacto.html" class="bg-white text-black px-6 py-2.5 rounded-lg font-bold hover:shadow-[0_0_15px_rgba(255,255,255,0.4)] transition-all transform hover:-translate-y-0.5">
-                Contacto
-            </a>
-        </nav>
-        
-        <button id="mobile-menu-btn" aria-label="Abrir menú" class="md:hidden text-2xl">
-            <i class="fas fa-bars"></i>
-        </button>
-    </div>
-
-    <div id="mobile-menu" class="md:hidden fixed inset-0 bg-black/95 backdrop-blur-xl z-40 transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center gap-8">
-        
-        <button id="close-mobile-menu" aria-label="Cerrar menú" class="absolute top-8 right-8 text-3xl text-white">
-            <i class="fas fa-times"></i>
-        </button>
-
-        <a href="index.html#inicio" class="text-2xl font-bold text-white mobile-link">Inicio</a>
-
-        <div class="flex flex-col items-center gap-2">
-            <span class="text-2xl font-bold text-white">Servicios</span>
-            <a href="desarrollo-web.html" class="text-lg text-white/80 mobile-link">Desarrollo Web</a>
-            <a href="branding.html" class="text-lg text-white/80 mobile-link">Branding Digital</a>
-            <a href="redes-sociales.html" class="text-lg text-brand-red mobile-link">Redes Sociales</a>
-            <a href="publicidad.html" class="text-lg text-white/80 mobile-link">Publicidad</a>
+          </div>
         </div>
 
-        <a href="index.html#somos" class="text-2xl font-bold text-white mobile-link">Nosotros</a>
-        
-        <a href="contacto.html" class="text-2xl font-bold text-brand-red mobile-link">Contacto</a>
+        <a href="index.html#somos" class="group hover:text-brand-red transition-colors">
+          Nosotros
+        </a>
 
-        <button id="mobile-theme-toggle" aria-label="Cambiar tema" class="text-xl text-white border border-white/20 px-6 py-2 rounded-full">
-            Cambiar tema
-        </button>
+        <a href="contacto.html"
+           class="bg-white text-black px-6 py-2.5 rounded-lg font-bold hover:shadow-[0_0_15px_rgba(255,255,255,0.4)] transition-all transform hover:-translate-y-0.5">
+          Contacto
+        </a>
+      </nav>
+
+      <!-- BOTÓN HAMBURGUESA MOBILE -->
+      <button id="mobile-menu-btn"
+              aria-label="Abrir menú"
+              class="md:hidden text-2xl">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
+  </div>
+
+  <!-- MENÚ MOBILE -->
+  <div
+    id="mobile-menu"
+    class="md:hidden fixed inset-0 bg-black/95 backdrop-blur-xl z-40
+           transform translate-x-full transition-transform duration-300
+           flex flex-col items-center justify-center gap-8"
+  >
+    <button
+      id="close-mobile-menu"
+      aria-label="Cerrar menú"
+      class="absolute top-8 right-8 text-3xl text-white"
+    >
+      <i class="fas fa-times"></i>
+    </button>
+
+    <a href="index.html#inicio" class="text-2xl font-bold text-white mobile-link">
+      Inicio
+    </a>
+
+    <div class="flex flex-col items-center gap-2">
+      <span class="text-2xl font-bold text-white">Servicios</span>
+      <a href="desarrollo-web.html" class="text-lg text-white/80 mobile-link">
+        Desarrollo Web
+      </a>
+      <a href="branding-digital.html" class="text-lg text-white/80 mobile-link">
+        Branding Digital
+      </a>
+      <span class="text-lg text-brand-red">
+        Redes Sociales
+      </span>
+      <a href="publicidad.html" class="text-lg text-white/80 mobile-link">
+        Publicidad
+      </a>
+    </div>
+
+    <a href="index.html#somos" class="text-2xl font-bold text-white mobile-link">
+      Nosotros
+    </a>
+
+    <a href="contacto.html" class="text-2xl font-bold text-brand-red mobile-link">
+      Contacto
+    </a>
+  </div>
 </header>
+
 
 <!-- HERO -->
 <section class="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden">
-    
-    <div class="absolute inset-0 section-bg z-0"></div>
-    <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-brand-red/10 rounded-full blur-[120px] animate-blob pointer-events-none"></div>
+        <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-brand-red/10 rounded-full blur-[120px] animate-blob pointer-events-none"></div>
 
     <div class="max-w-7xl mx-auto px-6 relative z-10 w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         
-        <div class="text-center md:text-left order-2 md:order-1 reveal-up relative z-20">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight text-[var(--text-main)]">
+        <div class="text-center md:text-left order-1 reveal-up relative z-20">
+            <h1 class="heading-hero mb-6">
                 Impulsamos tu presencia en redes con <span class="text-brand-red">contenido estratégico</span>
             </h1>
             
-            <h2 class="text-lg md:text-xl text-[var(--text-muted)] font-light leading-relaxed mb-10 max-w-lg">
+            <h2 class="subheading-hero max-w-lg mb-6">
                 Así creamos, diseñamos y gestionamos tus redes para atraer clientes, construir comunidad y fortalecer tu marca.
             </h2>
             
-            <a href="contacto.html" class="inline-block bg-brand-red text-white px-8 py-4 rounded-lg font-bold text-lg hover:shadow-[0_0_25px_rgba(190,24,37,0.4)] hover:-translate-y-1 transition-all duration-300">
+            <a href="contacto.html" class="btn-cta btn-cta--primary">
                 Quiero mejorar mis redes
             </a>
         </div>
 
-        <div class="order-1 md:order-2 relative h-[450px] w-full flex items-center justify-center reveal-up delay-100 perspective-1000">
+        <div class="order-2 relative h-[500px] w-full flex items-center justify-center reveal-up delay-100">
             
-            <div class="relative w-full max-w-[350px] h-[400px]">
-                
-                <div class="absolute top-0 right-4 w-60 h-44 crystal-glass rounded-xl p-4 transform rotate-6 animate-float z-0 border border-white/10" style="animation-delay: 1s;">
-                    <div class="flex items-center gap-2 mb-3">
-                        <div class="w-3 h-3 bg-green-400 rounded-full"></div>
-                        <span class="text-xs font-bold text-[var(--text-main)]">Crecimiento Q4</span>
-                    </div>
-                    <div class="flex items-end gap-1 h-24">
-                        <div class="w-1/5 bg-brand-red/20 h-[30%] rounded-t"></div>
-                        <div class="w-1/5 bg-brand-red/40 h-[50%] rounded-t"></div>
-                        <div class="w-1/5 bg-brand-red/60 h-[40%] rounded-t"></div>
-                        <div class="w-1/5 bg-brand-red/80 h-[70%] rounded-t"></div>
-                        <div class="w-1/5 bg-brand-red h-[90%] rounded-t relative">
-                            <span class="absolute -top-6 left-1/2 -translate-x-1/2 text-xs font-bold text-[var(--text-main)]">+120%</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="absolute top-16 left-6 w-64 h-auto crystal-glass rounded-xl p-4 transform -rotate-2 z-10 animate-float shadow-2xl border border-white/10 bg-black/40 backdrop-blur-md">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-8 h-8 rounded-full bg-gray-600"></div>
-                        <div class="h-2 w-20 bg-gray-600 rounded"></div>
-                    </div>
-                    <div class="w-full h-32 bg-gray-800 rounded-lg mb-3 relative overflow-hidden group">
-                        <div class="absolute inset-0 bg-gradient-to-tr from-brand-red/20 to-transparent"></div>
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur flex items-center justify-center">
-                                <div class="w-0 h-0 border-l-[10px] border-l-white border-y-[6px] border-y-transparent ml-1"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="space-y-2">
-                        <div class="h-2 w-full bg-gray-600/50 rounded"></div>
-                        <div class="h-2 w-3/4 bg-gray-600/50 rounded"></div>
-                    </div>
-                    <div class="flex gap-4 mt-4 opacity-50">
-                        <div class="w-4 h-4 rounded-full border border-gray-400"></div>
-                        <div class="w-4 h-4 rounded-full border border-gray-400"></div>
-                        <div class="w-4 h-4 rounded-full border border-gray-400 ml-auto"></div>
-                    </div>
-                </div>
-
-                <div class="absolute bottom-12 -right-2 w-52 crystal-glass rounded-xl p-3 flex items-center gap-3 transform translate-y-0 z-20 animate-float border border-white/20 bg-[#1a1a1a]" style="animation-delay: 2s;">
-                    <div class="w-10 h-10 rounded-full bg-brand-red flex items-center justify-center text-white shadow-lg shadow-brand-red/30 shrink-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                        </svg>
-                    </div>
-                    <div>
-                        <p class="text-xs font-bold text-white">Estrategia Activa</p>
-                        <p class="text-[10px] text-gray-400">Alcance aumentado x3</p>
-                    </div>
-                </div>
-
+            <div class="static-reel-card">
+                <video 
+                    src="./IMG/redes-1.mp4" 
+                    autoplay 
+                    muted 
+                    loop 
+                    playsinline
+                ></video>
             </div>
-        </div>
-    </div>
+            </div>
 </section>
 
-<!-- SECTION 2: QUÉ HACEMOS (2x2 Grid) -->
-<section class="py-24 bg-[var(--bg-body)] relative">
+<section class="section-block bg-[var(--bg-body)] relative">
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-16 reveal-up">
             <span class="text-brand-red font-bold tracking-widest uppercase text-sm mb-2 block">Servicios</span>
@@ -193,59 +218,54 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             
-            <!-- CARD 1 -->
-            <div class="crystal-glass hover-card rounded-2xl overflow-hidden min-h-[360px] md:min-h-[380px] relative group reveal-up">
+            <div class="crystal-glass hover-card rounded-2xl overflow-hidden min-h-[360px] relative group reveal-up">
                 <div class="relative z-20 p-8 h-full flex flex-col">
                     <h3 class="text-2xl font-bold text-[var(--text-main)] mb-2">Estrategia de contenido</h3>
                     <p class="text-[var(--text-muted)] text-sm mb-6 max-w-sm">
                         Planificamos tu contenido mensual según objetivos, audiencias y tendencias actuales.
                     </p>
                     
-                    <!-- Image Container (Bottom) -->
-                    <div class="mt-auto w-full h-40 md:h-48 bg-gray-900 rounded-xl overflow-hidden border border-white/5 relative transform group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-70"></div>
+                    <div class="mt-auto w-full aspect-video bg-gray-700 rounded-xl overflow-hidden border border-white/5 relative transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('IMG/redes-sociales-PLANIFICACION.webp');"></div>
                     </div>
                 </div>
             </div>
 
-            <!-- CARD 2 -->
-            <div class="crystal-glass hover-card rounded-2xl overflow-hidden min-h-[360px] md:min-h-[380px] relative group reveal-up delay-100">
+            <div class="crystal-glass hover-card rounded-2xl overflow-hidden min-h-[360px] relative group reveal-up delay-100">
                 <div class="relative z-20 p-8 h-full flex flex-col">
                     <h3 class="text-2xl font-bold text-[var(--text-main)] mb-2">Diseño profesional</h3>
                     <p class="text-[var(--text-muted)] text-sm mb-6 max-w-sm">
                         Creamos piezas visuales únicas, coherentes y estéticas, alineadas a tu marca.
                     </p>
                     
-                    <div class="mt-auto w-full h-40 md:h-48 bg-gray-900 rounded-xl overflow-hidden border border-white/5 relative transform group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1974&auto=format&fit=crop')] bg-cover bg-center opacity-70"></div>
+                    <div class="mt-auto w-full aspect-video bg-gray-700 rounded-xl overflow-hidden border border-white/5 relative transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('IMG/redes-sociales-creacion.webp');"></div>
                     </div>
                 </div>
             </div>
 
-            <!-- CARD 3 -->
-            <div class="crystal-glass hover-card rounded-2xl overflow-hidden min-h-[360px] md:min-h-[380px] relative group reveal-up">
+            <div class="crystal-glass hover-card rounded-2xl overflow-hidden min-h-[360px] relative group reveal-up">
                 <div class="relative z-20 p-8 h-full flex flex-col">
-                    <h3 class="text-2xl font-bold text-[var(--text-main)] mb-2">Gestión completa de redes</h3>
+                    <h3 class="text-2xl font-bold text-[var(--text-main)] mb-2">Ejecución en redes</h3>
                     <p class="text-[var(--text-muted)] text-sm mb-6 max-w-sm">
-                        Publicación, seguimiento, mensajes, análisis y optimización constante.
+                        Aseguramos una presencia sostenible y coherente en las distintas plataformas.
                     </p>
                     
-                    <div class="mt-auto w-full h-40 md:h-48 bg-gray-900 rounded-xl overflow-hidden border border-white/5 relative transform group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=2006&auto=format&fit=crop')] bg-cover bg-center opacity-70"></div>
+                    <div class="mt-auto w-full aspect-video bg-gray-700 rounded-xl overflow-hidden border border-white/5 relative transform group-hover:scale-105 transition-transform duration-500">
+                         <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('IMG/ejecucion-en-redes.webp');"></div>
                     </div>
                 </div>
             </div>
 
-            <!-- CARD 4 -->
-            <div class="crystal-glass hover-card rounded-2xl overflow-hidden min-h-[360px] md:min-h-[380px] relative group reveal-up delay-100">
+            <div class="crystal-glass hover-card rounded-2xl overflow-hidden min-h-[360px] relative group reveal-up delay-100">
                 <div class="relative z-20 p-8 h-full flex flex-col">
                     <h3 class="text-2xl font-bold text-[var(--text-main)] mb-2">Contenido que convierte</h3>
                     <p class="text-[var(--text-muted)] text-sm mb-6 max-w-sm">
                         Diseño pensado para atraer, retener y convertir sin perder tu identidad.
                     </p>
                     
-                    <div class="mt-auto w-full h-40 md:h-48 bg-gray-900 rounded-xl overflow-hidden border border-white/5 relative transform group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop')] bg-cover bg-center opacity-70"></div>
+                    <div class="mt-auto w-full aspect-video bg-gray-700 rounded-xl overflow-hidden border border-white/5 relative transform group-hover:scale-105 transition-transform duration-500">
+                         <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('IMG/charts-redes-sociales.webp');"></div>
                     </div>
                 </div>
             </div>
@@ -253,8 +273,7 @@
         </div>
     </div>
 </section>
-<!-- SECTION 3: QUÉ INCLUYE (Timeline) -->
-<section class="py-24 bg-[var(--section-bg)] relative overflow-hidden">
+<section class="section-block bg-[var(--section-bg)] relative overflow-hidden">
             
     <div class="max-w-7xl mx-auto px-6 relative z-10">
         <h2 class="text-4xl font-bold text-[var(--text-main)] mb-16 reveal-up">
@@ -263,13 +282,10 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
             
-            <!-- Left: Timeline -->
             <div class="relative pl-8 reveal-up">
-                <!-- Línea vertical roja que une los puntos -->
                 <div class="absolute left-[10px] top-2 bottom-2 w-[2px] bg-brand-red"></div>
 
                 <div class="space-y-8">
-                    <!-- Items -->
                     <div class="timeline-item flex items-center gap-4 group cursor-default transition-all duration-300">
                         <div class="timeline-dot w-3 h-3 rounded-full bg-brand-red border-2 border-brand-red shrink-0 z-10"></div>
                         <span class="timeline-text text-[var(--text-main)] text-lg">
@@ -335,162 +351,234 @@
                 </div>
             </div>
 
-            <!-- Right: Image Composition -->
-            <div class="relative h-[500px] lg:h-auto crystal-glass rounded-2xl overflow-hidden border border-white/5 reveal-up delay-100 group">
-                <!-- Imagen a color (sin gris, sin efecto raro) -->
-                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-80 transition-transform duration-700 group-hover:scale-105"></div>
-                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <div class="flex items-center justify-center lg:justify-end lg:pr-24 reveal-up delay-100">
                 
-                <div class="absolute bottom-8 left-8 right-8">
-                    <div class="flex gap-2 mb-4">
-                        <div class="px-3 py-1 bg-brand-red/80 backdrop-blur rounded text-xs font-bold text-white">
-                            Gestión 360
-                        </div>
+                <div class="relative w-full max-w-xs aspect-[9/16] crystal-glass rounded-2xl overflow-hidden border border-white/5 group shadow-2xl">
+                    
+                    <video class="absolute inset-0 w-full h-full object-cover transition-transform duration-700" 
+                           src="IMG/redes sociales-videos-3.mp4" 
+                           poster="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop" 
+                           autoplay loop muted playsinline>
+                        Tu navegador no soporta videos.
+                    </video>
+
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
+                    
+                    <div class="absolute bottom-6 left-6 right-6 pointer-events-none">
+                        <div class="flex gap-2 mb-2">
+                            
                     </div>
-                    <h3 class="text-2xl font-bold text-white">Tu equipo de redes</h3>
-                    <p class="text-gray-200 text-sm mt-2">
-                        Nos ocupamos de todo para que vos te ocupes de tu negocio.
-                    </p>
                 </div>
             </div>
 
         </div>
     </div>
 </section>
+<!-- SECTION 4: NUESTRO TRABAJO (Carousels) -->
+<section class="section-block bg-[var(--bg-body)] relative overflow-hidden"> 
+  <div class="max-w-7xl mx-auto px-6 mb-12 text-center reveal-up"> 
+    <h2 class="text-4xl font-bold text-[var(--text-main)] mb-2">
+      Nuestro trabajo en redes sociales
+    </h2> 
+    <p class="text-[var(--text-muted)]">
+      Algunas de las piezas, campañas y contenidos que hemos creado para distintas marcas y proyectos.
+    </p> 
+  </div>
 
+  <div class="relative w-full overflow-hidden marquee-mask">
+    
+    <!-- 🔼 FILA SUPERIOR: MUEVE A LA DERECHA -->
+    <div class="social-row social-row--right mb-6">
+      <!-- Bloque 1 -->
+      <div class="w-[300px] h-[350px] rounded-xl overflow-hidden cursor-pointer group relative">
+        <img src="./IMG/redes-sociales-3.1.webp" alt="Cierre de Campañas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
 
-    <!-- SECTION 4: NUESTRO TRABAJO (Carousels) -->
-    <section class="py-24 bg-[var(--bg-body)] relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 mb-12 text-center reveal-up">
-            <h2 class="text-4xl font-bold text-[var(--text-main)] mb-2">Nuestro trabajo en redes sociales</h2>
-            <p class="text-[var(--text-muted)]">Algunas de las piezas, campañas y contenidos que hemos creado para distintas marcas y proyectos.</p>
-        </div>
+      <div class="w-[300px] h-[350px] rounded-xl overflow-hidden cursor-pointer group relative">
+        <img src="./IMG/Gabo Diaz- PROPUESTAS LEGISLATIVAS-1.webp" alt="Reel de Producto" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
 
-        <!-- Marquee Mask Wrapper -->
-        <div class="relative w-full marquee-mask">
-            
-            <!-- Row 1: Scroll Right -->
-            <div class="flex gap-6 mb-6 w-max animate-scroll-right hover:[animation-play-state:paused]">
-                <!-- Item 1 -->
-                <div class="w-[300px] h-[350px] crystal-glass rounded-xl p-3 hover-card cursor-pointer group">
-                    <div class="w-full h-full bg-gray-900 rounded-lg overflow-hidden relative">
-                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1611262588024-d12430b98920?q=80&w=1974&auto=format&fit=crop')] bg-cover bg-center opacity-70 group-hover:scale-105 transition-transform duration-500"></div>
-                        <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black to-transparent">
-                            <span class="text-white text-sm font-bold">Carrusel Educativo</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Item 2 -->
-                <div class="w-[300px] h-[350px] crystal-glass rounded-xl p-3 hover-card cursor-pointer group">
-                    <div class="w-full h-full bg-gray-900 rounded-lg overflow-hidden relative">
-                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-70 group-hover:scale-105 transition-transform duration-500"></div>
-                        <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black to-transparent">
-                             <i class="fas fa-play absolute top-4 right-4 text-white drop-shadow-md"></i>
-                            <span class="text-white text-sm font-bold">Reel de Producto</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Item 3 -->
-                <div class="w-[300px] h-[350px] crystal-glass rounded-xl p-3 hover-card cursor-pointer group">
-                    <div class="w-full h-full bg-gray-900 rounded-lg overflow-hidden relative">
-                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1562577309-4932fdd64cd1?q=80&w=1974&auto=format&fit=crop')] bg-cover bg-center opacity-70 group-hover:scale-105 transition-transform duration-500"></div>
-                        <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black to-transparent">
-                            <span class="text-white text-sm font-bold">Campaña Lanzamiento</span>
-                        </div>
-                    </div>
-                </div>
-                 <!-- Item 4 -->
-                 <div class="w-[300px] h-[350px] crystal-glass rounded-xl p-3 hover-card cursor-pointer group">
-                    <div class="w-full h-full bg-gray-900 rounded-lg overflow-hidden relative">
-                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1533750516457-a7f992034fec?q=80&w=2106&auto=format&fit=crop')] bg-cover bg-center opacity-70 group-hover:scale-105 transition-transform duration-500"></div>
-                        <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black to-transparent">
-                            <span class="text-white text-sm font-bold">Branding Social</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Duplicates for loop -->
-                 <div class="w-[300px] h-[350px] crystal-glass rounded-xl p-3 hover-card cursor-pointer group">
-                    <div class="w-full h-full bg-gray-900 rounded-lg overflow-hidden relative">
-                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1611262588024-d12430b98920?q=80&w=1974&auto=format&fit=crop')] bg-cover bg-center opacity-70 group-hover:scale-105 transition-transform duration-500"></div>
-                        <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black to-transparent">
-                            <span class="text-white text-sm font-bold">Carrusel Educativo</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-[300px] h-[350px] crystal-glass rounded-xl p-3 hover-card cursor-pointer group">
-                    <div class="w-full h-full bg-gray-900 rounded-lg overflow-hidden relative">
-                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-70 group-hover:scale-105 transition-transform duration-500"></div>
-                        <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black to-transparent">
-                             <i class="fas fa-play absolute top-4 right-4 text-white drop-shadow-md"></i>
-                            <span class="text-white text-sm font-bold">Reel de Producto</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="w-[300px] h-[350px] rounded-xl overflow-hidden cursor-pointer group relative">
+        <img src="./IMG/redes-sociales-1.webp" alt="Campaña Lanzamiento" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
 
-            <!-- Row 2: Scroll Left -->
-             <div class="flex gap-6 w-max animate-scroll-left hover:[animation-play-state:paused]">
-                <!-- Item 1 -->
-                <div class="w-[300px] h-[350px] crystal-glass rounded-xl p-3 hover-card cursor-pointer group">
-                    <div class="w-full h-full bg-gray-900 rounded-lg overflow-hidden relative">
-                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop')] bg-cover bg-center opacity-70 group-hover:scale-105 transition-transform duration-500"></div>
-                        <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black to-transparent">
-                            <span class="text-white text-sm font-bold">Lifestyle Brand</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Item 2 -->
-                <div class="w-[300px] h-[350px] crystal-glass rounded-xl p-3 hover-card cursor-pointer group">
-                    <div class="w-full h-full bg-gray-900 rounded-lg overflow-hidden relative">
-                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1622549246175-103a0886df22?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-70 group-hover:scale-105 transition-transform duration-500"></div>
-                        <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black to-transparent">
-                            <span class="text-white text-sm font-bold">Storytelling Visual</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Item 3 -->
-                <div class="w-[300px] h-[350px] crystal-glass rounded-xl p-3 hover-card cursor-pointer group">
-                    <div class="w-full h-full bg-gray-900 rounded-lg overflow-hidden relative">
-                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1470&auto=format&fit=crop')] bg-cover bg-center opacity-70 group-hover:scale-105 transition-transform duration-500"></div>
-                        <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black to-transparent">
-                            <i class="fas fa-play absolute top-4 right-4 text-white drop-shadow-md"></i>
-                            <span class="text-white text-sm font-bold">TikTok Trends</span>
-                        </div>
-                    </div>
-                </div>
-                 <!-- Item 4 -->
-                 <div class="w-[300px] h-[350px] crystal-glass rounded-xl p-3 hover-card cursor-pointer group">
-                    <div class="w-full h-full bg-gray-900 rounded-lg overflow-hidden relative">
-                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-70 group-hover:scale-105 transition-transform duration-500"></div>
-                        <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black to-transparent">
-                            <span class="text-white text-sm font-bold">Fotografía de Producto</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Duplicates -->
-                <div class="w-[300px] h-[350px] crystal-glass rounded-xl p-3 hover-card cursor-pointer group">
-                    <div class="w-full h-full bg-gray-900 rounded-lg overflow-hidden relative">
-                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop')] bg-cover bg-center opacity-70 group-hover:scale-105 transition-transform duration-500"></div>
-                        <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black to-transparent">
-                            <span class="text-white text-sm font-bold">Lifestyle Brand</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-[300px] h-[350px] crystal-glass rounded-xl p-3 hover-card cursor-pointer group">
-                    <div class="w-full h-full bg-gray-900 rounded-lg overflow-hidden relative">
-                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1622549246175-103a0886df22?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-70 group-hover:scale-105 transition-transform duration-500"></div>
-                        <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black to-transparent">
-                            <span class="text-white text-sm font-bold">Storytelling Visual</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="w-[300px] h-[350px] rounded-xl overflow-hidden cursor-pointer group relative">
+        <img src="./IMG/redes-sociales-perfume-10.webp" alt="Reel de Producto" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
 
-        </div>
-    </section>
+      <div class="w-[300px] h-[350px] rounded-xl overflow-hidden cursor-pointer group relative">
+        <img src="./IMG/fernandonavaro.webp" alt="Carrusel Educativo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+
+      <div class="w-[300px] h-[350px] rounded-xl overflow-hidden cursor-pointer group relative">
+        <video 
+          class="lazy-video w-full h-full object-cover"
+          data-src="./IMG/redes-sociales-2.mp4"
+          preload="none"
+          autoplay 
+          muted 
+          loop 
+          playsinline
+        ></video>
+      </div>
+
+      <!-- 🔁 Bloque 2 (duplicado para loop suave) -->
+      <div class="w-[300px] h-[350px] rounded-xl overflow-hidden cursor-pointer group relative">
+        <img src="./IMG/redes-sociales-3.1.webp" alt="Cierre de Campañas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+
+      <div class="w-[300px] h-[350px] rounded-xl overflow-hidden cursor-pointer group relative">
+        <img src="./IMG/Gabo Diaz- PROPUESTAS LEGISLATIVAS-1.webp" alt="Reel de Producto" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+
+      <div class="w-[300px] h-[350px] rounded-xl overflow-hidden cursor-pointer group relative">
+        <img src="./IMG/redes-sociales-1.webp" alt="Campaña Lanzamiento" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+
+      <div class="w-[300px] h-[350px] rounded-xl overflow-hidden cursor-pointer group relative">
+        <img src="./IMG/redes-sociales-perfume-10.webp" alt="Reel de Producto" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+
+      <div class="w-[300px] h-[350px] rounded-xl overflow-hidden cursor-pointer group relative">
+        <img src="./IMG/fernandonavaro.webp" alt="Carrusel Educativo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+
+      <div class="w-[300px] h-[350px] rounded-xl overflow-hidden cursor-pointer group relative">
+        <video 
+          class="lazy-video w-full h-full object-cover"
+          data-src="./IMG/redes-sociales-2.mp4"
+          preload="none"
+          autoplay 
+          muted 
+          loop 
+          playsinline
+        ></video>
+      </div>
+    </div>
+
+    <!-- 🔽 FILA INFERIOR: MUEVE A LA IZQUIERDA -->
+    <div class="social-row social-row--left">
+      <!-- Bloque 1 -->
+      <div class="w-[270px] h-[480px] rounded-xl overflow-hidden cursor-pointer group relative">
+        <video 
+          class="lazy-video w-full h-full object-cover"
+          data-src="./IMG/historia-redes-vitalg.mp4"
+          preload="none"
+          autoplay 
+          muted 
+          loop 
+          playsinline
+        ></video>
+      </div>
+
+      <div class="w-[270px] h-[480px] rounded-xl overflow-hidden cursor-pointer group relative">
+        <img src="./IMG/historia-redes-2.webp" alt="Reel 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+
+      <div class="w-[270px] h-[480px] rounded-xl overflow-hidden cursor-pointer group relative">
+        <img src="./IMG/fiscalizar.webp" alt="Reel 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+
+      <div class="w-[270px] h-[480px] rounded-xl overflow-hidden cursor-pointer group relative">
+        <video 
+          class="lazy-video w-full h-full object-cover"
+          data-src="./IMG/vitalg1.mp4"
+          preload="none"
+          autoplay 
+          muted 
+          loop 
+          playsinline
+        ></video>
+      </div>
+
+      <div class="w-[270px] h-[480px] rounded-xl overflow-hidden cursor-pointer group relative">
+        <img src="./IMG/readyg.webp" alt="Reel 5" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+
+      <div class="w-[270px] h-[480px] rounded-xl overflow-hidden cursor-pointer group relative">
+        <img src="./IMG/redes-sociales-dip-nacionales.png" alt="Reel 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+
+      <div class="w-[270px] h-[480px] rounded-xl overflow-hidden cursor-pointer group relative">
+        <video 
+          class="lazy-video w-full h-full object-cover"
+          data-src="./IMG/3d para publicitar (1)_1.mp4"
+          preload="none"
+          autoplay 
+          muted 
+          loop 
+          playsinline
+        ></video>
+      </div>
+
+      <div class="w-[270px] h-[480px] rounded-xl overflow-hidden cursor-pointer group relative">
+        <img src="./IMG/agencia-de-viaje.webp" alt="Reel 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+
+      <!-- 🔁 Bloque 2 (duplicado) -->
+      <div class="w-[270px] h-[480px] rounded-xl overflow-hidden cursor-pointer group relative">
+        <video 
+          class="lazy-video w-full h-full object-cover"
+          data-src="./IMG/historia-redes-vitalg.mp4"
+          preload="none"
+          autoplay 
+          muted 
+          loop 
+          playsinline
+        ></video>
+      </div>
+
+      <div class="w-[270px] h-[480px] rounded-xl overflow-hidden cursor-pointer group relative">
+        <img src="./IMG/historia-redes-2.webp" alt="Reel 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+
+      <div class="w-[270px] h-[480px] rounded-xl overflow-hidden cursor-pointer group relative">
+        <img src="./IMG/fiscalizar.webp" alt="Reel 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+
+      <div class="w-[270px] h-[480px] rounded-xl overflow-hidden cursor-pointer group relative">
+        <video 
+          class="lazy-video w-full h-full object-cover"
+          data-src="./IMG/vitalg1.mp4"
+          preload="none"
+          autoplay 
+          muted 
+          loop 
+          playsinline
+        ></video>
+      </div>
+
+      <div class="w-[270px] h-[480px] rounded-xl overflow-hidden cursor-pointer group relative">
+        <img src="./IMG/readyg.webp" alt="Reel 5" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+
+      <div class="w-[270px] h-[480px] rounded-xl overflow-hidden cursor-pointer group relative">
+        <img src="./IMG/redes-sociales-dip-nacionales.png" alt="Reel 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+
+      <div class="w-[270px] h-[480px] rounded-xl overflow-hidden cursor-pointer group relative">
+        <video 
+          class="lazy-video w-full h-full object-cover"
+          data-src="./IMG/3d para publicitar (1)_1.mp4"
+          preload="none"
+          autoplay 
+          muted 
+          loop 
+          playsinline
+        ></video>
+      </div>
+
+      <div class="w-[270px] h-[480px] rounded-xl overflow-hidden cursor-pointer group relative">
+        <img src="./IMG/agencia-de-viaje.webp" alt="Reel 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
     <!-- SECTION 5: FINAL CTA -->
-    <section class="py-24 bg-[var(--bg-body)] relative">
+    <section class="section-block bg-[var(--bg-body)] relative">
         <!-- Subtle accent -->
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-red/5 rounded-full blur-[120px] pointer-events-none"></div>
 
@@ -498,7 +586,7 @@
             <h2 class="text-4xl md:text-5xl font-bold text-[var(--text-main)] mb-6">Hagamos que tus redes trabajen en serio</h2>
             <p class="text-[var(--text-muted)] text-lg mb-10 max-w-2xl mx-auto">Te ayudamos a pasar del publicar por publicar a una estrategia clara, medible y alineada a tus objetivos.</p>
             
-            <a href="contacto.html" class="inline-block bg-brand-red text-white px-10 py-4 rounded-lg font-bold text-lg hover:shadow-[0_0_25px_rgba(190,24,37,0.4)] hover:-translate-y-1 transition-all duration-300">
+            <a href="contacto.html" class="btn-cta btn-cta--primary">
                 Quiero mejorar mis redes
             </a>
             
@@ -556,7 +644,7 @@
                     <ul class="space-y-4">
                         <li><a href="index.html" class="text-[var(--text-muted)] hover:text-brand-red transition-colors">Inicio</a></li>
                         <li><a href="desarrollo-web.html" class="text-[var(--text-muted)] hover:text-brand-red transition-colors">Desarrollo Web</a></li>
-                        <li><a href="branding.html" class="text-[var(--text-muted)] hover:text-brand-red transition-colors">Branding Digital</a></li>
+                        <li><a href="branding-digital.html" class="text-[var(--text-muted)] hover:text-brand-red transition-colors">Branding Digital</a></li>
                         <li><a href="redes-sociales.html" class="text-[var(--text-main)] font-bold cursor-default">Redes Sociales</a></li>
                         <li><a href="publicidad.html" class="text-[var(--text-muted)] hover:text-brand-red transition-colors">Publicidad</a></li>
                     </ul>
@@ -569,90 +657,12 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
-<script>
-    // --- 1. Shared Logic (Theme, Mobile Menu, Scroll) ---
 
-    // THEME TOGGLE (desktop + mobile)
-    const themeToggleBtn = document.getElementById('theme-toggle');              // botón desktop
-    const mobileThemeToggleBtn = document.getElementById('mobile-theme-toggle'); // botón mobile
-    const darkIcon = document.querySelector('.dark-icon');
-    const lightIcon = document.querySelector('.light-icon');
-
-    function setTheme(theme) {
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
-
-        // Proteger por si no hay iconos en alguna página
-        if (darkIcon && lightIcon) {
-            if (theme === 'light') {
-                darkIcon.classList.remove('hidden');
-                lightIcon.classList.add('hidden');
-            } else {
-                lightIcon.classList.remove('hidden');
-                darkIcon.classList.add('hidden');
-            }
-        }
-    }
-
-    // Tema inicial (usa el guardado o dark por defecto)
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    setTheme(savedTheme);
-
-    function toggleTheme() {
-        const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-        setTheme(currentTheme === 'light' ? 'dark' : 'light');
-    }
-
-    // Conectar botones si existen
-    if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', toggleTheme);
-    }
-    if (mobileThemeToggleBtn) {
-        mobileThemeToggleBtn.addEventListener('click', toggleTheme);
-    }
-
-    // MOBILE MENU
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const closeMobileMenuBtn = document.getElementById('close-mobile-menu');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    function toggleMenu() {
-        if (!mobileMenu) return;
-        mobileMenu.classList.toggle('translate-x-full');
-    }
-
-    if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener('click', toggleMenu);
-    }
-    if (closeMobileMenuBtn) {
-        closeMobileMenuBtn.addEventListener('click', toggleMenu);
-    }
-
-    // Cerrar menú al hacer click en un link del menú mobile
-    document.querySelectorAll('#mobile-menu .mobile-link').forEach(link => {
-        link.addEventListener('click', () => {
-            if (!mobileMenu) return;
-            mobileMenu.classList.add('translate-x-full');
-        });
-    });
-
-    // REVEAL-UP con IntersectionObserver
-    const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                revealObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.reveal-up').forEach(el => revealObserver.observe(el));
-</script>
 
     <a href="https://wa.me/5493517064753?text=Hola,%20vi%20su%20web%20y%20me%20interesa%20mejorar%20mis%20redes." 
    target="_blank"
    rel="noopener noreferrer"
+   aria-label="Contactar por WhatsApp" 
    class="fixed bottom-6 right-5 md:bottom-10 md:right-8 z-[9999] group flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-[#25D366] rounded-full shadow-[0_4px_14px_0_rgba(37,211,102,0.39)] transition-all duration-300 hover:scale-110 hover:shadow-[0_6px_20px_rgba(37,211,102,0.23)] focus:outline-none focus:ring-4 focus:ring-green-300">
     
     <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-20 animate-ping group-hover:animate-none"></span>
@@ -661,5 +671,7 @@
         <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-4-10.5-6.7z"/>
     </svg>
 </a>
+<script type="module" src="/src/main.js"></script>
+
 </body>
 </html>

@@ -1,4 +1,4 @@
 User-agent: *
-Disallow:
+Allow: /
 
-Sitemap: https://kayso-oficial.com/sitemap.xml
+Sitemap: https://www.kayso-oficial.com/sitemap.xml

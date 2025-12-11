@@ -44,19 +44,25 @@
   ]
 }
 </script>
+<script>
+  (function () {
+    try {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'light' || saved === 'dark') {
+        document.documentElement.setAttribute('data-theme', saved);
+      }
+    } catch (e) {
+      // si falla localStorage, no pasa nada
+    }
+  })();
+</script>
     
     
     
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        <!-- Viewer 3D de Spline (robot) -->
-    <script
-        type="module"
-        src="https://unpkg.com/@splinetool/viewer@1.12.5/build/spline-viewer.js">
-    </script>
-
-   
+         
 
 
  <link rel="stylesheet" href="./styles.css">  
@@ -65,234 +71,351 @@
 
 <!-- 4.1 Fixed Header -->
 <header class="fixed top-0 w-full z-50 transition-all duration-300">
-    <div class="crystal-glass rounded-b-2xl mx-2 md:mx-6 px-6 py-4 flex justify-between items-center mx-auto">
+  <div class="crystal-glass rounded-b-2xl mx-2 md:mx-6 px-4 md:px-6 py-3 md:py-4 flex justify-between items-center">
+    
+    <!-- LOGO -->
+    <a href="#inicio" aria-label="Volver al inicio"
+       class="flex items-center gap-2 group hover:opacity-80 transition-opacity">
+      <img src="IMG/LOGOLETRA.webp" alt="Logo KA&SO" class="h-4 w-auto">
+    </a>
+
+    <!-- LADO DERECHO -->
+    <div class="flex items-center gap-3">
+      
+      <!-- TOGGLE TEMA MOBILE (pill sol/luna) -->
+      <button
+        id="mobile-theme-toggle"
+        data-theme-toggle
+        aria-label="Cambiar tema oscuro o claro"
+        class="md:hidden theme-pill"
+      >
+        <i class="fas fa-moon theme-toggle-icon theme-toggle-icon--moon"></i>
+        <i class="fas fa-sun theme-toggle-icon theme-toggle-icon--sun text-yellow-500"></i>
+      </button>
+
+      <!-- BOTÓN CONTACTO MOBILE -->
+      <a
+        href="contacto.html"
+        class="md:hidden text-xs font-semibold px-4 py-1.5 rounded-full bg-white text-black shadow-sm hover:shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all"
+      >
+        Contacto
+      </a>
+
+      <!-- NAV DESKTOP -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold tracking-wide">
         
-        <a href="#inicio" aria-label="Volver al inicio" class="flex items-center gap-2 group hover:opacity-80 transition-opacity">
-            <img src="IMG/LOGOLETRA.webp" alt="Logo KA&SO" class="h-4 w-auto">
+        <!-- TOGGLE TEMA DESKTOP -->
+        <button
+          id="theme-toggle"
+          data-theme-toggle
+          aria-label="Cambiar tema oscuro o claro"
+          class="p-2 rounded-full hover:bg-white/10 transition-colors"
+        >
+          <i class="fas fa-moon theme-toggle-icon theme-toggle-icon--moon"></i>
+          <i class="fas fa-sun theme-toggle-icon theme-toggle-icon--sun text-yellow-500"></i>
+        </button>
+
+        <a href="#inicio" class="relative group">
+          <span class="group-hover:text-brand-red transition-colors">Inicio</span>
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-red transition-all duration-300 group-hover:w-full"></span>
         </a>
 
-        <nav class="hidden md:flex items-center gap-8 text-sm font-semibold tracking-wide">
-            
-            <button id="theme-toggle" aria-label="Cambiar tema" class="p-2 rounded-full hover:bg-white/10 transition-colors">
-                <i class="fas fa-moon dark-icon"></i>
-                <i class="fas fa-sun light-icon hidden text-yellow-500"></i>
-            </button>
-
-            <a href="#inicio" class="relative group">
-                <span class="group-hover:text-brand-red transition-colors">Inicio</span>
-                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-red transition-all duration-300 group-hover:w-full"></span>
-            </a>
-
-            <div class="relative group cursor-pointer h-full flex items-center">
-                <span class="group-hover:text-brand-red transition-colors py-2">Servicios</span>
-                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-red transition-all duration-300 group-hover:w-full"></span>
-                
-                <div class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
-                    <div class="crystal-glass rounded-xl p-4 w-48 flex flex-col gap-2 text-sm">
-                        <a href="desarrollo-web.html" class="block px-3 py-2 rounded hover:bg-brand-red hover:text-white transition-colors">Desarrollo Web</a>
-                        <a href="branding.html" class="block px-3 py-2 rounded hover:bg-brand-red hover:text-white transition-colors">Branding Digital</a>
-                        <a href="redes-sociales.html" class="block px-3 py-2 rounded hover:bg-brand-red hover:text-white transition-colors">Redes Sociales</a>
-                        <a href="publicidad.html" class="block px-3 py-2 rounded hover:bg-brand-red hover:text-white transition-colors">Publicidad</a>
-                    </div>
-                </div>
+        <div class="relative group cursor-pointer h-full flex items-center">
+          <span class="group-hover:text-brand-red transition-colors py-2">Servicios</span>
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-red transition-all duration-300 group-hover:w-full"></span>
+          
+          <div class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
+            <div class="crystal-glass rounded-xl p-4 w-48 flex flex-col gap-2 text-sm">
+              <a href="desarrollo-web.html" class="block px-3 py-2 rounded hover:bg-brand-red hover:text-white transition-colors">Desarrollo Web</a>
+              <a href="branding-digital.html" class="block px-3 py-2 rounded hover:bg-brand-red hover:text-white transition-colors">Branding Digital</a>
+              <a href="redes-sociales.html" class="block px-3 py-2 rounded hover:bg-brand-red hover:text-white transition-colors">Redes Sociales</a>
+              <a href="publicidad.html" class="block px-3 py-2 rounded hover:bg-brand-red hover:text-white transition-colors">Publicidad</a>
             </div>
-
-            <a href="#somos" class="group hover:text-brand-red transition-colors">Nosotros</a>
-
-            <a href="contacto.html" class="bg-white text-black px-6 py-2.5 rounded-lg font-bold hover:shadow-[0_0_15px_rgba(255,255,255,0.4)] transition-all transform hover:-translate-y-0.5">
-                Contacto
-            </a>
-        </nav>
-
-        <button id="mobile-menu-btn" aria-label="Abrir menú" class="md:hidden text-2xl">
-            <i class="fas fa-bars"></i>
-        </button>
-    </div>
-    
-    <div id="mobile-menu" class="md:hidden fixed inset-0 bg-black/95 backdrop-blur-xl z-40 transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center gap-8">
-        
-        <button id="close-mobile-menu" aria-label="Cerrar menú" class="absolute top-8 right-8 text-3xl text-white">
-            <i class="fas fa-times"></i>
-        </button>
-
-        <a href="#inicio" class="text-2xl font-bold text-white mobile-link">Inicio</a>
-
-        <div class="flex flex-col items-center gap-2">
-            <span class="text-2xl font-bold text-white">Servicios</span>
-            <a href="desarrollo-web.html" class="text-lg text-white/80 mobile-link">Desarrollo Web</a>
-            <a href="branding.html" class="text-lg text-white/80 mobile-link">Branding Digital</a>
-            <a href="redes-sociales.html" class="text-lg text-white/80 mobile-link">Redes Sociales</a>
-            <a href="publicidad.html" class="text-lg text-white/80 mobile-link">Publicidad</a>
+          </div>
         </div>
 
-        <a href="#somos" class="text-2xl font-bold text-white mobile-link">Nosotros</a>
-        
-        <a href="contacto.html" class="text-2xl font-bold text-brand-red mobile-link">Contacto</a>
+        <a href="#somos" class="group hover:text-brand-red transition-colors">Nosotros</a>
 
-        <button id="mobile-theme-toggle" aria-label="Cambiar tema" class="text-xl text-white border border-white/20 px-6 py-2 rounded-full">
-            Cambiar Tema
-        </button>
+        <a href="contacto.html" class="bg-white text-black px-6 py-2.5 rounded-lg font-bold hover:shadow-[0_0_15px_rgba(255,255,255,0.4)] transition-all transform hover:-translate-y-0.5">
+          Contacto
+        </a>
+      </nav>
+
+      <!-- BOTÓN HAMBURGUESA MOBILE -->
+      <button id="mobile-menu-btn" aria-label="Abrir menú" class="md:hidden text-2xl">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
+  </div>
+
+  <!-- MENÚ MOBILE -->
+  <div id="mobile-menu" class="md:hidden fixed inset-0 bg-black/95 backdrop-blur-xl z-40 transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center gap-8">
+    
+    <button id="close-mobile-menu" aria-label="Cerrar menú" class="absolute top-8 right-8 text-3xl text-white">
+      <i class="fas fa-times"></i>
+    </button>
+
+    <a href="#inicio" class="text-2xl font-bold text-white mobile-link">Inicio</a>
+
+    <div class="flex flex-col items-center gap-2">
+      <span class="text-2xl font-bold text-white">Servicios</span>
+      <a href="desarrollo-web.html" class="text-lg text-white/80 mobile-link">Desarrollo Web</a>
+      <a href="branding-digital.html" class="text-lg text-white/80 mobile-link">Branding Digital</a>
+      <a href="redes-sociales.html" class="text-lg text-white/80 mobile-link">Redes Sociales</a>
+      <a href="publicidad.html" class="text-lg text-white/80 mobile-link">Publicidad</a>
+    </div>
+
+    <a href="#somos" class="text-2xl font-bold text-white mobile-link">Nosotros</a>
+    
+    <a href="contacto.html" class="text-2xl font-bold text-brand-red mobile-link">Contacto</a>
+  </div>
 </header>
 
 
-<section id="inicio" class="relative pt-19,5 pb-20 bg-[var(--bg-body)] overflow-hidden flex items-center justify-center min-h-[90vh]">
-  
+
+<section
+  id="inicio"
+  class="section-block relative flex items-start justify-center bg-[var(--bg-body)] text-[var(--text-main)] overflow-hidden"
+>
+
   <div class="absolute top-0 left-0 w-[600px] h-[600px] bg-brand-red/10 rounded-full blur-[140px] pointer-events-none"></div>
-  
-  <div class="relative w-full max-w-[1400px] mx-4 md:mx-6 rounded-[3rem] border border-white/10 bg-black/40 backdrop-blur-xl shadow-[0_0_80px_rgba(0,0,0,0.6)] overflow-hidden">
-    
-    <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay pointer-events-none"></div>
-    
-    <div class="grid grid-cols-1 lg:grid-cols-12 items-center relative z-10 min-h-[500px] p-6 md:p-10 gap-8 lg:gap-0">
-      
-      <div class="lg:col-span-4 flex flex-col justify-center text-center lg:text-left order-2 lg:order-1">
+
+  <div class="relative w-full max-w-[1400px] mx-auto px-4 md:px-6">
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 items-center relative z-10 min-h-[520px] py-6 gap-3 md:gap-6 lg:gap-6">
+      <div class="lg:col-span-4 flex flex-col justify-center text-center lg:text-left order-1">
         <div class="reveal-up">
-           <span class="inline-block py-1 px-3 rounded-full bg-brand-red/10 border border-brand-red/20 text-brand-red text-xs font-bold tracking-[0.2em] uppercase mb-4">
-             Agencia de Marketing & IA
-           </span>
-    
-           <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight text-white mb-6">
-             Soluciones <span class="text-brand-red">Digitales</span><br />
-             pensadas para crecer
-           </h1>
-    
-           <p class="text-base md:text-lg text-[var(--text-muted)] leading-relaxed">
-             Combinamos estrategia, diseño y automatización con IA para atraer clientes, optimizar anuncios y construir una presencia digital que realmente trabaje por tu negocio.
-           </p>
+          <span class="inline-block py-1 px-3 rounded-full bg-brand-red/10 border border-brand-red/20 text-red-600 text-xs font-bold tracking-[0.2em] uppercase mb-4">
+            Agencia de Marketing & IA
+          </span>
+
+          <h1 class="heading-hero mb-6 text-4xl md:text-5xl font-bold leading-tight">
+            Soluciones <span class="text-brand-red">Digitales</span><br />
+            pensadas para crecer
+          </h1>
+
+          <p class="subtitle-muted text-sm md:text-base leading-relaxed">
+            Combinamos estrategia, diseño y automatización con IA para atraer clientes,
+            optimizar anuncios y construir una presencia digital que realmente trabaje por tu negocio.
+          </p>
         </div>
       </div>
 
-      <div class="lg:col-span-4 h-[400px] md:h-[500px] relative order-1 lg:order-2 w-full flex items-center justify-center">
-     
-     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] bg-brand-red/30 blur-[80px] rounded-full pointer-events-none"></div>
+      <div class="lg:col-span-4 h-[500px] relative order-2 w-full flex items-center justify-center overflow-visible hero-visual">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-brand-red/20 blur-[100px] rounded-full pointer-events-none"></div>
 
-     <spline-viewer 
-        url="https://prod.spline.design/bH2GMMEnhgiSsYYO/scene.splinecode"
-        loading-anim-type="spinner"
-        background-color="transparent"
-        events-target="global"
-        style="width: 100%; height: 100%; display: block;">
-     </spline-viewer>
-     <div class="absolute bottom-2 right-2 md:bottom-6 md:right-6 z-50 bg-black border border-white/20 rounded-full px-5 py-3 shadow-[0_0_30px_rgba(0,0,0,1)] flex items-center gap-3">
-         <div class="w-3 h-3 bg-brand-red rounded-full animate-pulse shadow-[0_0_10px_#be1825]"></div>
-         <span class="text-xs md:text-sm font-bold text-white tracking-widest font-mono uppercase">
-            KA&SO SYSTEM
-         </span>
-     </div>
-     
-     <div class="absolute bottom-6 left-6 hidden md:block opacity-50">
-         <i class="fas fa-fingerprint text-2xl text-white/30"></i>
-     </div>
+        <div class="v-carousel-scene">
+          <div class="v-carousel">
+           <div class="v-item">
+  <img 
+    src="IMG/RESULTADOS.webp" 
+    alt="Resultados Kayso" 
+    fetchpriority="high" 
+    loading="eager"
+    width="500" 
+    height="300"
+    class="w-full h-full object-cover" 
+  />
 </div>
-      <div class="lg:col-span-4 flex flex-col gap-5 items-center lg:items-end justify-center reveal-up order-3">
-        
-        <a href="#servicios" class="w-full md:w-auto min-w-[240px] bg-brand-red text-white py-4 px-8 rounded-2xl font-bold text-center hover:bg-red-700 hover:scale-105 hover:shadow-[0_0_30px_rgba(190,24,37,0.4)] transition-all duration-300 flex items-center justify-center gap-3 group">
+            <div class="v-item">
+              <video src="IMG/PUBLICIDAD-CON-KAYSO2.mp4" autoplay muted loop playsinline></video>
+            </div>
+            <div class="v-item">
+              <video
+            src="IMG/agencia-marketing-card1.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+            class="w-full h-full object-contain bg-black transition-transform duration-500 group-hover:scale-105"
+          ></video>
+            </div>
+            <div class="v-item">
+              <video
+            src="IMG/agencia-marketing-card3.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+            class="w-full h-full object-contain bg-black transition-transform duration-500 group-hover:scale-105"
+          ></video>
+            </div>
+            <div class="v-item">
+              <video
+            src="IMG/agencia-marketing-card2.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+            class="w-full h-full object-contain bg-black transition-transform duration-500 group-hover:scale-105"
+          ></video>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-4 flex flex-col gap-5 items-center lg:items-middle justify-center reveal-up order-2 lg:order-3 -mt-2 md:mt-0">
+        <a href="#servicios" class="btn-cta btn-cta--primary w-full md:w-auto">
           <span>Descubrir servicios</span>
         </a>
 
-        <a href="contacto.html" class="w-full md:w-auto min-w-[240px] border border-white/10 bg-white/5 text-white py-4 px-8 rounded-2xl font-semibold text-center hover:bg-white/10 hover:border-white/30 transition-all duration-300 flex items-center justify-center gap-2 group backdrop-blur-md">
-          <span>Primera consulta sin compromiso</span>
-          <i class="fas fa-external-link-alt text-xs group-hover:rotate-45 transition-transform"></i>
+        <a href="contacto.html" class="btn-cta btn-cta--secondary w-full md:w-auto flex items-center gap-2">
+          <span>Primera consulta</span>
+          <i class="fas fa-external-link-alt text-xs"></i>
         </a>
-
       </div>
 
     </div>
   </div>
-  
-  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce opacity-40 z-10">
-    <i class="fas fa-chevron-down text-xl text-white"></i>
-  </div>
 
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce opacity-40 z-10">
+    <i class="fas fa-chevron-down text-xl"></i>
+  </div>
 </section>
 
 
 
-    <!-- 4.3 Floating Projects Carousel -->
-<div class="flex animate-scroll-left gap-6 w-max">
+
+<!-- 4.3 Floating Projects Carousel -->
+<section class="section-block relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
     
-    <div class="w-[300px] md:w-[400px] h-[250px] crystal-glass rounded-2xl overflow-hidden relative group shrink-0">
-        <img 
-            src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=600&auto=format&fit=crop" 
-            loading="lazy"
-            alt="Branding Tech" 
-            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        >
+    <div class="projects-marquee">
+      <div class="projects-track">
+        <!-- CARD 1: VIDEO -->
+        <div class="crystal-glass rounded-2xl overflow-hidden relative group shrink-0 w-[260px] md:w-[400px] aspect-[16/9]">
+          <video
+            class="lazy-video w-full h-full object-contain bg-black transition-transform duration-500 group-hover:scale-105"
+            data-src="IMG/Constructoras-card1.mp4"
+            preload="none"
+            muted
+            loop
+            playsinline
+          ></video>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="crystal-glass rounded-2xl overflow-hidden relative group shrink-0 w-[260px] md:w-[400px] aspect-[16/9]">
+          <video
+            class="lazy-video w-full h-full object-contain bg-black transition-transform duration-500 group-hover:scale-105"
+            data-src="IMG/salud-centro-card.mp4"
+            preload="none"
+            muted
+            loop
+            playsinline
+          ></video>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="crystal-glass rounded-2xl overflow-hidden relative group shrink-0 w-[260px] md:w-[400px] aspect-[16/9]">
+          <video
+            class="lazy-video w-full h-full object-contain bg-black transition-transform duration-500 group-hover:scale-105"
+            data-src="IMG/Restaurantes-card.mp4"
+            preload="none"
+            muted
+            loop
+            playsinline
+          ></video>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="crystal-glass rounded-2xl overflow-hidden relative group shrink-0 w-[260px] md:w-[400px] aspect-[16/9]">
+          <video
+            class="lazy-video w-full h-full object-contain bg-black transition-transform duration-500 group-hover:scale-105"
+            data-src="IMG/patidos-politicos-card.mp4"
+            preload="none"
+            muted
+            loop
+            playsinline
+          ></video>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="crystal-glass rounded-2xl overflow-hidden relative group shrink-0 w-[260px] md:w-[400px] aspect-[16/9]">
+          <video
+            class="lazy-video w-full h-full object-contain bg-black transition-transform duration-500 group-hover:scale-105"
+            data-src="IMG/indumentaria-card.mp4"
+            preload="none"
+            muted
+            loop
+            playsinline
+          ></video>
+        </div>
+
+        <!-- 🔁 DUPLICADOS PARA QUE EL LOOP SEA SUAVE -->
+        <div class="crystal-glass rounded-2xl overflow-hidden relative group shrink-0 w-[260px] md:w-[400px] aspect-[16/9]">
+          <video
+            class="lazy-video w-full h-full object-contain bg-black transition-transform duration-500 group-hover:scale-105"
+            data-src="IMG/Constructoras-card1.mp4"
+            preload="none"
+            muted
+            loop
+            playsinline
+          ></video>
+        </div>
+
+        <div class="crystal-glass rounded-2xl overflow-hidden relative group shrink-0 w-[260px] md:w-[400px] aspect-[16/9]">
+          <video
+            class="lazy-video w-full h-full object-contain bg-black transition-transform duration-500 group-hover:scale-105"
+            data-src="IMG/salud-centro-card.mp4"
+            preload="none"
+            muted
+            loop
+            playsinline
+          ></video>
+        </div>
+
+        <div class="crystal-glass rounded-2xl overflow-hidden relative group shrink-0 w-[260px] md:w-[400px] aspect-[16/9]">
+          <video
+            class="lazy-video w-full h-full object-contain bg-black transition-transform duration-500 group-hover:scale-105"
+            data-src="IMG/Restaurantes-card.mp4"
+            preload="none"
+            muted
+            loop
+            playsinline
+          ></video>
+        </div>
+
+        <div class="crystal-glass rounded-2xl overflow-hidden relative group shrink-0 w-[260px] md:w-[400px] aspect-[16/9]">
+          <video
+            class="lazy-video w-full h-full object-contain bg-black transition-transform duration-500 group-hover:scale-105"
+            data-src="IMG/patidos-politicos-card.mp4"
+            preload="none"
+            muted
+            loop
+            playsinline
+          ></video>
+        </div>
+
+        <div class="crystal-glass rounded-2xl overflow-hidden relative group shrink-0 w-[260px] md:w-[400px] aspect-[16/9]">
+          <video
+            class="lazy-video w-full h-full object-contain bg-black transition-transform duration-500 group-hover:scale-105"
+            data-src="IMG/indumentaria-card.mp4"
+            preload="none"
+            muted
+            loop
+            playsinline
+          ></video>
+        </div>
+
+      </div>
     </div>
 
-    <div class="w-[300px] md:w-[400px] h-[250px] crystal-glass rounded-2xl overflow-hidden relative group shrink-0">
-        <img 
-            src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=600&auto=format&fit=crop" 
-            loading="lazy"
-            alt="Campaña Social" 
-            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        >
-    </div>
+  </div>
+</section>
 
-    <div class="w-[300px] md:w-[400px] h-[250px] crystal-glass rounded-2xl overflow-hidden relative group shrink-0">
-        <img 
-            src="https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?q=80&w=600&auto=format&fit=crop" 
-            loading="lazy"
-            alt="E-Commerce UI" 
-            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        >
-    </div>
 
-    <div class="w-[300px] md:w-[400px] h-[250px] crystal-glass rounded-2xl overflow-hidden relative group shrink-0">
-        <img 
-            src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=600&auto=format&fit=crop" 
-            loading="lazy"
-            alt="App Launch" 
-            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        >
-    </div>
-
-    <div class="w-[300px] md:w-[400px] h-[250px] crystal-glass rounded-2xl overflow-hidden relative group shrink-0">
-        <img 
-            src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=600&auto=format&fit=crop" 
-            loading="lazy"
-            alt="Branding Tech" 
-            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        >
-    </div>
-
-    <div class="w-[300px] md:w-[400px] h-[250px] crystal-glass rounded-2xl overflow-hidden relative group shrink-0">
-        <img 
-            src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=600&auto=format&fit=crop" 
-            loading="lazy"
-            alt="Campaña Social" 
-            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        >
-    </div>
-
-    <div class="w-[300px] md:w-[400px] h-[250px] crystal-glass rounded-2xl overflow-hidden relative group shrink-0">
-        <img 
-            src="https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?q=80&w=600&auto=format&fit=crop" 
-            loading="lazy"
-            alt="E-Commerce UI" 
-            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        >
-    </div>
-
-    <div class="w-[300px] md:w-[400px] h-[250px] crystal-glass rounded-2xl overflow-hidden relative group shrink-0">
-        <img 
-            src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=600&auto=format&fit=crop" 
-            loading="lazy"
-            alt="App Launch" 
-            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        >
-    </div>
-
-</div>
-<section id="servicios" class="py-24 section-bg relative overflow-hidden">
+<section id="servicios" class="section-block section-bg relative overflow-hidden">
     
     <div class="max-w-7xl mx-auto px-6 relative z-10">
         <div class="text-center mb-16 reveal-up">
             <span class="text-brand-red text-sm font-bold tracking-[0.2em] uppercase block mb-3">
                 CONSTRUIDO PARA TODAS LAS INDUSTRIAS
             </span>
-            <h2 class="text-4xl font-bold text-[var(--text-main)]">Nuestros Servicios</h2>
+            <h2 class="heading-section text-[var(--text-main)]">
+  Nuestros Servicios
+</h2>
+
         </div>
 
         <!-- ===== MOBILE (stack, imagen cuadrada, sin acordeón) ===== -->
@@ -300,7 +423,7 @@
             <!-- Card 1 -->
             <div class="crystal-glass rounded-3xl overflow-hidden">
                 <img
-                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop"
+                    src="IMG/desarrollo-web-e1.webp"
                     loading="lazy"
                     alt="Desarrollo Web"
                     class="w-full h-72 object-cover"
@@ -321,7 +444,7 @@
             <!-- Card 2 -->
             <div class="crystal-glass rounded-3xl overflow-hidden">
                 <img
-                    src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800&auto=format&fit=crop"
+                    src="IMG/branding-digital-index.webp"
                     loading="lazy"
                     alt="Branding Digital"
                     class="w-full h-72 object-cover"
@@ -333,7 +456,7 @@
                     <p class="text-sm text-[var(--text-muted)] mb-4">
                         Identidad visual estratégica que conecta valores con audiencia.
                     </p>
-                    <a href="branding.html" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-red">
+                    <a href="branding-digital.html" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-red">
                         Ver más <i class="fas fa-arrow-right text-xs"></i>
                     </a>
                 </div>
@@ -342,7 +465,7 @@
             <!-- Card 3 -->
             <div class="crystal-glass rounded-3xl overflow-hidden">
                 <img
-                    src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=800&auto=format&fit=crop"
+                    src="IMG/redes-sociales-index.webp"
                     loading="lazy"
                     alt="Redes Sociales"
                     class="w-full h-72 object-cover"
@@ -363,7 +486,7 @@
             <!-- Card 4 -->
             <div class="crystal-glass rounded-3xl overflow-hidden">
                 <img
-                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop"
+                    src="IMG/publicidad-chart.webp"
                     loading="lazy"
                     alt="Publicidad"
                     class="w-full h-72 object-cover"
@@ -382,123 +505,157 @@
             </div>
         </div>
 
-        <!-- ===== DESKTOP (acordeón pro con hover) ===== -->
-        <div class="hidden md:flex h-[500px] gap-4 w-full">
+<!-- ===== DESKTOP (acordeón pro con hover) ===== -->
+<div class="hidden md:flex h-[500px] gap-4 w-full">
             
-            <!-- Card 1 -->
-            <div class="service-card group relative flex-1 hover:flex-[2] crystal-glass rounded-3xl overflow-hidden cursor-pointer transition-all duration-500">
-                <div class="absolute inset-0 bg-black/5 dark:bg-transparent group-hover:bg-black/40 dark:group-hover:bg-black/30 transition-colors z-10"></div>
-                <img 
-                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop" 
-                    loading="lazy"
-                    alt="Desarrollo Web" 
-                    class="service-bg w-full h-full object-cover absolute inset-0 transition-all bg-gray-200 dark:bg-gray-900"
-                >
-                
-                <div class="absolute bottom-0 left-0 w-full p-8 z-20 flex flex-col justify-end h-full">
-                    <h3 class="text-2xl font-bold text-white mb-2 md:rotate-0 md:origin-bottom-left transition-transform group-hover:rotate-0 whitespace-nowrap">
-                        Desarrollo Web
-                    </h3>
-                    <div class="max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-500 opacity-0 group-hover:opacity-100">
-                        <p class="text-gray-200 text-sm mb-4">
-                            Sitios de alto rendimiento, optimizados para conversión y diseñados para escalar.
-                        </p>
-                        <a href="desarrollo-web.html" class="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-brand-red transition-colors">
-                            Ver más <i class="fas fa-arrow-right text-xs"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+  <!-- Card 1 -->
+  <div class="service-card group relative flex-1 hover:flex-[2] crystal-glass rounded-3xl overflow-hidden cursor-pointer transition-all duration-500">
+    <!-- Overlay suave general -->
+    <div class="absolute inset-0 bg-black/5 dark:bg-transparent group-hover:bg-black/40 dark:group-hover:bg-black/30 transition-colors z-10"></div>
 
-            <!-- Card 2 -->
-            <div class="service-card group relative flex-1 hover:flex-[2] crystal-glass rounded-3xl overflow-hidden cursor-pointer transition-all duration-500">
-                <div class="absolute inset-0 bg-black/5 dark:bg-transparent group-hover:bg-black/40 dark:group-hover:bg-black/30 transition-colors z-10"></div>
-                <img 
-                    src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800&auto=format&fit=crop" 
-                    loading="lazy"
-                    alt="Branding Digital" 
-                    class="service-bg w-full h-full object-cover absolute inset-0 transition-all bg-gray-200 dark:bg-gray-800"
-                >
-                
-                <div class="absolute bottom-0 left-0 w-full p-8 z-20 flex flex-col justify-end h-full">
-                    <h3 class="text-2xl font-bold text-white mb-2 whitespace-nowrap">
-                        Branding Digital
-                    </h3>
-                    <div class="max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-500 opacity-0 group-hover:opacity-100">
-                        <p class="text-gray-200 text-sm mb-4">
-                            Identidad visual estratégica que conecta valores con audiencia.
-                        </p>
-                        <a href="branding.html" class="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-brand-red transition-colors">
-                            Ver más <i class="fas fa-arrow-right text-xs"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+    <!-- Imagen de fondo -->
+    <img 
+      src="IMG/desarrollo-web-e1.webp" 
+      loading="lazy"
+      alt="Desarrollo Web" 
+      class="service-bg w-full h-full object-cover absolute inset-0 transition-all bg-gray-200 dark:bg-gray-900"
+    >
 
-            <!-- Card 3 -->
-            <div class="service-card group relative flex-1 hover:flex-[2] crystal-glass rounded-3xl overflow-hidden cursor-pointer transition-all duration-500">
-                <div class="absolute inset-0 bg-black/5 dark:bg-transparent group-hover:bg-black/40 dark:group-hover:bg-black/30 transition-colors z-10"></div>
-                <img 
-                    src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=800&auto=format&fit=crop" 
-                    loading="lazy"
-                    alt="Redes Sociales" 
-                    class="service-bg w-full h-full object-cover absolute inset-0 transition-all bg-gray-200 dark:bg-gray-900"
-                >
+    <!-- Franja inferior tipo glass pegada a la silueta -->
+    <div class="absolute inset-x-0 bottom-0 h-[32%] bg-gradient-to-t from-black/85 via-black/65 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
                 
-                <div class="absolute bottom-0 left-0 w-full p-8 z-20 flex flex-col justify-end h-full">
-                    <h3 class="text-2xl font-bold text-white mb-2 whitespace-nowrap">
-                        Redes Sociales
-                    </h3>
-                    <div class="max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-500 opacity-0 group-hover:opacity-100">
-                        <p class="text-gray-200 text-sm mb-4">
-                            Gestión de comunidad y contenido que genera engagement real.
-                        </p>
-                        <a href="redes-sociales.html" class="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-brand-red transition-colors">
-                            Ver más <i class="fas fa-arrow-right text-xs"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+    <!-- Contenido -->
+    <div class="absolute bottom-0 left-0 w-full p-8 z-30 flex flex-col justify-end h-full">
+      <h3 class="text-2xl font-bold text-white mb-2 whitespace-nowrap">
+        Desarrollo Web
+      </h3>
+      <div class="max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-500 opacity-0 group-hover:opacity-100">
+        <p class="text-gray-200 text-sm mb-4">
+          Sitios de alto rendimiento, optimizados para conversión y diseñados para escalar.
+        </p>
+        <a href="desarrollo-web.html" class="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-brand-red transition-colors">
+          Ver más <i class="fas fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+    </div>
+  </div>
 
-            <!-- Card 4 -->
-            <div class="service-card group relative flex-1 hover:flex-[2] crystal-glass rounded-3xl overflow-hidden cursor-pointer transition-all duration-500">
-                <div class="absolute inset-0 bg-black/5 dark:bg-transparent group-hover:bg-black/40 dark:group-hover:bg-black/30 transition-colors z-10"></div>
-                <img 
-                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" 
-                    loading="lazy"
-                    alt="Publicidad" 
-                    class="service-bg w-full h-full object-cover absolute inset-0 transition-all bg-gray-200 dark:bg-gray-800"
-                >
+  <!-- Card 2 -->
+  <div class="service-card group relative flex-1 hover:flex-[2] crystal-glass rounded-3xl overflow-hidden cursor-pointer transition-all duration-500">
+    <!-- Overlay suave general -->
+    <div class="absolute inset-0 bg-black/5 dark:bg-transparent group-hover:bg-black/40 dark:group-hover:bg-black/30 transition-colors z-10"></div>
+
+    <!-- Imagen de fondo -->
+    <img 
+      src="IMG/branding-digital-index.webp" 
+      loading="lazy"
+      alt="Branding Digital" 
+      class="service-bg w-full h-full object-cover absolute inset-0 transition-all bg-gray-200 dark:bg-gray-800"
+    >
+
+    <!-- Franja inferior tipo glass pegada a la silueta -->
+    <div class="absolute inset-x-0 bottom-0 h-[32%] bg-gradient-to-t from-black/85 via-black/65 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
                 
-                <div class="absolute bottom-0 left-0 w-full p-8 z-20 flex flex-col justify-end h-full">
-                    <h3 class="text-2xl font-bold text-white mb-2 whitespace-nowrap">
-                        Publicidad
-                    </h3>
-                    <div class="max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-500 opacity-0 group-hover:opacity-100">
-                        <p class="text-gray-200 text-sm mb-4">
-                            Campañas de Paid Media orientadas a ROI positivo.
-                        </p>
-                        <a href="publicidad.html" class="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-brand-red transition-colors">
-                            Ver más <i class="fas fa-arrow-right text-xs"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+    <!-- Contenido -->
+    <div class="absolute bottom-0 left-0 w-full p-8 z-30 flex flex-col justify-end h-full">
+      <h3 class="text-2xl font-bold text-white mb-2 whitespace-nowrap">
+        Branding Digital
+      </h3>
+      <div class="max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-500 opacity-0 group-hover:opacity-100">
+        <p class="text-gray-200 text-sm mb-4">
+          Identidad visual estratégica que conecta valores con audiencia.
+        </p>
+        <a href="branding-digital.html" class="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-brand-red transition-colors">
+          Ver más <i class="fas fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+    </div>
+  </div>
 
-        </div>
+  <!-- Card 3 -->
+  <div class="service-card group relative flex-1 hover:flex-[2] crystal-glass rounded-3xl overflow-hidden cursor-pointer transition-all duration-500">
+    <!-- Overlay suave general -->
+    <div class="absolute inset-0 bg-black/5 dark:bg-transparent group-hover:bg-black/40 dark:group-hover:bg-black/30 transition-colors z-10"></div>
+
+    <!-- Imagen de fondo -->
+    <img 
+      src="IMG/redes-sociales-index.webp" 
+      loading="lazy"
+      alt="Redes Sociales" 
+      class="service-bg w-full h-full object-cover absolute inset-0 transition-all bg-gray-200 dark:bg-gray-900"
+    >
+
+    <!-- Franja inferior tipo glass pegada a la silueta -->
+    <div class="absolute inset-x-0 bottom-0 h-[32%] bg-gradient-to-t from-black/85 via-black/65 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
+                
+    <!-- Contenido -->
+    <div class="absolute bottom-0 left-0 w-full p-8 z-30 flex flex-col justify-end h-full">
+      <h3 class="text-2xl font-bold text-white mb-2 whitespace-nowrap">
+        Redes Sociales
+      </h3>
+      <div class="max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-500 opacity-0 group-hover:opacity-100">
+        <p class="text-gray-200 text-sm mb-4">
+          Gestión de comunidad y contenido que genera engagement real.
+        </p>
+        <a href="redes-sociales.html" class="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-brand-red transition-colors">
+          Ver más <i class="fas fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="service-card group relative flex-1 hover:flex-[2] crystal-glass rounded-3xl overflow-hidden cursor-pointer transition-all duration-500">
+    <!-- Overlay suave general -->
+    <div class="absolute inset-0 bg-black/5 dark:bg-transparent group-hover:bg-black/40 dark:group-hover:bg-black/30 transition-colors z-10"></div>
+
+    <!-- Imagen de fondo -->
+    <img 
+      src="IMG/publicidad-chart.webp" 
+      loading="lazy"
+      alt="Publicidad" 
+      class="service-bg w-full h-full object-cover absolute inset-0 transition-all bg-gray-200 dark:bg-gray-800"
+    >
+
+    <!-- Franja inferior tipo glass pegada a la silueta -->
+    <div class="absolute inset-x-0 bottom-0 h-[32%] bg-gradient-to-t from-black/85 via-black/65 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
+                
+    <!-- Contenido -->
+    <div class="absolute bottom-0 left-0 w-full p-8 z-30 flex flex-col justify-end h-full">
+      <h3 class="text-2xl font-bold text-white mb-2 whitespace-nowrap">
+        Publicidad
+      </h3>
+      <div class="max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-500 opacity-0 group-hover:opacity-100">
+        <p class="text-gray-200 text-sm mb-4">
+          Campañas de Paid Media orientadas a ROI positivo.
+        </p>
+        <a href="publicidad.html" class="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-brand-red transition-colors">
+          Ver más <i class="fas fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+</div>
+
     </div>
 </section>
+
 <!-- 4.6 Sobre Nosotros / SOMOS KA&SO -->
-<section id="somos" class="scroll-mt-32 py-16 md:py-24 section-bg border-t border-white/5 relative overflow-hidden">
+<section id="somos" class="scroll-mt-32 section-block section-bg border-t border-white/5 relative overflow-hidden">
     
     <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-red/5 rounded-full blur-[120px] pointer-events-none"></div>
 
     <div class="container mx-auto px-6 relative z-10">
         
         <div class="text-center mb-12 md:mb-16 reveal-up">
-            <h2 class="text-3xl md:text-5xl font-semibold inline-block pb-4 text-[var(--text-main)] tracking-tight">
-                SOMOS <span class="text-brand-red">KA&SO</span>
-            </h2>
+            <h2 class="heading-section inline-block pb-4 text-[var(--text-main)]">
+  SOMOS <span class="text-brand-red">KA&SO</span>
+</h2>
+
         </div>
 
         <!-- CAMBIO: items-start para que cada columna tenga su propia altura -->
@@ -547,7 +704,7 @@
                     <div class="p-6 md:p-7 flex-1 flex flex-col">
                         <h4 class="text-xl font-bold text-[var(--text-main)]">Karen</h4>
                         <p class="text-xs font-semibold tracking-[0.16em] uppercase text-brand-red mt-1">
-                            Analista de Datos
+                            Fundadora & Directora de Marketing
                         </p>
 
                         <!-- Botón "Sobre mí" -->
@@ -595,7 +752,7 @@
                     <div class="p-6 md:p-7 flex-1 flex flex-col">
                         <h4 class="text-xl font-bold text-[var(--text-main)]">Agustín</h4>
                         <p class="text-xs font-semibold tracking-[0.16em] uppercase text-brand-red mt-1">
-                            Director Comercial
+                            Fundador & Director Comercial
                         </p>
 
                         <!-- Botón "Sobre mí" -->
@@ -626,7 +783,7 @@
         </div> <!-- fin grid columnas Visión + Cards -->
     </div>
 </section>
-<section id="proceso" class="py-16 md:py-24 bg-[var(--bg-body)] overflow-hidden">
+<section id="proceso" class="section-block bg-[var(--bg-body)] overflow-hidden">
   
   <div class="max-w-7xl mx-auto px-6 relative z-10">
     
@@ -636,7 +793,10 @@
         <span class="text-brand-red text-sm font-bold tracking-[0.2em] uppercase block mb-3">
           PROCESO
         </span>
-        <h2 class="text-3xl md:text-4xl font-bold text-[var(--text-main)]">Cómo trabajamos</h2>
+        <h2 class="heading-section text-[var(--text-main)]">
+  Cómo trabajamos
+</h2>
+
       </div>
 
       <p class="text-[var(--text-muted)] max-w-md md:text-right text-center text-sm md:text-base">
@@ -656,9 +816,9 @@
             01
           </div>
           <div class="step-content text-center overflow-hidden transition-all duration-500 ease-out opacity-100 max-h-full md:opacity-0 md:max-h-0 md:group-hover:max-h-60 md:group-hover:opacity-100">
-            <h4 class="font-bold text-lg mb-2 text-[var(--text-main)] translate-y-0 md:translate-y-4 transition-transform duration-500 md:group-hover:translate-y-0">
+            <h3 class="font-bold text-lg mb-2 text-[var(--text-main)] translate-y-0 md:translate-y-4 transition-transform duration-500 md:group-hover:translate-y-0">
               Auditoría
-            </h4>
+            </h3>
             <p class="text-sm text-[var(--text-muted)] leading-relaxed px-0 md:px-2">
               Análisis profundo del estado actual de tu marca.
             </p>
@@ -670,9 +830,9 @@
             02
           </div>
           <div class="step-content text-center overflow-hidden transition-all duration-500 ease-out opacity-100 max-h-full md:opacity-0 md:max-h-0 md:group-hover:max-h-60 md:group-hover:opacity-100">
-            <h4 class="font-bold text-lg mb-2 text-[var(--text-main)] translate-y-0 md:translate-y-4 transition-transform duration-500 md:group-hover:translate-y-0">
+            <h3 class="font-bold text-lg mb-2 text-[var(--text-main)] translate-y-0 md:translate-y-4 transition-transform duration-500 md:group-hover:translate-y-0">
               Estrategia
-            </h4>
+            </h3>
             <p class="text-sm text-[var(--text-muted)] leading-relaxed px-0 md:px-2">
               Planificación estratégica basada en datos reales.
             </p>
@@ -684,9 +844,9 @@
             03
           </div>
           <div class="step-content text-center overflow-hidden transition-all duration-500 ease-out opacity-100 max-h-full md:opacity-0 md:max-h-0 md:group-hover:max-h-60 md:group-hover:opacity-100">
-            <h4 class="font-bold text-lg mb-2 text-[var(--text-main)] translate-y-0 md:translate-y-4 transition-transform duration-500 md:group-hover:translate-y-0">
+            <h3 class="font-bold text-lg mb-2 text-[var(--text-main)] translate-y-0 md:translate-y-4 transition-transform duration-500 md:group-hover:translate-y-0">
               Ejecución
-            </h4>
+            </h3>
             <p class="text-sm text-[var(--text-muted)] leading-relaxed px-0 md:px-2">
               Implementación creativa y desarrollo técnico.
             </p>
@@ -698,9 +858,9 @@
             04
           </div>
           <div class="step-content text-center overflow-hidden transition-all duration-500 ease-out opacity-100 max-h-full md:opacity-0 md:max-h-0 md:group-hover:max-h-60 md:group-hover:opacity-100">
-            <h4 class="font-bold text-lg mb-2 text-[var(--text-main)] translate-y-0 md:translate-y-4 transition-transform duration-500 md:group-hover:translate-y-0">
+            <h3 class="font-bold text-lg mb-2 text-[var(--text-main)] translate-y-0 md:translate-y-4 transition-transform duration-500 md:group-hover:translate-y-0">
               Optimización
-            </h4>
+            </h3>
             <p class="text-sm text-[var(--text-muted)] leading-relaxed px-0 md:px-2">
               Mejora continua, analítica y reportes de rendimiento.
             </p>
@@ -713,12 +873,13 @@
 </section>
 
 <!-- 4.8 Testimonios (Vertical Scroll) -->
-<section id="testimonios" class="pt-12 pb-4 section-bg relative overflow-hidden">
+<section id="testimonios" class="section-block section-bg relative overflow-hidden">
     
     <div class="max-w-7xl mx-auto px-6 mb-8 relative z-10 text-center md:text-left">
         <h2 class="text-3xl md:text-4xl font-bold max-w-2xl text-[var(--text-main)]">
-            Líderes que confían en nosotros
-        </h2>
+    Líderes que confían en nosotros
+</h2>
+
     </div>
 
     <div
@@ -1148,7 +1309,7 @@
 </section>
 
     <!-- 4.9 CTA Steps -->
-<section id="cta" class="py-24 relative bg-[var(--bg-body)]">
+<section id="cta" class="section-block relative bg-[var(--bg-body)]">
     <div class="absolute inset-0 bg-gradient-to-t from-brand-red/5 to-transparent pointer-events-none"></div>
 
     <div class="max-w-7xl mx-auto px-6 relative z-10">
@@ -1157,9 +1318,10 @@
                 Vos elegís cómo seguir
             </span>
             
-            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-[var(--text-main)]">
-                Agendá tu análisis estratégico sin costo
-            </h2>
+            <h2 class="heading-section mb-6 text-[var(--text-main)]">
+  Agendá tu análisis estratégico sin costo
+</h2>
+
             
             <p class="text-[var(--text-muted)] max-w-3xl mx-auto text-lg">
                 Nosotros vamos a analizar tu cuenta en profundidad y te vamos a enviar un diagnóstico claro con las oportunidades concretas para crecer y mejorar tu retorno. Sin costo, sin compromiso y sin videollamadas innecesarias.
@@ -1215,7 +1377,7 @@
                     <p class="text-[var(--text-muted)] mb-8 max-w-sm">
                         Agencia de marketing digital enfocada en datos y creatividad. Transformamos tu presencia digital en resultados medibles.
                     </p>
-                    <h4 class="font-bold mb-4">¡Seguinos!</h4>
+                    <h3 class="font-bold mb-4">¡Seguinos!</h3>
                     <div class="flex gap-4">
                         <a href="https://instagram.com/Kayso_marketingdecontenidos" class="w-12 h-12 rounded-full crystal-glass flex items-center justify-center text-xl hover:text-brand-red hover:border-brand-red transition-all group" title="Instagram">
                             <i class="fab fa-instagram"></i>
@@ -1252,7 +1414,7 @@
                     <ul class="space-y-4">
                         <li><a href="#inicio" class="text-[var(--text-muted)] hover:text-brand-red transition-colors">Inicio</a></li>
                         <li><a href="desarrollo-web.html" class="text-[var(--text-muted)] hover:text-brand-red transition-colors">Desarrollo Web</a></li>
-                        <li><a href="branding.html" class="text-[var(--text-muted)] hover:text-brand-red transition-colors">Branding Digital</a></li>
+                        <li><a href="branding-digital.html" class="text-[var(--text-muted)] hover:text-brand-red transition-colors">Branding Digital</a></li>
                         <li><a href="redes-sociales.html" class="text-[var(--text-muted)] hover:text-brand-red transition-colors">Redes Sociales</a></li>
                         <li><a href="publicidad.html" class="text-[var(--text-muted)] hover:text-brand-red transition-colors">Publicidad</a></li>
                     </ul>
@@ -1265,138 +1427,11 @@
         </div>
     </footer>
 
-<script>
-  // ======================
-  // Theme Toggle Logic
-  // ======================
-  const root = document.documentElement;
-  const themeToggleBtn = document.getElementById('theme-toggle');
-  const mobileThemeToggleBtn = document.getElementById('mobile-theme-toggle');
 
-  function setTheme(theme) {
-    // por las dudas, si viene cualquier cosa, usamos dark
-    if (theme !== 'light' && theme !== 'dark') theme = 'dark';
-    root.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-  }
-
-  // Tema inicial
-  const savedTheme = localStorage.getItem('theme') || 'dark';
-  setTheme(savedTheme);
-
-  // Click en los botones de tema (desktop + mobile)
-  [themeToggleBtn, mobileThemeToggleBtn].forEach(btn => {
-    if (!btn) return; // por si alguno no existe
-    btn.addEventListener('click', () => {
-      const current = root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
-      const next = current === 'light' ? 'dark' : 'light';
-      setTheme(next);
-    });
-  });
-
-  // ======================
-  // Mobile Menu Logic
-  // ======================
-  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const closeMobileMenuBtn = document.getElementById('close-mobile-menu');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const mobileLinks = document.querySelectorAll('.mobile-link');
-
-  function toggleMenu() {
-    mobileMenu.classList.toggle('translate-x-full');
-  }
-
-  mobileMenuBtn?.addEventListener('click', toggleMenu);
-  closeMobileMenuBtn?.addEventListener('click', toggleMenu);
-  mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
-
-
-        // Scroll Reveal Observer
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px"
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    
-                    // Trigger counters if this is the results section
-                    if(entry.target.querySelector('.counter')) {
-                        startCounters();
-                    }
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
-
-        // Metrics Counter Logic
-        let countersStarted = false;
-        function startCounters() {
-            if(countersStarted) return;
-            countersStarted = true;
-            
-            const counters = document.querySelectorAll('.counter');
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                const suffix = counter.getAttribute('data-suffix');
-                const duration = 1500; // ms
-                const increment = target / (duration / 16); // 60fps
-                
-                let current = 0;
-                const updateCounter = () => {
-                    current += increment;
-                    if (current < target) {
-                        counter.innerText = Math.ceil(current) + suffix;
-                        requestAnimationFrame(updateCounter);
-                    } else {
-                        counter.innerText = target + suffix;
-                    }
-                };
-                updateCounter();
-            });
-        }
-
-// === LOGICA DEL PROCESO (NUEVA) ===
-document.addEventListener('DOMContentLoaded', () => {
-    const steps = document.querySelectorAll('.process-step');
-    
-    const handleMobileClick = (clickedStep) => {
-        // En Desktop no hacemos nada (es solo hover)
-        if (window.innerWidth >= 768) return;
-
-        // En Mobile: funcionamos como acordeón
-        steps.forEach(s => {
-            if (s !== clickedStep) s.classList.remove('active-mobile');
-        });
-        clickedStep.classList.toggle('active-mobile');
-    };
-
-    steps.forEach(step => {
-        step.addEventListener('click', () => handleMobileClick(step));
-    });
-});
-        
-
-        // Interactive KA&SO Glow
-        const container = document.getElementById('glow-container');
-        if(container) {
-            container.addEventListener('mousemove', (e) => {
-                const rect = container.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                container.style.setProperty('--x', x + 'px');
-                container.style.setProperty('--y', y + 'px');
-            });
-        }
-
-    </script>
     <a href="https://wa.me/5493517064753?text=Hola,%20vi%20su%20web%20y%20me%20interesa%20mejorar%20mis%20redes." 
    target="_blank"
    rel="noopener noreferrer"
+   aria-label="Contactar por WhatsApp" 
    class="fixed bottom-6 right-5 md:bottom-10 md:right-8 z-[9999] group flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-[#25D366] rounded-full shadow-[0_4px_14px_0_rgba(37,211,102,0.39)] transition-all duration-300 hover:scale-110 hover:shadow-[0_6px_20px_rgba(37,211,102,0.23)] focus:outline-none focus:ring-4 focus:ring-green-300">
     
     <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-20 animate-ping group-hover:animate-none"></span>
@@ -1406,36 +1441,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </svg>
 </a>
 
-   <script>
-  // Cargar el viewer de Spline un segundo después de que carga la página
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      const script = document.createElement('script');
-      script.type = 'module';
-      script.src = 'https://unpkg.com/@splinetool/viewer@1.12.5/build/spline-viewer.js';
-      document.body.appendChild(script);
-    }, 1000);
-  });
+  <script type="module" src="/src/main.js"></script>
 
-  // --- Toggle "Sobre mí" Karen / Agustín ---
-  function toggleBio(person) {
-    const panel = document.getElementById(`bio-${person}`);
-    const card  = document.getElementById(`card-${person}`);
-    if (!panel || !card) return;
-
-    const btn = card.querySelector('.bio-toggle');
-    const isOpen = panel.classList.contains('open');
-
-    if (isOpen) {
-      // Cerrar solo este
-      panel.classList.remove('open');
-      if (btn) btn.setAttribute('aria-expanded', 'false');
-    } else {
-      // Abrir solo este
-      panel.classList.add('open');
-      if (btn) btn.setAttribute('aria-expanded', 'true');
-    }
-  }
-</script>
 </body>
 </html>

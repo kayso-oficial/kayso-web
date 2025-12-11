@@ -32,138 +32,175 @@
 
 <!-- Header - DESARROLLO WEB -->
 <header class="fixed top-0 w-full z-50 transition-all duration-300">
-    <div class="crystal-glass rounded-b-2xl mx-2 md:mx-6 px-6 py-4 flex justify-between items-center mx-auto">
+  <div class="crystal-glass rounded-b-2xl mx-2 md:mx-6 px-4 md:px-6 py-3 md:py-4 flex justify-between items-center">
+    
+    <!-- LOGO -->
+    <a href="index.html#inicio" aria-label="Volver al inicio"
+       class="flex items-center gap-2 group hover:opacity-80 transition-opacity">
+      <img src="IMG/LOGOLETRA.webp" alt="KA&SO - Agencia de Marketing & IA" class="h-4 w-auto">
+    </a>
+
+    <!-- LADO DERECHO -->
+    <div class="flex items-center gap-3">
+      
+      <!-- TOGGLE TEMA MOBILE (pill sol/luna) -->
+      <button
+        id="mobile-theme-toggle"
+        aria-label="Cambiar tema oscuro o claro"
+        class="md:hidden theme-pill"
+      >
+        <i class="fas fa-moon theme-toggle-icon theme-toggle-icon--moon"></i>
+        <i class="fas fa-sun theme-toggle-icon theme-toggle-icon--sun text-yellow-500"></i>
+      </button>
+
+      <!-- BOTÓN CONTACTO MOBILE -->
+      <a
+        href="contacto.html"
+        class="md:hidden text-xs font-semibold px-4 py-1.5 rounded-full bg-white text-black shadow-sm hover:shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all"
+      >
+        Contacto
+      </a>
+
+      <!-- NAV DESKTOP -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold tracking-wide">
         
-        <a href="index.html#inicio" aria-label="Volver al inicio" class="text-2xl font-bold tracking-tighter hover:text-brand-red transition-colors flex items-center gap-2 group">
-            <img src="IMG/LOGOLETRA.webp" alt="KA&SO - Agencia de Marketing & IA" class="h-4 w-auto">
-        </a>
+        <!-- Theme toggle desktop (luna / sol amarillo) -->
+        <button id="theme-toggle" aria-label="Cambiar tema" class="p-2 rounded-full hover:bg-white/10 transition-colors">
+          <i class="fas fa-moon dark-icon"></i>
+          <i class="fas fa-sun light-icon hidden text-yellow-500"></i>
+        </button>
 
-        <nav class="hidden md:flex items-center gap-8 text-sm font-semibold tracking-wide">
-            
-            <button id="theme-toggle" aria-label="Cambiar tema" class="p-2 rounded-full hover:bg-white/10 transition-colors">
-                <i class="fas fa-moon hidden dark-icon"></i>
-                <i class="fas fa-sun hidden light-icon text-yellow-500"></i>
-            </button>
+        <a href="index.html#inicio" class="hover:text-brand-red transition-colors">Inicio</a>
 
-            <a href="index.html#inicio" class="hover:text-brand-red transition-colors">Inicio</a>
-
-            <div class="relative group cursor-pointer h-full flex items-center">
-                <span class="text-brand-red py-2">Servicios</span>
-                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-red"></span>
-                
-                <div class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
-                    <div class="crystal-glass rounded-xl p-4 w-48 flex flex-col gap-2 text-sm text-[var(--text-main)]">
-                        <a href="desarrollo-web.html" class="block px-3 py-2 rounded bg-brand-red text-white cursor-default">Desarrollo Web</a>
-                        <a href="branding.html" class="block px-3 py-2 rounded hover:bg-brand-red hover:text-white transition-colors">Branding Digital</a>
-                        <a href="redes-sociales.html" class="block px-3 py-2 rounded hover:bg-brand-red hover:text-white transition-colors">Redes Sociales</a>
-                        <a href="publicidad.html" class="block px-3 py-2 rounded hover:bg-brand-red hover:text-white transition-colors">Publicidad</a>
-                    </div>
-                </div>
+        <div class="relative group cursor-pointer h-full flex items-center">
+          <span class="text-brand-red py-2">Servicios</span>
+          <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-red"></span>
+          
+          <div class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
+            <div class="crystal-glass rounded-xl p-4 w-48 flex flex-col gap-2 text-sm text-[var(--text-main)]">
+              <a href="desarrollo-web.html" class="block px-3 py-2 rounded bg-brand-red text-white cursor-default">
+                Desarrollo Web
+              </a>
+              <a href="branding-digital.html" class="block px-3 py-2 rounded hover:bg-brand-red hover:text-white transition-colors">
+                Branding Digital
+              </a>
+              <a href="redes-sociales.html" class="block px-3 py-2 rounded hover:bg-brand-red hover:text-white transition-colors">
+                Redes Sociales
+              </a>
+              <a href="publicidad.html" class="block px-3 py-2 rounded hover:bg-brand-red hover:text-white transition-colors">
+                Publicidad
+              </a>
             </div>
-
-            <a href="index.html#somos" class="group hover:text-brand-red transition-colors">Nosotros</a>
-            
-            <a href="contacto.html" class="bg-white text-black px-6 py-2.5 rounded-lg font-bold hover:shadow-[0_0_15px_rgba(255,255,255,0.4)] transition-all transform hover:-translate-y-0.5">
-                Contacto
-            </a>
-        </nav>
-        
-        <button id="mobile-menu-btn" aria-label="Abrir menú" class="md:hidden text-2xl">
-            <i class="fas fa-bars"></i>
-        </button>
-    </div>
-
-    <div id="mobile-menu" class="md:hidden fixed inset-0 bg-black/95 backdrop-blur-xl z-40 transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center gap-8">
-        
-        <button id="close-mobile-menu" aria-label="Cerrar menú" class="absolute top-8 right-8 text-3xl text-white">
-            <i class="fas fa-times"></i>
-        </button>
-
-        <a href="index.html#inicio" class="text-2xl font-bold text-white mobile-link">Inicio</a>
-
-        <div class="flex flex-col items-center gap-2">
-            <span class="text-2xl font-bold text-white">Servicios</span>
-            <a href="desarrollo-web.html" class="text-lg text-brand-red mobile-link">Desarrollo Web</a>
-            <a href="branding.html" class="text-lg text-white/80 mobile-link">Branding Digital</a>
-            <a href="redes-sociales.html" class="text-lg text-white/80 mobile-link">Redes Sociales</a>
-            <a href="publicidad.html" class="text-lg text-white/80 mobile-link">Publicidad</a>
+          </div>
         </div>
 
-        <a href="index.html#somos" class="text-2xl font-bold text-white mobile-link">Nosotros</a>
+        <a href="index.html#somos" class="group hover:text-brand-red transition-colors">Nosotros</a>
         
-        <a href="contacto.html" class="text-2xl font-bold text-brand-red mobile-link">Contacto</a>
+        <a href="contacto.html" class="bg-white text-black px-6 py-2.5 rounded-lg font-bold hover:shadow-[0_0_15px_rgba(255,255,255,0.4)] transition-all transform hover:-translate-y-0.5">
+          Contacto
+        </a>
+      </nav>
 
-        <button id="mobile-theme-toggle" aria-label="Cambiar tema" class="text-xl text-white border border-white/20 px-6 py-2 rounded-full">
-            Cambiar tema
-        </button>
+      <!-- BOTÓN HAMBURGUESA MOBILE -->
+      <button id="mobile-menu-btn" aria-label="Abrir menú" class="md:hidden text-2xl">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
+  </div>
+
+  <!-- MENÚ MOBILE -->
+  <div id="mobile-menu" class="md:hidden fixed inset-0 bg-black/95 backdrop-blur-xl z-40 transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center gap-8">
+    
+    <button id="close-mobile-menu" aria-label="Cerrar menú" class="absolute top-8 right-8 text-3xl text-white">
+      <i class="fas fa-times"></i>
+    </button>
+
+    <a href="index.html#inicio" class="text-2xl font-bold text-white mobile-link">Inicio</a>
+
+    <div class="flex flex-col items-center gap-2">
+      <span class="text-2xl font-bold text-white">Servicios</span>
+      <a href="desarrollo-web.html" class="text-lg text-brand-red mobile-link">Desarrollo Web</a>
+      <a href="branding-digital.html" class="text-lg text-white/80 mobile-link">Branding Digital</a>
+      <a href="redes-sociales.html" class="text-lg text-white/80 mobile-link">Redes Sociales</a>
+      <a href="publicidad.html" class="text-lg text-white/80 mobile-link">Publicidad</a>
+    </div>
+
+    <a href="index.html#somos" class="text-2xl font-bold text-white mobile-link">Nosotros</a>
+    
+    <a href="contacto.html" class="text-2xl font-bold text-brand-red mobile-link">Contacto</a>
+  </div>
 </header>
+
 
 <section class="relative min-h-screen flex items-center pt-28 pb-12 overflow-hidden section-bg">
     <!-- Fondo liso según el tema -->
-    <div class="absolute inset-0 bg-[var(--bg-body)] z-0"></div>
+    
         <div class="max-w-7xl mx-auto px-6 w-full relative z-10 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
             
             <!-- Left Column: Text (60%) -->
             <div class="md:col-span-7 flex flex-col justify-center text-left reveal-up">
-                <h1 class="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight leading-tight text-[var(--text-main)]">
-    Desarrollo <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-red-400">Web</span>
-                </h1>
-                
-                <h2 class="text-lg md:text-xl text-[var(--text-muted)] font-light leading-relaxed mb-10 max-w-lg">
-                    Diseñamos sitios web y landing pages rápidas y claras, con SEO, para convertir visitas en clientes reales.
-                </h2>
+                <h1 class="heading-hero mb-8 text-[var(--text-main)]">
+    Desarrollo 
+    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-red-400">
+        Web
+    </span>
+</h1>
+               
+                <h2 class="subheading-soft max-w-lg mb-6">
+    Diseñamos sitios web y landing pages rápidas y claras, con SEO, para convertir visitas en clientes reales.
+</h2>
+
                 
                 <div class="flex flex-wrap gap-4">
-                    <a href="contacto.html" class="bg-brand-red text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-red-700 hover:shadow-[0_0_25px_rgba(190,24,37,0.4)] hover:scale-105 transition-all duration-300 inline-flex items-center gap-2">
-                        Crear mi sitio web <i class="fas fa-arrow-right text-sm"></i>
-                    </a>
+                    <a href="contacto.html" class="btn-cta btn-cta--primary">
+  Crear mi sitio web
+  <i class="fas fa-arrow-right text-sm"></i>
+</a>
                 </div>
             </div>
 
-            <!-- Right Column: 3D Glass Card (40%) -->
-            <div class="md:col-span-5 tilt-container h-[300px] md:h-[400px] flex items-center justify-center reveal-up delay-100">
-                <div id="hero-card" class="tilt-card w-full aspect-video crystal-glass rounded-2xl relative flex items-center justify-center border border-white/10 group cursor-default">
-                    <!-- Ambient Glow behind card -->
-                    <div class="absolute inset-0 rounded-2xl bg-brand-red/5 blur-xl -z-10 group-hover:bg-brand-red/10 transition-colors duration-500"></div>
-                    
-                    <!-- Card Content with Depth -->
-                    <div class="tilt-card-content text-center p-8 w-full h-full flex flex-col items-center justify-center relative overflow-hidden rounded-2xl">
-                        <!-- Placeholder for Mockup/Image -->
-                        <div class="absolute inset-0 bg-gradient-to-tr from-black/80 to-transparent z-0"></div>
-                        <i class="fas fa-code text-6xl text-brand-red/20 absolute top-4 right-6 transform rotate-12"></i>
-                        
-                        <!-- Simple visual representation -->
-                        <div class="relative z-10 w-3/4 h-3/4 bg-gray-900/50 backdrop-blur-sm rounded-lg border border-white/5 shadow-2xl flex flex-col overflow-hidden transform transition-transform duration-500 group-hover:scale-105 group-hover:-translate-y-2">
-                            <!-- Mockup Header -->
-                            <div class="h-6 bg-gray-800 border-b border-white/5 flex items-center px-3 gap-1.5">
-                                <div class="w-2 h-2 rounded-full bg-red-500"></div>
-                                <div class="w-2 h-2 rounded-full bg-yellow-500"></div>
-                                <div class="w-2 h-2 rounded-full bg-green-500"></div>
-                            </div>
-                            <!-- Mockup Body -->
-                            <div class="flex-1 p-4 flex flex-col gap-3">
-                                <div class="w-2/3 h-4 bg-gray-700/50 rounded animate-pulse"></div>
-                                <div class="w-full h-20 bg-gray-800/50 rounded border border-white/5 flex items-center justify-center">
-                                    <span class="text-xs text-gray-500 font-mono">&lt;ka&so /&gt;</span>
-                                </div>
-                                <div class="w-1/2 h-3 bg-brand-red/20 rounded"></div>
-                            </div>
-                        </div>
-                    </div>
+<div class="md:col-span-5 flex items-center md:justify-start justify-center relative md:-ml-12 reveal-up delay-100">
+    
+    <div class="absolute inset-0 bg-brand-red/10 blur-[80px] rounded-full pointer-events-none transform translate-y-4"></div>
+
+    <div id="code-editor" class="relative w-full max-w-[480px] bg-[#1e1e1e] rounded-xl shadow-2xl border border-white/10 overflow-hidden group cursor-text">
+    
+    <div class="flex items-center px-4 py-3 bg-[#252526] border-b border-white/5">
+        <div class="flex space-x-2">
+            <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+            <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+            <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+        </div>
+        <div class="ml-4 text-xs text-gray-400 font-mono flex items-center gap-1">
+            <i class="fas fa-code text-blue-400"></i> main.js
+        </div>
+    </div>
+
+    <div class="p-6 font-mono text-sm md:text-base leading-relaxed min-h-[220px]">
+        <pre class="m-0"><code id="code-container" class="language-js"></code><span class="animate-pulse text-brand-red">|</span></pre>
+    </div>
+
+    <div class="bg-[#007acc] px-3 py-1 flex justify-between items-center text-[10px] text-white font-sans">
+        <span>master*</span>
+        <span>Ln 12, Col 45</span>
+    </div>
+</div>
+</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 4.2 Pillars Section -->
-    <section class="py-24 bg-[var(--bg-body)] relative">
+    <section class="section-block bg-[var(--bg-body)] relative">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16 reveal-up">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gradient">Lo que hacemos por tu presencia digital</h2>
-                <p class="text-[var(--text-muted)] text-lg max-w-3xl mx-auto">
-                    Nos encargamos de crear y optimizar la presencia digital de tu marca. Diseñamos webs claras, modernas y fáciles de usar, pensadas para convertir visitas en clientes.
-                </p>
+                <h2 class="heading-section text-gradient mb-6">
+    Lo que hacemos por tu presencia digital
+</h2>
+                <p class="subheading-soft max-w-3xl mx-auto">
+    Nos encargamos de crear y optimizar la presencia digital de tu marca. Diseñamos webs claras, modernas y fáciles de usar, pensadas para convertir visitas en clientes.
+</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -204,133 +241,89 @@
     </section>
 
     <!-- 4.3 Benefits / Timeline Section -->
-<section class="py-24 section-bg relative overflow-hidden">
-        <!-- Background Ambience -->
-        <div class="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-brand-red/5 to-transparent pointer-events-none"></div>
+<section class="section-block section-bg relative overflow-hidden">
+   
 
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
-                
-                <!-- Left Column: Timeline (60%) -->
-                <div class="lg:col-span-7 reveal-up">
-                    <h2 class="text-4xl font-bold text-[var(--text-main)] mb-6">Un sitio estratégico convierte más</h2>
-                    <p class="text-[var(--text-muted)] text-lg mb-12">
-                        Tu sitio web es muchas veces el primer contacto que alguien tiene con tu marca. Un buen desarrollo hace la diferencia:
-                    </p>
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+            
+            <div class="lg:col-span-7 reveal-up">
+                <h2 class="heading-section mb-6">
+                    Un sitio estratégico convierte más
+                </h2>
+                <p class="subheading-soft mb-12">
+                    Tu sitio web es muchas veces el primer contacto que alguien tiene con tu marca. Un buen desarrollo hace la diferencia:
+                </p>
 
-<div class="crystal-glass rounded-3xl p-8 md:p-10 relative">
-    <!-- Vertical Dotted Line centrada y ajustada -->
-    <div
-  class="absolute
-         left-[48px] md:left-[60px]
-         top-[3rem]
-         bottom-[4rem] md:bottom-[3.2rem]
-         w-px border-l-2 border-dotted border-gray-400/70
-         z-0 pointer-events-none">
-</div>
+                <div class="crystal-glass rounded-3xl p-8 md:p-10 relative">
+                    <div class="absolute left-[48px] md:left-[60px] top-[3rem] bottom-[4rem] md:bottom-[3.2rem] w-px border-l-2 border-dotted border-gray-400/70 z-0 pointer-events-none"></div>
 
-    <div class="space-y-10 relative z-10">
-        <!-- Benefit 1 -->
-        <div class="flex gap-6 group">
-            <div
-              class="w-8 h-8 md:w-10 md:h-10
-                     rounded-full border-2 border-brand-red
-                     bg-[var(--section-bg)]
-                     shrink-0 relative z-10
-                     group-hover:shadow-[0_0_15px_rgba(190,24,37,0.5)]
-                     transition-shadow duration-300">
-            </div>
-                                            <div>
-                                    <h4 class="text-xl font-bold text-[var(--text-main)] mb-2 group-hover:text-brand-red transition-colors">Primera impresión profesional</h4>
-                                    <p class="text-[var(--text-muted)]">Transmití confianza desde el primer segundo.</p>
-                                </div>
+                    <div class="space-y-10 relative z-10">
+                        <div class="flex gap-6 group">
+                            <div class="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-brand-red bg-[var(--section-bg)] shrink-0 relative z-10 group-hover:shadow-[0_0_15px_rgba(190,24,37,0.5)] transition-shadow duration-300"></div>
+                            <div>
+                                <h3 class="text-xl font-bold text-[var(--text-main)] mb-2 group-hover:text-brand-red transition-colors">Primera impresión profesional</h3>
+                                <p class="text-[var(--text-muted)]">Transmití confianza desde el primer segundo.</p>
                             </div>
-
-                            <!-- Benefit 2 -->
-                            <div class="flex gap-6 group">
-                                <div
-  class="w-8 h-8 md:w-10 md:h-10
-         rounded-full border-2 border-brand-red
-         bg-[var(--section-bg)]
-         shrink-0 relative z-10
-         group-hover:shadow-[0_0_15px_rgba(190,24,37,0.5)]
-         transition-shadow duration-300">
-</div>
-
-                                <div>
-                                    <h4 class="text-xl font-bold text-[var(--text-main)] mb-2 group-hover:text-brand-red transition-colors">Más consultas y ventas</h4>
-                                    <p class="text-[var(--text-muted)]">Diseñamos cada sección con un objetivo: que el usuario sepa qué hacer y cómo contactarte.</p>
-                                </div>
+                        </div>
+                        <div class="flex gap-6 group">
+                            <div class="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-brand-red bg-[var(--section-bg)] shrink-0 relative z-10 group-hover:shadow-[0_0_15px_rgba(190,24,37,0.5)] transition-shadow duration-300"></div>
+                            <div>
+                                <h3 class="text-xl font-bold text-[var(--text-main)] mb-2 group-hover:text-brand-red transition-colors">Más consultas y ventas</h3>
+                                <p class="text-[var(--text-muted)]">Diseñamos cada sección con un objetivo: que el usuario sepa qué hacer y cómo contactarte.</p>
                             </div>
-
-                            <!-- Benefit 3 -->
-                            <div class="flex gap-6 group">
-                                <div
-  class="w-8 h-8 md:w-10 md:h-10
-         rounded-full border-2 border-brand-red
-         bg-[var(--section-bg)]
-         shrink-0 relative z-10
-         group-hover:shadow-[0_0_15px_rgba(190,24,37,0.5)]
-         transition-shadow duration-300">
-</div>
-
-                                <div>
-                                    <h4 class="text-xl font-bold text-[var(--text-main)] mb-2 group-hover:text-brand-red transition-colors">Optimización para Google (SEO básico)</h4>
-                                    <p class="text-[var(--text-muted)]">Estructura y contenidos preparados para que te encuentren más fácil.</p>
-                                </div>
+                        </div>
+                        <div class="flex gap-6 group">
+                            <div class="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-brand-red bg-[var(--section-bg)] shrink-0 relative z-10 group-hover:shadow-[0_0_15px_rgba(190,24,37,0.5)] transition-shadow duration-300"></div>
+                            <div>
+                                <h3 class="text-xl font-bold text-[var(--text-main)] mb-2 group-hover:text-brand-red transition-colors">Optimización para Google (SEO básico)</h3>
+                                <p class="text-[var(--text-muted)]">Estructura y contenidos preparados para que te encuentren más fácil.</p>
                             </div>
-
-                            <!-- Benefit 4 -->
-                            <div class="flex gap-6 group">
-                                <div
-  class="w-8 h-8 md:w-10 md:h-10
-         rounded-full border-2 border-brand-red
-         bg-[var(--section-bg)]
-         shrink-0 relative z-10
-         group-hover:shadow-[0_0_15px_rgba(190,24,37,0.5)]
-         transition-shadow duration-300">
-</div>
-
-                                <div>
-                                    <h4 class="text-xl font-bold text-[var(--text-main)] mb-2 group-hover:text-brand-red transition-colors">Adaptado a celulares y tablets</h4>
-                                    <p class="text-[var(--text-muted)]">Más del 70% del tráfico viene desde el móvil: tu web se tiene que ver bien ahí primero.</p>
-                                </div>
+                        </div>
+                        <div class="flex gap-6 group">
+                            <div class="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-brand-red bg-[var(--section-bg)] shrink-0 relative z-10 group-hover:shadow-[0_0_15px_rgba(190,24,37,0.5)] transition-shadow duration-300"></div>
+                            <div>
+                                <h3 class="text-xl font-bold text-[var(--text-main)] mb-2 group-hover:text-brand-red transition-colors">Adaptado a celulares y tablets</h3>
+                                <p class="text-[var(--text-muted)]">Más del 70% del tráfico viene desde el móvil: tu web se tiene que ver bien ahí primero.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Right Column: Image Placeholder (40%) -->
-                <div class="lg:col-span-5 h-full min-h-[400px] reveal-up delay-100">
-                    <div class="w-full h-full rounded-3xl bg-gray-900 border border-white/5 relative overflow-hidden shadow-2xl group">
-                        <!-- Placeholder Content -->
-                        <div class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-800 to-black">
-                            <i class="fas fa-laptop-code text-6xl text-gray-700 group-hover:text-brand-red/50 transition-colors duration-500"></i>
-                            <span class="absolute bottom-10 text-sm text-gray-500 font-mono opacity-60">IMAGEN MOCKUP PENDIENTE</span>
-                        </div>
-                        
-                        <!-- Decorative overlay -->
-                        <div class="absolute inset-0 bg-brand-red/5 mix-blend-overlay"></div>
-                    </div>
-                </div>
-
             </div>
+
+            <div class="lg:col-span-5 relative w-full flex items-center justify-center reveal-up delay-100 dev-video-wrapper">
+  <div class="static-reel-card">
+    <video 
+      src="./IMG/webs.mp4" 
+      autoplay 
+      muted 
+      loop 
+      playsinline
+      class="w-full h-full"
+    ></video>
+  </div>
+</div>
+
+
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- 4.4 Closing CTA -->
-    <section id="cta-final" class="py-32 bg-[var(--bg-body)] relative">
+    <section id="cta-final" class="section-block bg-[var(--bg-body)] relative">
         <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
             <div class="w-[800px] h-[800px] bg-brand-red/5 rounded-full blur-[150px]"></div>
         </div>
 
         <div class="max-w-4xl mx-auto px-6 text-center relative z-10 reveal-up">
-            <h2 class="text-5xl md:text-6xl font-bold text-[var(--text-main)] mb-10 tracking-tight">¿Listo para crear tu sitio web?</h2>
+            <h2 class="heading-hero mb-10 text-[var(--text-main)]">
+    ¿Listo para crear tu sitio web?
+</h2>
             
-            <a href="contacto.html" class="inline-block bg-brand-red text-white px-12 py-5 rounded-full font-bold text-xl hover:bg-red-700 hover:shadow-[0_0_40px_rgba(190,24,37,0.5)] hover:scale-105 transition-all duration-300">
-                Contactanos
-            </a>
-            
+            <a href="contacto.html" class="btn-cta btn-cta--primary">
+  Contactanos
+</a>
+           
             <p class="mt-6 text-[var(--text-muted)] text-sm">Sin compromiso. Hablemos de tu proyecto.</p>
         </div>
     </section>
@@ -348,7 +341,7 @@
                 <p class="text-[var(--text-muted)] mb-8 max-w-sm">
                     Agencia de marketing digital enfocada en datos y creatividad. Transformamos tu presencia digital en resultados medibles.
                 </p>
-                <h4 class="font-bold text-[var(--text-main)] mb-4">¡Seguinos!</h4>
+                <h3 class="font-bold text-[var(--text-main)] mb-4">¡Seguinos!</h3>
                 <div class="flex gap-4">
                     <a href="https://instagram.com/Kayso_marketingdecontenidos" class="w-12 h-12 rounded-full crystal-glass flex items-center justify-center text-xl text-[var(--text-main)] hover:text-brand-red hover:border-brand-red transition-all" title="Instagram">
                         <i class="fab fa-instagram"></i>
@@ -384,7 +377,7 @@
                 <ul class="space-y-4">
                     <li><a href="index.html" class="text-[var(--text-muted)] hover:text-brand-red transition-colors">Inicio</a></li>
                     <li><a href="desarrollo-web.html" class="text-[var(--text-main)] font-bold cursor-default">Desarrollo Web</a></li>
-                    <li><a href="branding.html" class="text-[var(--text-muted)] hover:text-brand-red transition-colors">Branding Digital</a></li>
+                    <li><a href="branding-digital.html" class="text-[var(--text-muted)] hover:text-brand-red transition-colors">Branding Digital</a></li>
                     <li><a href="redes-sociales.html" class="text-[var(--text-muted)] hover:text-brand-red transition-colors">Redes Sociales</a></li>
                     <li><a href="publicidad.html" class="text-[var(--text-muted)] hover:text-brand-red transition-colors">Publicidad</a></li>
                 </ul>
@@ -397,113 +390,19 @@
     </div>
 </footer>
 
-    <!-- Scripts -->
-<script>
-    // --- 1. Shared Logic (Theme, Mobile Menu, Scroll) ---
+ 
+ <a href="https://wa.me/5493517064753?text=Hola,%20vi%20su%20web%20y%20me%20interesa%20mejorar%20mis%20redes." 
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Contactar por WhatsApp" 
+   class="fixed bottom-6 right-5 md:bottom-10 md:right-8 z-[9999] group flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-[#25D366] rounded-full shadow-[0_4px_14px_0_rgba(37,211,102,0.39)] transition-all duration-300 hover:scale-110 hover:shadow-[0_6px_20px_rgba(37,211,102,0.23)] focus:outline-none focus:ring-4 focus:ring-green-300">
+    
+    <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-20 animate-ping group-hover:animate-none"></span>
 
-    // THEME TOGGLE (desktop + mobile)
-    const themeToggleBtn = document.getElementById('theme-toggle');              // botón desktop
-    const mobileThemeToggleBtn = document.getElementById('mobile-theme-toggle'); // botón mobile
-    const darkIcon = document.querySelector('.dark-icon');
-    const lightIcon = document.querySelector('.light-icon');
-
-    function setTheme(theme) {
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
-
-        // Proteger por si no hay iconos en alguna página
-        if (darkIcon && lightIcon) {
-            if (theme === 'light') {
-                darkIcon.classList.remove('hidden');
-                lightIcon.classList.add('hidden');
-            } else {
-                lightIcon.classList.remove('hidden');
-                darkIcon.classList.add('hidden');
-            }
-        }
-    }
-
-    // Tema inicial (usa el guardado o dark por defecto)
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    setTheme(savedTheme);
-
-    function toggleTheme() {
-        const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-        setTheme(currentTheme === 'light' ? 'dark' : 'light');
-    }
-
-    // Conectar botones si existen
-    if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', toggleTheme);
-    }
-    if (mobileThemeToggleBtn) {
-        mobileThemeToggleBtn.addEventListener('click', toggleTheme);
-    }
-
-    // MOBILE MENU
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const closeMobileMenuBtn = document.getElementById('close-mobile-menu');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    function toggleMenu() {
-        if (!mobileMenu) return;
-        mobileMenu.classList.toggle('translate-x-full');
-    }
-
-    if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener('click', toggleMenu);
-    }
-    if (closeMobileMenuBtn) {
-        closeMobileMenuBtn.addEventListener('click', toggleMenu);
-    }
-
-    // Cerrar menú al hacer click en un link del menú mobile
-    document.querySelectorAll('#mobile-menu .mobile-link').forEach(link => {
-        link.addEventListener('click', () => {
-            if (!mobileMenu) return;
-            mobileMenu.classList.add('translate-x-full');
-        });
-    });
-
-    // REVEAL-UP con IntersectionObserver
-    const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                revealObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.reveal-up').forEach(el => revealObserver.observe(el));
-
-        // --- 2. Page Specific: 3D Tilt Effect for Hero Card ---
-        
-        const heroCard = document.getElementById('hero-card');
-        const tiltContainer = document.querySelector('.tilt-container');
-
-        if(heroCard && tiltContainer) {
-            tiltContainer.addEventListener('mousemove', (e) => {
-                const rect = tiltContainer.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                // Calculate center
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                
-                // Calculate rotation (Max 10 degrees)
-                const rotateX = ((y - centerY) / centerY) * -10;
-                const rotateY = ((x - centerX) / centerX) * 10;
-
-                heroCard.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-            });
-
-            // Reset on mouse leave
-            tiltContainer.addEventListener('mouseleave', () => {
-                heroCard.style.transform = `rotateX(0deg) rotateY(0deg)`;
-            });
-        }
-    </script>
+    <svg class="w-7 h-7 md:w-8 md:h-8 text-white fill-current relative z-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-4-10.5-6.7z"/>
+    </svg>
+</a>
+<script type="module" src="/src/main.js"></script>
 </body>
 </html>
