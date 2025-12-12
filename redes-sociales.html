@@ -10,7 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
-    
+    <link rel="icon" type="image/png" sizes="32x32" href="/IMG/isologokayso-01.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/IMG/isologokayso-01.png">
+<link rel="apple-touch-icon" href="/IMG/isologokayso-01.png">
     <!-- Tailwind CSS -->
    
     
@@ -36,7 +38,7 @@
   <div class="crystal-glass rounded-b-2xl mx-2 md:mx-6 px-4 md:px-6 py-3 md:py-4 flex justify-between items-center">
 
     <!-- LOGO -->
-    <a href="index.html#inicio"
+    <a href="/"
        aria-label="Volver al inicio"
        class="flex items-center gap-2 group hover:opacity-80 transition-opacity">
       <img
@@ -78,7 +80,7 @@
           <i class="fas fa-sun light-icon hidden text-yellow-500"></i>
         </button>
 
-        <a href="index.html#inicio" class="hover:text-brand-red transition-colors">
+        <a href="/" class="hover:text-brand-red transition-colors">
           Inicio
         </a>
 
@@ -174,6 +176,7 @@
   </div>
 </header>
 
+<main id="main-content" class="w-full">
 
 <!-- HERO -->
 <section class="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden">
@@ -384,8 +387,6 @@
       Algunas de las piezas, campañas y contenidos que hemos creado para distintas marcas y proyectos.
     </p> 
   </div>
-
-  <div class="relative w-full overflow-hidden marquee-mask">
     
     <!-- 🔼 FILA SUPERIOR: MUEVE A LA DERECHA -->
     <div class="social-row social-row--right mb-6">
@@ -413,8 +414,7 @@
       <div class="w-[300px] h-[350px] rounded-xl overflow-hidden cursor-pointer group relative">
         <video 
           class="lazy-video w-full h-full object-cover"
-          data-src="./IMG/redes-sociales-2.mp4"
-          preload="none"
+          src="./IMG/redes-sociales-2.mp4"
           autoplay 
           muted 
           loop 
@@ -446,8 +446,7 @@
       <div class="w-[300px] h-[350px] rounded-xl overflow-hidden cursor-pointer group relative">
         <video 
           class="lazy-video w-full h-full object-cover"
-          data-src="./IMG/redes-sociales-2.mp4"
-          preload="none"
+          src="./IMG/redes-sociales-2.mp4"
           autoplay 
           muted 
           loop 
@@ -462,8 +461,7 @@
       <div class="w-[270px] h-[480px] rounded-xl overflow-hidden cursor-pointer group relative">
         <video 
           class="lazy-video w-full h-full object-cover"
-          data-src="./IMG/historia-redes-vitalg.mp4"
-          preload="none"
+          src="./IMG/historia-redes-vitalg.mp4"
           autoplay 
           muted 
           loop 
@@ -482,8 +480,7 @@
       <div class="w-[270px] h-[480px] rounded-xl overflow-hidden cursor-pointer group relative">
         <video 
           class="lazy-video w-full h-full object-cover"
-          data-src="./IMG/vitalg1.mp4"
-          preload="none"
+          src="./IMG/vitalg-1.mp4"
           autoplay 
           muted 
           loop 
@@ -502,8 +499,7 @@
       <div class="w-[270px] h-[480px] rounded-xl overflow-hidden cursor-pointer group relative">
         <video 
           class="lazy-video w-full h-full object-cover"
-          data-src="./IMG/3d para publicitar (1)_1.mp4"
-          preload="none"
+          src="./IMG/3d-redes.mp4"
           autoplay 
           muted 
           loop 
@@ -519,8 +515,7 @@
       <div class="w-[270px] h-[480px] rounded-xl overflow-hidden cursor-pointer group relative">
         <video 
           class="lazy-video w-full h-full object-cover"
-          data-src="./IMG/historia-redes-vitalg.mp4"
-          preload="none"
+          src="./IMG/historia-redes-vitalg.mp4"
           autoplay 
           muted 
           loop 
@@ -539,8 +534,7 @@
       <div class="w-[270px] h-[480px] rounded-xl overflow-hidden cursor-pointer group relative">
         <video 
           class="lazy-video w-full h-full object-cover"
-          data-src="./IMG/vitalg1.mp4"
-          preload="none"
+          src="./IMG/vitalg-1.mp4"
           autoplay 
           muted 
           loop 
@@ -559,8 +553,7 @@
       <div class="w-[270px] h-[480px] rounded-xl overflow-hidden cursor-pointer group relative">
         <video 
           class="lazy-video w-full h-full object-cover"
-          data-src="./IMG/3d para publicitar (1)_1.mp4"
-          preload="none"
+          src="./IMG/3d-redes.mp4"
           autoplay 
           muted 
           loop 
@@ -575,8 +568,6 @@
 
   </div>
 </section>
-
-
     <!-- SECTION 5: FINAL CTA -->
     <section class="section-block bg-[var(--bg-body)] relative">
         <!-- Subtle accent -->
@@ -593,6 +584,7 @@
             <p class="mt-6 text-sm text-[var(--text-muted)]">Primera reunión estratégica sin costo ni compromiso.</p>
         </div>
     </section>
+</main>
 
     <!-- Footer -->
     <footer class="bg-[var(--bg-body)] border-t border-white/10 pt-20 pb-10">
@@ -610,7 +602,7 @@
                     </p>
                     <h4 class="font-bold text-[var(--text-main)] mb-4">¡Seguinos!</h4>
                     <div class="flex gap-4">
-                        <a href="https://instagram.com/Kayso_marketingdecontenidos" class="w-12 h-12 rounded-full crystal-glass flex items-center justify-center text-xl text-[var(--text-main)] hover:text-brand-red hover:border-brand-red transition-all" title="Instagram">
+                        <a href="https://www.instagram.com/kayso_marketing.ia" class="w-12 h-12 rounded-full crystal-glass flex items-center justify-center text-xl text-[var(--text-main)] hover:text-brand-red hover:border-brand-red transition-all" title="Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
                         <a href="https://wa.me/5493517064753" target="_blank" class="w-12 h-12 rounded-full crystal-glass flex items-center justify-center text-xl text-[var(--text-main)] hover:text-green-500 hover:border-green-500 transition-all" title="WhatsApp">

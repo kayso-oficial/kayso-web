@@ -190,205 +190,107 @@ window.toggleBio = function (person) {
    desarrollo web
    ========================================= */
 document.addEventListener('DOMContentLoaded', () => {
-    const outputEl = document.getElementById('code-container');
-    const editorWrapper = document.getElementById('code-editor');
+  const outputEl = document.getElementById('code-container');
+  const editorWrapper = document.getElementById('code-editor');
 
-    // PROTECCIÓN: Solo ejecutamos si existen los elementos
-    if (outputEl && editorWrapper) {
+  // PROTECCIÓN: Solo ejecutamos si existen los elementos
+  if (outputEl && editorWrapper) {
+    // CONFIGURACIÓN DEL CÓDIGO AQUÍ
+    const codeContent = [
+      { text: "const", type: "s-k" },
+      { text: " ", type: "" }, 
+      { text: "agencia", type: "s-v" },
+      { text: " ", type: "" },
+      { text: "=", type: "s-p" },
+      { text: " ", type: "" },
+      { text: "{", type: "s-p" },
+      { text: "\n  ", type: "" },
+      
+      { text: "nombre", type: "s-o" },
+      { text: ":", type: "s-p" },
+      { text: " ", type: "" },
+      { text: "'KA&SO'", type: "s-brand" },
+      { text: ",", type: "s-p" },
+      { text: "\n  ", type: "" },
 
-        // CONFIGURACIÓN DEL CÓDIGO AQUÍ
-        const codeContent = [
-            { text: "const", type: "s-k" },
-            { text: " ", type: "" }, 
-            { text: "agencia", type: "s-v" },
-            { text: " ", type: "" },
-            { text: "=", type: "s-p" },
-            { text: " ", type: "" },
-            { text: "{", type: "s-p" },
-            { text: "\n  ", type: "" },
-            
-            { text: "nombre", type: "s-o" },
-            { text: ":", type: "s-p" },
-            { text: " ", type: "" },
-            { text: "'KA&SO'", type: "s-brand" },
-            { text: ",", type: "s-p" },
-            { text: "\n  ", type: "" },
+      { text: "expertos", type: "s-o" },
+      { text: ":", type: "s-p" },
+      { text: " ", type: "" },
+      { text: "[", type: "s-p" },
+      { text: "'Web'", type: "s-s" },
+      { text: ",", type: "s-p" },
+      { text: " ", type: "" },
+      { text: "'SEO'", type: "s-s" },
+      { text: "]", type: "s-p" },
+      { text: ",", type: "s-p" },
+      { text: "\n  ", type: "" },
 
-            { text: "expertos", type: "s-o" },
-            { text: ":", type: "s-p" },
-            { text: " ", type: "" },
-            { text: "[", type: "s-p" },
-            { text: "'Web'", type: "s-s" },
-            { text: ",", type: "s-p" },
-            { text: " ", type: "" },
-            { text: "'SEO'", type: "s-s" },
-            { text: "]", type: "s-p" },
-            { text: ",", type: "s-p" },
-            { text: "\n  ", type: "" },
+      { text: "resultado", type: "s-o" },
+      { text: ":", type: "s-p" },
+      { text: " ", type: "" },
+      { text: "'Crecimiento 🚀'", type: "s-s" },
+      { text: "\n", type: "" },
+      { text: "};", type: "s-p" },
+      
+      { text: "\n\n", type: "" },
+      { text: "// Transformamos tu negocio", type: "s-c" },
+      { text: "\n", type: "" },
+      { text: "function", type: "s-k" },
+      { text: " ", type: "" },
+      { text: "boost", type: "s-f" },
+      { text: "()", type: "s-p" },
+      { text: " ", type: "" },
+      { text: "{", type: "s-p" },
+      { text: "\n  ", type: "" },
+      { text: "return", type: "s-k" },
+      { text: " ", type: "" },
+      { text: "\"Éxito Garantizado\"", type: "s-s" },
+      { text: ";", type: "s-p" },
+      { text: "\n", type: "" },
+      { text: "}", type: "s-p" }
+    ];
 
-            { text: "resultado", type: "s-o" },
-            { text: ":", type: "s-p" },
-            { text: " ", type: "" },
-            { text: "'Crecimiento 🚀'", type: "s-s" },
-            { text: "\n", type: "" },
-            { text: "};", type: "s-p" },
-            
-            { text: "\n\n", type: "" },
-            { text: "// Transformamos tu negocio", type: "s-c" },
-            { text: "\n", type: "" },
-            { text: "function", type: "s-k" },
-            { text: " ", type: "" },
-            { text: "boost", type: "s-f" },
-            { text: "()", type: "s-p" },
-            { text: " ", type: "" },
-            { text: "{", type: "s-p" },
-            { text: "\n  ", type: "" },
-            { text: "return", type: "s-k" },
-            { text: " ", type: "" },
-            { text: "\"Éxito Garantizado\"", type: "s-s" },
-            { text: ";", type: "s-p" },
-            { text: "\n", type: "" },
-            { text: "}", type: "s-p" }
-        ];
+    // Parámetros de timing
+    const AUTO_START_DELAY = 800;  // ms (0.8s después de entrar a la página)
+    const TYPE_DELAY = 15;         // ms entre cada carácter
 
-        // Función para mostrar el código completo estático
-        const showStaticCode = () => {
-            outputEl.innerHTML = '';
-            codeContent.forEach(chunk => {
-                const el = document.createElement('span');
-                el.className = chunk.type;
-                el.textContent = chunk.text;
-                outputEl.appendChild(el);
-            });
-        };
+    let isTyping = false;
 
-        // Llamamos al inicio
-        showStaticCode();
+    // Función de animación (typewriter)
+    const playTypingAnimation = async () => {
+      if (isTyping) return;
+      isTyping = true;
+      
+      // Limpiamos el contenido para que se vea escribir desde cero
+      outputEl.innerHTML = ''; 
 
-        let isTyping = false;
+      for (const chunk of codeContent) {
+        const el = document.createElement('span');
+        el.className = chunk.type; 
+        outputEl.appendChild(el);
 
-        // Función de animación
-        const playTypingAnimation = async () => {
-            if (isTyping) return;
-            isTyping = true;
-            
-            outputEl.innerHTML = ''; 
-
-            for (const chunk of codeContent) {
-                const el = document.createElement('span');
-                el.className = chunk.type; 
-                outputEl.appendChild(el);
-
-                for (let char of chunk.text) {
-                    el.textContent += char;
-                    await new Promise(r => setTimeout(r, 15)); 
-                }
-            }
-            isTyping = false;
-        };
-
-        // Activador: Mouse Enter
-        editorWrapper.addEventListener('mouseenter', () => {
-            if (!isTyping) {
-                playTypingAnimation();
-            }
-        });
-    } // Fin del IF de protección
-});
-// JS PARA ROTACIÓN AUTOMÁTICA + DRAG
-document.addEventListener('DOMContentLoaded', () => {
-    const ring = document.getElementById('carouselRing');
-    const container = document.querySelector('.carousel-container');
-    
-    // PROTECCIÓN: Solo ejecutamos si existen el anillo y el contenedor
-    if (ring && container) {
-        
-        const cards = document.querySelectorAll('.carousel-card');
-        
-        // CONFIGURACIÓN
-        const cardCount = cards.length;
-        const radius = 240; 
-        const autoSpeed = 0.2; 
-        const dragSpeed = 0.5; 
-        
-        let currentAngle = 0;
-        let targetAngle = 0;
-        let isDragging = false;
-        let startX = 0;
-        let lastX = 0;
-        let autoRotateActive = true;
-        let resumeAutoTimeout;
-
-        // 1. POSICIONAMIENTO INICIAL
-        const anglePerCard = 360 / cardCount;
-
-        cards.forEach((card, index) => {
-            const theta = anglePerCard * index;
-            card.style.transform = `rotateY(${theta}deg) translateZ(${radius}px)`;
-        });
-
-        // 2. BUCLE DE ANIMACIÓN
-        function animate() {
-            if (autoRotateActive && !isDragging) {
-                targetAngle -= autoSpeed;
-            }
-
-            currentAngle += (targetAngle - currentAngle) * 0.1;
-
-            // Aquí es donde fallaba antes si ring era null
-            ring.style.transform = `rotateY(${currentAngle}deg)`;
-
-            requestAnimationFrame(animate);
+        for (let char of chunk.text) {
+          el.textContent += char;
+          await new Promise(r => setTimeout(r, TYPE_DELAY));
         }
-        
-        // Iniciar loop
-        animate();
+      }
+      isTyping = false;
+    };
 
-        // 3. EVENTOS DE ARRASTRE
-        const startDrag = (e) => {
-            isDragging = true;
-            autoRotateActive = false; 
-            clearTimeout(resumeAutoTimeout);
-            
-            startX = e.pageX || e.touches[0].pageX;
-            lastX = startX;
-            
-            container.style.cursor = 'grabbing';
-        };
+    // 1) Lanzar animación automáticamente al entrar a la página
+    setTimeout(() => {
+      playTypingAnimation();
+    }, AUTO_START_DELAY);
 
-        const onDrag = (e) => {
-            if (!isDragging) return;
-            
-            const x = e.pageX || e.touches[0].pageX;
-            const deltaX = x - lastX;
-            
-            targetAngle += deltaX * dragSpeed;
-            lastX = x;
-        };
-
-        const endDrag = () => {
-            isDragging = false;
-            container.style.cursor = 'grab';
-
-            resumeAutoTimeout = setTimeout(() => {
-                autoRotateActive = true;
-            }, 2000);
-        };
-
-        container.addEventListener('mousedown', startDrag);
-        container.addEventListener('touchstart', startDrag, {passive: true});
-
-        window.addEventListener('mousemove', onDrag);
-        window.addEventListener('touchmove', onDrag, {passive: true});
-
-        window.addEventListener('mouseup', endDrag);
-        window.addEventListener('touchend', endDrag);
-        
-        window.addEventListener('mouseleave', () => {
-            if(isDragging) endDrag();
-        });
-    } // Fin del IF de protección
+    // 2) Permitir re-lanzarla al pasar el mouse por el editor
+    editorWrapper.addEventListener('mouseenter', () => {
+      if (!isTyping) {
+        playTypingAnimation();
+      }
+    });
+  } // Fin del IF de protección
 });
+
 /* =========================================    <-- Agregá la barra aquí
    contacto
    ========================================= */
@@ -442,19 +344,16 @@ document.addEventListener("DOMContentLoaded", () => {
           const video = entry.target;
 
           if (entry.isIntersecting) {
-            // Si aún no tiene src, se lo seteamos desde data-src
-            if (!video.src && video.dataset.src) {
-              video.src = video.dataset.src;
-            }
+  // Si llegara a haber algún video que todavía use data-src, lo cubrimos igual
+  if (!video.src && video.dataset.src) {
+    video.src = video.dataset.src;
+  }
 
-            // Intentamos reproducirlo
-            video.play().catch(() => {
-              // En caso de que el navegador bloquee el autoplay, lo ignoramos
-            });
-          } else {
-            // Al salir de la vista, pausamos el video
-            video.pause();
-          }
+  video.play().catch(() => {});
+} else {
+  video.pause();
+}
+
         });
       },
       {

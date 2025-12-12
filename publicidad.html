@@ -6,11 +6,23 @@
     <title>Publicidad en Meta y Google | KA&SO</title>
     <meta name="description" content="Publicidad digital en Córdoba para negocios que quieren dejar de improvisar y empezar a invertir en anuncios que traen clientes reales en Meta y Google.">
     <link rel="canonical" href="https://kayso-oficial.com/publicidad" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/IMG/isologokayso-01.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/IMG/isologokayso-01.png">
+<link rel="apple-touch-icon" href="/IMG/isologokayso-01.png">
     <!-- Fonts: Nunito Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
-    
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LCYKNW5QD4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LCYKNW5QD4');
+</script>
+  
     
     
     <!-- FontAwesome -->
@@ -27,7 +39,7 @@
   <div class="crystal-glass rounded-b-2xl mx-2 md:mx-6 px-4 md:px-6 py-3 md:py-4 flex justify-between items-center">
     
     <!-- LOGO -->
-    <a href="index.html#inicio" aria-label="Volver al inicio"
+    <a href="/" aria-label="Volver al inicio"
        class="flex items-center gap-2 group hover:opacity-80 transition-opacity">
       <img src="IMG/LOGOLETRA.webp" alt="KA&SO - Agencia de Marketing & IA" class="h-4 w-auto">
     </a>
@@ -62,7 +74,7 @@
           <i class="fas fa-sun light-icon hidden text-yellow-500"></i>
         </button>
 
-        <a href="index.html#inicio" class="hover:text-brand-red transition-colors">
+        <a href="/" class="hover:text-brand-red transition-colors">
           Inicio
         </a>
 
@@ -119,7 +131,7 @@
       <i class="fas fa-times"></i>
     </button>
 
-    <a href="index.html#inicio" class="text-2xl font-bold text-white mobile-link">Inicio</a>
+    <a href="/" class="text-2xl font-bold text-white mobile-link">Inicio</a>
 
     <div class="flex flex-col items-center gap-2">
       <span class="text-2xl font-bold text-white">Servicios</span>
@@ -134,6 +146,7 @@
     <a href="contacto.html" class="text-2xl font-bold text-brand-red mobile-link">Contacto</a>
   </div>
 </header>
+<main id="main-content" class="w-full">
 
 
 
@@ -616,27 +629,19 @@
 
 <!-- SECTION 3: ROTATING TEXT -->
 <section class="section-block bg-[var(--bg-body)] relative flex items-center justify-center text-center overflow-hidden">
-    <div class="absolute inset-0 bg-brand-red/5 mix-blend-overlay pointer-events-none"></div>
-    
-    <div class="max-w-4xl mx-auto px-6 relative z-10 reveal-up">
-        <h2
-  class="heading-hero
-         flex flex-col md:flex-row items-center justify-center
-         gap-3 md:gap-4 leading-tight md:whitespace-nowrap
-         text-center md:text-left"
->
-  <span>Con KA&SO tu marca obtiene</span>
-
-  <span class="text-brand-red inline-block md:ml-2 md:min-w-[260px] text-center md:text-left">
-    <span id="rotating-text" class="rotate-text visible heading-hero-highlight">
-      más visibilidad
-    </span>
-  </span>
-</h2>
-
-
-    </div>
+  <div class="absolute inset-0 bg-brand-red/5 mix-blend-overlay pointer-events-none"></div>
+  
+  <div class="max-w-4xl mx-auto px-6 relative z-10 reveal-up">
+    <h2 class="heading-hero text-center leading-tight">
+      Con KA&SO tu marca obtiene
+      <br class="hidden md:block" />
+      <span id="rotating-text" class="rotate-text visible heading-hero-highlight text-brand-red">
+        más visibilidad
+      </span>
+    </h2>
+  </div>
 </section>
+
 <!-- SECTION 4: FINAL CTA -->
 <section id="contacto" class="section-block bg-[var(--bg-body)] relative border-t border-white/5">
     <div class="max-w-4xl mx-auto px-6 text-center reveal-up">
@@ -657,6 +662,7 @@
 </p>
     </div>
 </section>
+</main>
 
     <!-- Footer -->
     <footer class="bg-[var(--bg-body)] border-t border-white/10 pt-20 pb-10">
@@ -673,7 +679,7 @@
                     </p>
                     <h4 class="font-bold text-[var(--text-main)] mb-4">¡Seguinos!</h4>
                     <div class="flex gap-4">
-                        <a href="https://instagram.com/Kayso_marketingdecontenidos" class="w-12 h-12 rounded-full crystal-glass flex items-center justify-center text-xl text-[var(--text-main)] hover:text-brand-red hover:border-brand-red transition-all" title="Instagram">
+                        <a href="https://www.instagram.com/kayso_marketing.ia" class="w-12 h-12 rounded-full crystal-glass flex items-center justify-center text-xl text-[var(--text-main)] hover:text-brand-red hover:border-brand-red transition-all" title="Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
                         <a href="https://wa.me/5493517064753" target="_blank" class="w-12 h-12 rounded-full crystal-glass flex items-center justify-center text-xl text-[var(--text-main)] hover:text-green-500 hover:border-green-500 transition-all" title="WhatsApp">
@@ -720,16 +726,6 @@
         </div>
     </footer>
 
-    
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LCYKNW5QD4"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-LCYKNW5QD4');
-    </script>
 
     <!-- Botón flotante de WhatsApp -->
     <a href="https://wa.me/5493517064753?text=Hola,%20vi%20su%20web%20y%20me%20interesa%20mejorar%20mis%20redes." 
