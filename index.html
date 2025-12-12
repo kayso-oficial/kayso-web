@@ -231,16 +231,20 @@
 </div>
             <div class="v-item">
               <video src="IMG/PUBLICIDAD-CON-KAYSO2.mp4" autoplay muted loop playsinline></video>
+            
             </div>
             <div class="v-item">
               <video
-            src="IMG/agencia-marketing-card1.mp4"
+            src="IMG/agencia-marketing-card-1.mp4"
             autoplay
             muted
             loop
             playsinline
             class="w-full h-full object-contain bg-black transition-transform duration-500 group-hover:scale-105"
           ></video>
+         
+                <source src="IMG/agencia-marketing-card1-MOBILE.mp4" type="video/mp4" />
+              </video>
             </div>
             <div class="v-item">
               <video
@@ -251,16 +255,18 @@
             playsinline
             class="w-full h-full object-contain bg-black transition-transform duration-500 group-hover:scale-105"
           ></video>
+          
             </div>
             <div class="v-item">
               <video
-            src="IMG/agencia-marketing-card2.mp4"
+            src="IMG/agencia-marketing-card-2.mp4"
             autoplay
             muted
             loop
             playsinline
             class="w-full h-full object-contain bg-black transition-transform duration-500 group-hover:scale-105"
           ></video>
+        
             </div>
           </div>
         </div>
@@ -284,10 +290,6 @@
     <i class="fas fa-chevron-down text-xl"></i>
   </div>
 </section>
-
-
-
-
 <!-- 4.3 Floating Projects Carousel -->
 <section class="section-block relative overflow-hidden">
   <div class="max-w-7xl mx-auto px-6">
@@ -407,245 +409,231 @@
 </section>
 
 
-
 <section id="servicios" class="section-block section-bg relative overflow-hidden">
-    
-    <div class="max-w-7xl mx-auto px-6 relative z-10">
-        <div class="text-center mb-16 reveal-up">
-            <span class="text-brand-red text-sm font-bold tracking-[0.2em] uppercase block mb-3">
-                CONSTRUIDO PARA TODAS LAS INDUSTRIAS
-            </span>
-            <h2 class="heading-section text-[var(--text-main)]">
-  Nuestros Servicios
-</h2>
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="text-center mb-16 reveal-up">
+      <span class="text-brand-red text-sm font-bold tracking-[0.2em] uppercase block mb-3">
+        CONSTRUIDO PARA TODAS LAS INDUSTRIAS
+      </span>
+      <h2 class="heading-section text-[var(--text-main)]">Nuestros Servicios</h2>
+    </div>
 
+    <!-- ===== MOBILE (stack, imagen cuadrada, sin acordeón) ===== -->
+    <div class="flex flex-col gap-4 md:hidden">
+
+      <!-- Card 1 -->
+      <a href="desarrollo-web.html" class="crystal-glass rounded-3xl overflow-hidden block">
+        <img
+          src="IMG/desarrollo-web-e1.webp"
+          loading="lazy"
+          decoding="async"
+          alt="Desarrollo Web"
+          class="w-full h-72 object-cover"
+          width="800"
+          height="800"
+        />
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-[var(--text-main)] mb-2">Desarrollo Web</h3>
+          <p class="text-sm text-[var(--text-muted)] mb-4">
+            Sitios de alto rendimiento, optimizados para conversión y diseñados para escalar.
+          </p>
+          <div class="inline-flex items-center gap-2 text-sm font-semibold text-brand-red">
+            Ver más <i class="fas fa-arrow-right text-xs"></i>
+          </div>
         </div>
+      </a>
 
-        <!-- ===== MOBILE (stack, imagen cuadrada, sin acordeón) ===== -->
-        <div class="flex flex-col gap-4 md:hidden">
-            <!-- Card 1 -->
-            <div class="crystal-glass rounded-3xl overflow-hidden">
-                <img
-                    src="IMG/desarrollo-web-e1.webp"
-                    loading="lazy"
-                    alt="Desarrollo Web"
-                    class="w-full h-72 object-cover"
-                >
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-[var(--text-main)] mb-2">
-                        Desarrollo Web
-                    </h3>
-                    <p class="text-sm text-[var(--text-muted)] mb-4">
-                        Sitios de alto rendimiento, optimizados para conversión y diseñados para escalar.
-                    </p>
-                    <a href="desarrollo-web.html" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-red">
-                        Ver más <i class="fas fa-arrow-right text-xs"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="crystal-glass rounded-3xl overflow-hidden">
-                <img
-                    src="IMG/branding-digital-index.webp"
-                    loading="lazy"
-                    alt="Branding Digital"
-                    class="w-full h-72 object-cover"
-                >
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-[var(--text-main)] mb-2">
-                        Branding Digital
-                    </h3>
-                    <p class="text-sm text-[var(--text-muted)] mb-4">
-                        Identidad visual estratégica que conecta valores con audiencia.
-                    </p>
-                    <a href="branding-digital.html" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-red">
-                        Ver más <i class="fas fa-arrow-right text-xs"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="crystal-glass rounded-3xl overflow-hidden">
-                <img
-                    src="IMG/redes-sociales-index.webp"
-                    loading="lazy"
-                    alt="Redes Sociales"
-                    class="w-full h-72 object-cover"
-                >
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-[var(--text-main)] mb-2">
-                        Redes Sociales
-                    </h3>
-                    <p class="text-sm text-[var(--text-muted)] mb-4">
-                        Gestión de comunidad y contenido que genera engagement real.
-                    </p>
-                    <a href="redes-sociales.html" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-red">
-                        Ver más <i class="fas fa-arrow-right text-xs"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="crystal-glass rounded-3xl overflow-hidden">
-                <img
-                    src="IMG/publicidad-chart.webp"
-                    loading="lazy"
-                    alt="Publicidad"
-                    class="w-full h-72 object-cover"
-                >
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-[var(--text-main)] mb-2">
-                        Publicidad
-                    </h3>
-                    <p class="text-sm text-[var(--text-muted)] mb-4">
-                        Campañas de Paid Media orientadas a ROI positivo.
-                    </p>
-                    <a href="publicidad.html" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-red">
-                        Ver más <i class="fas fa-arrow-right text-xs"></i>
-                    </a>
-                </div>
-            </div>
+      <!-- Card 2 -->
+      <a href="branding-digital.html" class="crystal-glass rounded-3xl overflow-hidden block">
+        <img
+          src="IMG/branding-digital-index.webp"
+          loading="lazy"
+          decoding="async"
+          alt="Branding Digital"
+          class="w-full h-72 object-cover"
+          width="800"
+          height="800"
+        />
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-[var(--text-main)] mb-2">Branding Digital</h3>
+          <p class="text-sm text-[var(--text-muted)] mb-4">
+            Identidad visual estratégica que conecta valores con audiencia.
+          </p>
+          <div class="inline-flex items-center gap-2 text-sm font-semibold text-brand-red">
+            Ver más <i class="fas fa-arrow-right text-xs"></i>
+          </div>
         </div>
+      </a>
 
-<!-- ===== DESKTOP (acordeón pro con hover) ===== -->
-<div class="hidden md:flex h-[500px] gap-4 w-full">
-            
-  <!-- Card 1 -->
-  <div class="service-card group relative flex-1 hover:flex-[2] crystal-glass rounded-3xl overflow-hidden cursor-pointer transition-all duration-500">
-    <!-- Overlay suave general -->
-    <div class="absolute inset-0 bg-black/5 dark:bg-transparent group-hover:bg-black/40 dark:group-hover:bg-black/30 transition-colors z-10"></div>
+      <!-- Card 3 -->
+      <a href="redes-sociales.html" class="crystal-glass rounded-3xl overflow-hidden block">
+        <img
+          src="IMG/redes-sociales-index.webp"
+          loading="lazy"
+          decoding="async"
+          alt="Redes Sociales"
+          class="w-full h-72 object-cover"
+          width="800"
+          height="800"
+        />
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-[var(--text-main)] mb-2">Redes Sociales</h3>
+          <p class="text-sm text-[var(--text-muted)] mb-4">
+            Gestión de comunidad y contenido que genera engagement real.
+          </p>
+          <div class="inline-flex items-center gap-2 text-sm font-semibold text-brand-red">
+            Ver más <i class="fas fa-arrow-right text-xs"></i>
+          </div>
+        </div>
+      </a>
 
-    <!-- Imagen de fondo -->
-    <img 
-      src="IMG/desarrollo-web-e1.webp" 
-      loading="lazy"
-      alt="Desarrollo Web" 
-      class="service-bg w-full h-full object-cover absolute inset-0 transition-all bg-gray-200 dark:bg-gray-900"
-    >
+      <!-- Card 4 -->
+      <a href="publicidad.html" class="crystal-glass rounded-3xl overflow-hidden block">
+        <img
+          src="IMG/publicidad-chart.webp"
+          loading="lazy"
+          decoding="async"
+          alt="Publicidad"
+          class="w-full h-72 object-cover"
+          width="800"
+          height="800"
+        />
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-[var(--text-main)] mb-2">Publicidad</h3>
+          <p class="text-sm text-[var(--text-muted)] mb-4">
+            Campañas de Paid Media orientadas a ROI positivo.
+          </p>
+          <div class="inline-flex items-center gap-2 text-sm font-semibold text-brand-red">
+            Ver más <i class="fas fa-arrow-right text-xs"></i>
+          </div>
+        </div>
+      </a>
 
-    <!-- Franja inferior tipo glass pegada a la silueta -->
-    <div class="absolute inset-x-0 bottom-0 h-[32%] bg-gradient-to-t from-black/85 via-black/65 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
-                
-    <!-- Contenido -->
-    <div class="absolute bottom-0 left-0 w-full p-8 z-30 flex flex-col justify-end h-full">
-      <h3 class="text-2xl font-bold text-white mb-2 whitespace-nowrap">
-        Desarrollo Web
-      </h3>
-      <div class="max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-500 opacity-0 group-hover:opacity-100">
-        <p class="text-gray-200 text-sm mb-4">
-          Sitios de alto rendimiento, optimizados para conversión y diseñados para escalar.
-        </p>
-        <a href="desarrollo-web.html" class="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-brand-red transition-colors">
-          Ver más <i class="fas fa-arrow-right text-xs"></i>
-        </a>
+    </div>
+
+    <!-- ===== DESKTOP (acordeón pro con hover) ===== -->
+    <div class="hidden md:flex h-[500px] gap-4 w-full">
+
+      <!-- Card 1 -->
+      <div class="service-card group relative flex-1 hover:flex-[2] crystal-glass rounded-3xl overflow-hidden cursor-pointer transition-all duration-500">
+        <a href="desarrollo-web.html" class="absolute inset-0 z-40" aria-label="Ir a Desarrollo Web"></a>
+
+        <div class="absolute inset-0 bg-black/5 dark:bg-transparent group-hover:bg-black/40 dark:group-hover:bg-black/30 transition-colors z-10"></div>
+
+        <img 
+          src="IMG/desarrollo-web-e1.webp" 
+          loading="lazy"
+          decoding="async"
+          alt="Desarrollo Web" 
+          class="service-bg w-full h-full object-cover absolute inset-0 transition-all bg-gray-200 dark:bg-gray-900"
+        />
+
+        <div class="absolute inset-x-0 bottom-0 h-[32%] bg-gradient-to-t from-black/85 via-black/65 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
+
+        <div class="absolute bottom-0 left-0 w-full p-8 z-30 flex flex-col justify-end h-full">
+          <h3 class="text-2xl font-bold text-white mb-2 whitespace-nowrap">Desarrollo Web</h3>
+          <div class="max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-500 opacity-0 group-hover:opacity-100">
+            <p class="text-gray-200 text-sm mb-4">
+              Sitios de alto rendimiento, optimizados para conversión y diseñados para escalar.
+            </p>
+            <div class="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-brand-red transition-colors">
+              Ver más <i class="fas fa-arrow-right text-xs"></i>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <!-- Card 2 -->
+      <div class="service-card group relative flex-1 hover:flex-[2] crystal-glass rounded-3xl overflow-hidden cursor-pointer transition-all duration-500">
+        <a href="branding-digital.html" class="absolute inset-0 z-40" aria-label="Ir a Branding Digital"></a>
+
+        <div class="absolute inset-0 bg-black/5 dark:bg-transparent group-hover:bg-black/40 dark:group-hover:bg-black/30 transition-colors z-10"></div>
+
+        <img 
+          src="IMG/branding-digital-index.webp" 
+          loading="lazy"
+          decoding="async"
+          alt="Branding Digital" 
+          class="service-bg w-full h-full object-cover absolute inset-0 transition-all bg-gray-200 dark:bg-gray-800"
+        />
+
+        <div class="absolute inset-x-0 bottom-0 h-[32%] bg-gradient-to-t from-black/85 via-black/65 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
+
+        <div class="absolute bottom-0 left-0 w-full p-8 z-30 flex flex-col justify-end h-full">
+          <h3 class="text-2xl font-bold text-white mb-2 whitespace-nowrap">Branding Digital</h3>
+          <div class="max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-500 opacity-0 group-hover:opacity-100">
+            <p class="text-gray-200 text-sm mb-4">
+              Identidad visual estratégica que conecta valores con audiencia.
+            </p>
+            <div class="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-brand-red transition-colors">
+              Ver más <i class="fas fa-arrow-right text-xs"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="service-card group relative flex-1 hover:flex-[2] crystal-glass rounded-3xl overflow-hidden cursor-pointer transition-all duration-500">
+        <a href="redes-sociales.html" class="absolute inset-0 z-40" aria-label="Ir a Redes Sociales"></a>
+
+        <div class="absolute inset-0 bg-black/5 dark:bg-transparent group-hover:bg-black/40 dark:group-hover:bg-black/30 transition-colors z-10"></div>
+
+        <img 
+          src="IMG/redes-sociales-index.webp" 
+          loading="lazy"
+          decoding="async"
+          alt="Redes Sociales" 
+          class="service-bg w-full h-full object-cover absolute inset-0 transition-all bg-gray-200 dark:bg-gray-900"
+        />
+
+        <div class="absolute inset-x-0 bottom-0 h-[32%] bg-gradient-to-t from-black/85 via-black/65 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
+
+        <div class="absolute bottom-0 left-0 w-full p-8 z-30 flex flex-col justify-end h-full">
+          <h3 class="text-2xl font-bold text-white mb-2 whitespace-nowrap">Redes Sociales</h3>
+          <div class="max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-500 opacity-0 group-hover:opacity-100">
+            <p class="text-gray-200 text-sm mb-4">
+              Gestión de comunidad y contenido que genera engagement real.
+            </p>
+            <div class="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-brand-red transition-colors">
+              Ver más <i class="fas fa-arrow-right text-xs"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="service-card group relative flex-1 hover:flex-[2] crystal-glass rounded-3xl overflow-hidden cursor-pointer transition-all duration-500">
+        <a href="publicidad.html" class="absolute inset-0 z-40" aria-label="Ir a Publicidad"></a>
+
+        <div class="absolute inset-0 bg-black/5 dark:bg-transparent group-hover:bg-black/40 dark:group-hover:bg-black/30 transition-colors z-10"></div>
+
+        <img 
+          src="IMG/publicidad-chart.webp" 
+          loading="lazy"
+          decoding="async"
+          alt="Publicidad" 
+          class="service-bg w-full h-full object-cover absolute inset-0 transition-all bg-gray-200 dark:bg-gray-800"
+        />
+
+        <div class="absolute inset-x-0 bottom-0 h-[32%] bg-gradient-to-t from-black/85 via-black/65 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
+
+        <div class="absolute bottom-0 left-0 w-full p-8 z-30 flex flex-col justify-end h-full">
+          <h3 class="text-2xl font-bold text-white mb-2 whitespace-nowrap">Publicidad</h3>
+          <div class="max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-500 opacity-0 group-hover:opacity-100">
+            <p class="text-gray-200 text-sm mb-4">
+              Campañas de Paid Media orientadas a ROI positivo.
+            </p>
+            <div class="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-brand-red transition-colors">
+              Ver más <i class="fas fa-arrow-right text-xs"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
-
-  <!-- Card 2 -->
-  <div class="service-card group relative flex-1 hover:flex-[2] crystal-glass rounded-3xl overflow-hidden cursor-pointer transition-all duration-500">
-    <!-- Overlay suave general -->
-    <div class="absolute inset-0 bg-black/5 dark:bg-transparent group-hover:bg-black/40 dark:group-hover:bg-black/30 transition-colors z-10"></div>
-
-    <!-- Imagen de fondo -->
-    <img 
-      src="IMG/branding-digital-index.webp" 
-      loading="lazy"
-      alt="Branding Digital" 
-      class="service-bg w-full h-full object-cover absolute inset-0 transition-all bg-gray-200 dark:bg-gray-800"
-    >
-
-    <!-- Franja inferior tipo glass pegada a la silueta -->
-    <div class="absolute inset-x-0 bottom-0 h-[32%] bg-gradient-to-t from-black/85 via-black/65 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
-                
-    <!-- Contenido -->
-    <div class="absolute bottom-0 left-0 w-full p-8 z-30 flex flex-col justify-end h-full">
-      <h3 class="text-2xl font-bold text-white mb-2 whitespace-nowrap">
-        Branding Digital
-      </h3>
-      <div class="max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-500 opacity-0 group-hover:opacity-100">
-        <p class="text-gray-200 text-sm mb-4">
-          Identidad visual estratégica que conecta valores con audiencia.
-        </p>
-        <a href="branding-digital.html" class="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-brand-red transition-colors">
-          Ver más <i class="fas fa-arrow-right text-xs"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Card 3 -->
-  <div class="service-card group relative flex-1 hover:flex-[2] crystal-glass rounded-3xl overflow-hidden cursor-pointer transition-all duration-500">
-    <!-- Overlay suave general -->
-    <div class="absolute inset-0 bg-black/5 dark:bg-transparent group-hover:bg-black/40 dark:group-hover:bg-black/30 transition-colors z-10"></div>
-
-    <!-- Imagen de fondo -->
-    <img 
-      src="IMG/redes-sociales-index.webp" 
-      loading="lazy"
-      alt="Redes Sociales" 
-      class="service-bg w-full h-full object-cover absolute inset-0 transition-all bg-gray-200 dark:bg-gray-900"
-    >
-
-    <!-- Franja inferior tipo glass pegada a la silueta -->
-    <div class="absolute inset-x-0 bottom-0 h-[32%] bg-gradient-to-t from-black/85 via-black/65 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
-                
-    <!-- Contenido -->
-    <div class="absolute bottom-0 left-0 w-full p-8 z-30 flex flex-col justify-end h-full">
-      <h3 class="text-2xl font-bold text-white mb-2 whitespace-nowrap">
-        Redes Sociales
-      </h3>
-      <div class="max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-500 opacity-0 group-hover:opacity-100">
-        <p class="text-gray-200 text-sm mb-4">
-          Gestión de comunidad y contenido que genera engagement real.
-        </p>
-        <a href="redes-sociales.html" class="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-brand-red transition-colors">
-          Ver más <i class="fas fa-arrow-right text-xs"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Card 4 -->
-  <div class="service-card group relative flex-1 hover:flex-[2] crystal-glass rounded-3xl overflow-hidden cursor-pointer transition-all duration-500">
-    <!-- Overlay suave general -->
-    <div class="absolute inset-0 bg-black/5 dark:bg-transparent group-hover:bg-black/40 dark:group-hover:bg-black/30 transition-colors z-10"></div>
-
-    <!-- Imagen de fondo -->
-    <img 
-      src="IMG/publicidad-chart.webp" 
-      loading="lazy"
-      alt="Publicidad" 
-      class="service-bg w-full h-full object-cover absolute inset-0 transition-all bg-gray-200 dark:bg-gray-800"
-    >
-
-    <!-- Franja inferior tipo glass pegada a la silueta -->
-    <div class="absolute inset-x-0 bottom-0 h-[32%] bg-gradient-to-t from-black/85 via-black/65 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
-                
-    <!-- Contenido -->
-    <div class="absolute bottom-0 left-0 w-full p-8 z-30 flex flex-col justify-end h-full">
-      <h3 class="text-2xl font-bold text-white mb-2 whitespace-nowrap">
-        Publicidad
-      </h3>
-      <div class="max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-500 opacity-0 group-hover:opacity-100">
-        <p class="text-gray-200 text-sm mb-4">
-          Campañas de Paid Media orientadas a ROI positivo.
-        </p>
-        <a href="publicidad.html" class="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-brand-red transition-colors">
-          Ver más <i class="fas fa-arrow-right text-xs"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-
-</div>
-
-    </div>
 </section>
+
 
 <!-- 4.6 Sobre Nosotros / SOMOS KA&SO -->
 <section id="somos" class="scroll-mt-32 section-block section-bg border-t border-white/5 relative overflow-hidden">
@@ -1379,7 +1367,7 @@
                         <img src="IMG/isologokayso.webp" alt="KA&SO" class="h-10 w-auto object-contain">
                     </div>
                     <p class="text-[var(--text-muted)] mb-8 max-w-sm">
-                        Agencia de marketing digital enfocada en datos y creatividad. Transformamos tu presencia digital en resultados medibles.
+                        Agencia de marketing digital e IA enfocada en datos y creatividad. Transformamos tu presencia digital en resultados medibles.
                     </p>
                     <h3 class="font-bold mb-4">¡Seguinos!</h3>
                     <div class="flex gap-4">
