@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog de Marketing Digital e IA | KA&SO</title>
+  <meta name="description" content="Artículos de estrategia, publicidad digital, branding y automatización con IA. Análisis y soluciones para potenciar tu negocio con datos.">
+  <link rel="canonical" href="https://kayso-oficial.com/blog.html" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/IMG/isologokayso-01.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/IMG/isologokayso-01.png">
+  <link rel="apple-touch-icon" href="/IMG/isologokayso-01.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+
+  <meta property="og:title" content="Blog de Marketing Digital e IA | KA&SO">
+  <meta property="og:description" content="Estrategias de crecimiento, análisis de datos y publicidad digital para empresas.">
+  <meta property="og:image" content="https://kayso-oficial.com/IMG/og-blog.jpg">
+  <meta property="og:url" content="https://kayso-oficial.com/blog.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./styles.css">
+
+  <script>
+    (function () {
+      try {
+        const saved = localStorage.getItem('theme');
+        if (saved === 'light' || saved === 'dark') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+
+<body class="font-sans antialiased overflow-x-hidden selection:bg-brand-red selection:text-white">
+
+  <div id="site-header"></div>
+
+  <main id="main-content" class="w-full">
+
+    <!-- HERO -->
+    <section class="section-block relative pt-32 md:pt-40 pb-12 overflow-hidden">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-brand-red/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+        <nav aria-label="Breadcrumb" class="mb-6 flex justify-center text-sm text-[var(--text-muted)] reveal-up">
+          <ol class="flex items-center gap-2">
+            <li><a href="/" class="hover:text-brand-red transition-colors">Inicio</a></li>
+            <li><span class="text-white/20">/</span></li>
+            <li class="text-[var(--text-main)] font-semibold" aria-current="page">Blog</li>
+          </ol>
+        </nav>
+
+        <div class="reveal-up">
+          <span class="inline-block py-1 px-3 rounded-full bg-brand-red/10 border border-brand-red/20 text-brand-red text-xs font-bold tracking-[0.2em] uppercase mb-4">
+            Insights & Tendencias
+          </span>
+          <h1 class="heading-hero mb-6">
+            Blog de <span class="text-brand-red">Marketing</span>
+          </h1>
+          <p class="subtitle-muted max-w-2xl mx-auto mb-10">
+            Análisis estratégicos, novedades en inteligencia artificial y guías prácticas para fortalecer la presencia digital de tu empresa.
+          </p>
+        </div>
+
+        <!-- Opcional: si querés, lo dejamos. Con un solo post es prescindible -->
+        <div class="reveal-up delay-100 flex flex-col md:flex-row items-center justify-center gap-3">
+          <a href="#posts" class="px-5 py-2 rounded-full bg-brand-red text-white text-sm font-bold shadow-[0_0_15px_rgba(190,24,37,0.4)] transition-all">
+            Ver artículo
+          </a>
+
+          <label class="w-full md:w-[420px] crystal-glass rounded-full px-4 py-2 flex items-center gap-2 border border-white/10">
+            <i class="fas fa-search text-white/40 text-sm"></i>
+            <input
+              id="blogSearch"
+              type="search"
+              placeholder="Buscar por tema (ej: navidad, ads, seo...)"
+              class="bg-transparent outline-none w-full text-sm text-[var(--text-main)] placeholder:text-white/40"
+            />
+          </label>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- POSTS -->
+    <section class="section-block relative pb-20" id="posts">
+      <div class="max-w-7xl mx-auto px-6">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <!-- ÚNICO ARTÍCULO: NAVIDAD -->
+          <article class="group crystal-glass rounded-2xl overflow-hidden hover-card transition-all duration-300 reveal-up">
+            <!-- AJUSTE: link a tu carpeta Blog/navidad.html -->
+            <a href="Blog/navidad.html" class="block relative h-56 overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+
+              <img
+                src="IMG/ia-navidad-portada.webp"
+                alt="IA en campañas de Navidad 2025"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              >
+
+              <span class="absolute top-4 left-4 z-20 px-3 py-1 bg-black/60 backdrop-blur-md rounded-full text-xs font-bold text-white border border-white/10">
+                Marketing & IA
+              </span>
+            </a>
+
+            <div class="p-6">
+              <div class="flex items-center gap-3 text-xs text-[var(--text-muted)] mb-3">
+                <time datetime="2025-12-14">
+                  <i class="far fa-calendar-alt mr-1"></i> 14 Dic, 2025
+                </time>
+                <span><i class="far fa-clock mr-1"></i> 8 min lectura</span>
+              </div>
+
+              <h2 class="text-xl font-bold text-[var(--text-main)] mb-3 leading-tight group-hover:text-brand-red transition-colors">
+                <a href="Blog/navidad.html">IA en Navidad 2025: eficiencia, creatividad y límites</a>
+              </h2>
+
+              <p class="text-sm text-[var(--text-muted)] mb-4 line-clamp-2">
+                Un análisis sobre cómo las marcas están utilizando inteligencia artificial en campañas navideñas y por qué la ejecución creativa sigue siendo clave.
+              </p>
+
+              <a
+                href="Blog/navidad.html"
+                class="inline-flex items-center gap-2 text-sm font-bold text-brand-red hover:underline underline-offset-4"
+              >
+                Leer artículo <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+              </a>
+            </div>
+          </article>
+
+
+            </div>
+            
+            <div class="flex justify-center mt-16 reveal-up">
+                <nav class="flex gap-2">
+                    <span class="w-10 h-10 flex items-center justify-center rounded-full bg-brand-red text-white font-bold cursor-default">1</span>
+                    <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full crystal-glass hover:text-brand-red transition-colors">2</a>
+                    <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full crystal-glass hover:text-brand-red transition-colors"><i class="fas fa-chevron-right text-xs"></i></a>
+                </nav>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section-block bg-[var(--bg-body)] relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-12 reveal-up">
+                <span class="text-brand-red text-sm font-bold tracking-[0.2em] uppercase block mb-3">
+                    DE LA TEORÍA A LA PRÁCTICA
+                </span>
+                <h2 class="heading-section text-[var(--text-main)]">Impulsamos tu estrategia</h2>
+                <p class="text-[var(--text-muted)] mt-4 max-w-2xl mx-auto">
+                    ¿Te interesó lo que leíste? Nosotros nos encargamos de ejecutarlo.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <a href="desarrollo-web.html" class="crystal-glass p-6 rounded-xl hover:border-brand-red/40 transition-all group text-center">
+                    <i class="fas fa-code text-2xl text-brand-red mb-4 group-hover:scale-110 transition-transform block"></i>
+                    <h3 class="font-bold text-[var(--text-main)] mb-1">Desarrollo Web</h3>
+                    <p class="text-xs text-[var(--text-muted)]">Sitios rápidos y SEO-ready.</p>
+                </a>
+                <a href="publicidad.html" class="crystal-glass p-6 rounded-xl hover:border-brand-red/40 transition-all group text-center">
+                    <i class="fas fa-bullhorn text-2xl text-brand-red mb-4 group-hover:scale-110 transition-transform block"></i>
+                    <h3 class="font-bold text-[var(--text-main)] mb-1">Publicidad (Ads)</h3>
+                    <p class="text-xs text-[var(--text-muted)]">Campañas de alto ROI.</p>
+                </a>
+                <a href="branding-digital.html" class="crystal-glass p-6 rounded-xl hover:border-brand-red/40 transition-all group text-center">
+                    <i class="fas fa-paint-brush text-2xl text-brand-red mb-4 group-hover:scale-110 transition-transform block"></i>
+                    <h3 class="font-bold text-[var(--text-main)] mb-1">Branding</h3>
+                    <p class="text-xs text-[var(--text-muted)]">Identidad que vende.</p>
+                </a>
+                <a href="redes-sociales.html" class="crystal-glass p-6 rounded-xl hover:border-brand-red/40 transition-all group text-center">
+                    <i class="fas fa-share-alt text-2xl text-brand-red mb-4 group-hover:scale-110 transition-transform block"></i>
+                    <h3 class="font-bold text-[var(--text-main)] mb-1">Redes Sociales</h3>
+                    <p class="text-xs text-[var(--text-muted)]">Gestión y comunidad.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-block relative bg-[var(--bg-body)]">
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-red/5 to-transparent pointer-events-none"></div>
+        <div class="max-w-4xl mx-auto px-6 relative z-10 text-center reveal-up">
+            <h2 class="heading-section mb-6 text-[var(--text-main)]">
+                ¿Querés aplicar esto en tu negocio?
+            </h2>
+            <p class="text-[var(--text-muted)] mb-8 text-lg">
+                Agendá un diagnóstico gratuito y analicemos juntos las oportunidades de crecimiento para tu marca.
+            </p>
+            <a href="contacto.html" class="btn-cta btn-cta--primary">
+                <span>Solicitar Diagnóstico</span>
+                <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+        </div>
+    </section>
+
+</main>
+
+<div id="site-footer"></div>
+
+
+<a href="https://wa.me/5493517064753?text=Hola,%20vi%20su%20blog%20y%20me%20interesa%20saber%20mas." 
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Contactar por WhatsApp" 
+   class="fixed bottom-6 right-5 md:bottom-10 md:right-8 z-[9999] group flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-[#25D366] rounded-full shadow-[0_4px_14px_0_rgba(37,211,102,0.39)] transition-all duration-300 hover:scale-110 hover:shadow-[0_6px_20px_rgba(37,211,102,0.23)] focus:outline-none focus:ring-4 focus:ring-green-300">
+   <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-20 animate-ping group-hover:animate-none"></span>
+   <svg class="w-7 h-7 md:w-8 md:h-8 text-white fill-current relative z-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+       <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-4-10.5-6.7z"/>
+   </svg>
+</a>
+
+<script type="module" src="/src/main.js"></script>
+
+</body>
+</html>

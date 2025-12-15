@@ -86,6 +86,13 @@ body {
   transition: background-color 0.5s ease, color 0.5s ease;
   font-family: var(--font-sans);
 }
+/* ===========================
+   NAV: estado activo
+   =========================== */
+.is-active {
+  color: var(--color-brand-red);
+  font-weight: 700;
+}
 
 /* Selección de texto roja */
 ::selection {
@@ -780,4 +787,22 @@ body {
 #mensaje.form-input::placeholder {
   color: var(--text-muted);
   opacity: 1;
+}
+/* ===========================
+   BLOG
+   =========================== */
+   /* Blog post: menos "bloques" y más lectura editorial */
+.prose p {
+  margin-top: 0.75rem !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.prose h2 {
+  margin-top: 2.2rem !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.prose ul {
+  margin-top: 0.75rem !important;
+  margin-bottom: 0.75rem !important;
 }

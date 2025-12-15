@@ -81,106 +81,8 @@
 <body class="font-sans antialiased overflow-x-hidden selection:bg-brand-red selection:text-white">
 
 <!-- 4.1 Fixed Header -->
-<header class="fixed top-0 w-full z-50 transition-all duration-300">
-  <div class="crystal-glass rounded-b-2xl mx-2 md:mx-6 px-4 md:px-6 py-3 md:py-4 flex justify-between items-center">
-    
-    <!-- LOGO -->
-    <a href="/" aria-label="Volver al inicio"
-       class="flex items-center gap-2 group hover:opacity-80 transition-opacity">
-      <img src="IMG/LOGOLETRA.webp" alt="Logo KA&SO" class="h-4 w-auto">
-    </a>
+<div id="site-header"></div>
 
-    <!-- LADO DERECHO -->
-    <div class="flex items-center gap-3">
-      
-      <!-- TOGGLE TEMA MOBILE (pill sol/luna) -->
-      <button
-        id="mobile-theme-toggle"
-        data-theme-toggle
-        aria-label="Cambiar tema oscuro o claro"
-        class="md:hidden theme-pill"
-      >
-        <i class="fas fa-moon theme-toggle-icon theme-toggle-icon--moon"></i>
-        <i class="fas fa-sun theme-toggle-icon theme-toggle-icon--sun text-yellow-500"></i>
-      </button>
-
-      <!-- BOTÓN CONTACTO MOBILE -->
-      <a
-        href="contacto.html"
-        class="md:hidden text-xs font-semibold px-4 py-1.5 rounded-full bg-white text-black shadow-sm hover:shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all"
-      >
-        Contacto
-      </a>
-
-      <!-- NAV DESKTOP -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold tracking-wide">
-        
-        <!-- TOGGLE TEMA DESKTOP -->
-        <button
-          id="theme-toggle"
-          data-theme-toggle
-          aria-label="Cambiar tema oscuro o claro"
-          class="p-2 rounded-full hover:bg-white/10 transition-colors"
-        >
-          <i class="fas fa-moon theme-toggle-icon theme-toggle-icon--moon"></i>
-          <i class="fas fa-sun theme-toggle-icon theme-toggle-icon--sun text-yellow-500"></i>
-        </button>
-
-        <a href="/" class="relative group">
-          <span class="group-hover:text-brand-red transition-colors">Inicio</span>
-          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-red transition-all duration-300 group-hover:w-full"></span>
-        </a>
-
-        <div class="relative group cursor-pointer h-full flex items-center">
-          <span class="group-hover:text-brand-red transition-colors py-2">Servicios</span>
-          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-red transition-all duration-300 group-hover:w-full"></span>
-          
-          <div class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
-            <div class="crystal-glass rounded-xl p-4 w-48 flex flex-col gap-2 text-sm">
-              <a href="desarrollo-web.html" class="block px-3 py-2 rounded hover:bg-brand-red hover:text-white transition-colors">Desarrollo Web</a>
-              <a href="branding-digital.html" class="block px-3 py-2 rounded hover:bg-brand-red hover:text-white transition-colors">Branding Digital</a>
-              <a href="redes-sociales.html" class="block px-3 py-2 rounded hover:bg-brand-red hover:text-white transition-colors">Redes Sociales</a>
-              <a href="publicidad.html" class="block px-3 py-2 rounded hover:bg-brand-red hover:text-white transition-colors">Publicidad</a>
-            </div>
-          </div>
-        </div>
-
-        <a href="#somos" class="group hover:text-brand-red transition-colors">Nosotros</a>
-
-        <a href="contacto.html" class="bg-white text-black px-6 py-2.5 rounded-lg font-bold hover:shadow-[0_0_15px_rgba(255,255,255,0.4)] transition-all transform hover:-translate-y-0.5">
-          Contacto
-        </a>
-      </nav>
-
-      <!-- BOTÓN HAMBURGUESA MOBILE -->
-      <button id="mobile-menu-btn" aria-label="Abrir menú" class="md:hidden text-2xl">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
-  </div>
-
-  <!-- MENÚ MOBILE -->
-  <div id="mobile-menu" class="md:hidden fixed inset-0 bg-black/95 backdrop-blur-xl z-40 transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center gap-8">
-    
-    <button id="close-mobile-menu" aria-label="Cerrar menú" class="absolute top-8 right-8 text-3xl text-white">
-      <i class="fas fa-times"></i>
-    </button>
-
-    <a href="/" class="text-2xl font-bold text-white mobile-link">Inicio</a>
-
-    <div class="flex flex-col items-center gap-2">
-      <span class="text-2xl font-bold text-white">Servicios</span>
-      <a href="desarrollo-web.html" class="text-lg text-white/80 mobile-link">Desarrollo Web</a>
-      <a href="branding-digital.html" class="text-lg text-white/80 mobile-link">Branding Digital</a>
-      <a href="redes-sociales.html" class="text-lg text-white/80 mobile-link">Redes Sociales</a>
-      <a href="publicidad.html" class="text-lg text-white/80 mobile-link">Publicidad</a>
-    </div>
-
-    <a href="#somos" class="text-2xl font-bold text-white mobile-link">Nosotros</a>
-    
-    <a href="contacto.html" class="text-2xl font-bold text-brand-red mobile-link">Contacto</a>
-  </div>
-</header>
 <main id="main-content" class="w-full">
 <!-- 4.2 Hero Section -->
 
@@ -216,60 +118,75 @@
       <div class="lg:col-span-4 h-[500px] relative order-2 w-full flex items-center justify-center overflow-visible hero-visual">
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-brand-red/20 blur-[100px] rounded-full pointer-events-none"></div>
 
-        <div class="v-carousel-scene">
-          <div class="v-carousel">
-           <div class="v-item">
-  <img 
-    src="IMG/RESULTADOS.webp" 
-    alt="Resultados Kayso" 
-    fetchpriority="high" 
-    loading="eager"
-    width="500" 
-    height="300"
-    class="w-full h-full object-cover" 
-  />
+ <div class="v-carousel-scene">
+  <div class="v-carousel">
+
+    <!-- ITEM 1 (IMAGEN) -->
+    <div class="v-item">
+      <img 
+        src="IMG/RESULTADOS.webp" 
+        alt="Resultados Kayso" 
+        fetchpriority="high" 
+        loading="eager"
+        width="500" 
+        height="300"
+        class="w-full h-full object-cover" 
+      />
+    </div>
+
+    <!-- ITEM 2 (VIDEO) -->
+    <div class="v-item">
+      <video
+        class="hero-video w-full h-full object-cover bg-black"
+        preload="none"
+        muted
+        loop
+        playsinline
+        data-src="IMG/PUBLICIDAD-CON-KAYSO2.mp4"
+        poster="IMG/publicidad-com-kayso.webp"
+      ></video>
+    </div>
+
+    <!-- ITEM 3 (VIDEO) -->
+    <div class="v-item">
+      <video
+        class="hero-video w-full h-full object-contain bg-black"
+        preload="none"
+        muted
+        loop
+        playsinline
+        data-src="IMG/agencia-marketing-card-1.mp4"
+        poster="IMG/agencia-marketing-card-1-poster.webp"
+      ></video>
+    </div>
+
+    <!-- ITEM 4 (VIDEO) -->
+    <div class="v-item">
+      <video
+        class="hero-video w-full h-full object-contain bg-black"
+        preload="none"
+        muted
+        loop
+        playsinline
+        data-src="IMG/agencia-marketing-card-3.mp4"
+        poster="IMG/team-kayso-card-3.webp"
+      ></video>
+    </div>
+
+    <!-- ITEM 5 (VIDEO) -->
+    <div class="v-item">
+      <video
+        class="hero-video w-full h-full object-contain bg-black"
+        preload="none"
+        muted
+        loop
+        playsinline
+        data-src="IMG/agencia-marketing-card-2.mp4"
+        poster="IMG/agencia-de-marketing-ai.webp"
+      ></video>
+    </div>
+  </div>
 </div>
-            <div class="v-item">
-              <video src="IMG/PUBLICIDAD-CON-KAYSO2.mp4" autoplay muted loop playsinline></video>
-            
-            </div>
-            <div class="v-item">
-              <video
-            src="IMG/agencia-marketing-card-1.mp4"
-            autoplay
-            muted
-            loop
-            playsinline
-            class="w-full h-full object-contain bg-black transition-transform duration-500 group-hover:scale-105"
-          ></video>
-         
-                <source src="IMG/agencia-marketing-card1-MOBILE.mp4" type="video/mp4" />
-              </video>
-            </div>
-            <div class="v-item">
-              <video
-            src="IMG/agencia-marketing-card3.mp4"
-            autoplay
-            muted
-            loop
-            playsinline
-            class="w-full h-full object-contain bg-black transition-transform duration-500 group-hover:scale-105"
-          ></video>
-          
-            </div>
-            <div class="v-item">
-              <video
-            src="IMG/agencia-marketing-card-2.mp4"
-            autoplay
-            muted
-            loop
-            playsinline
-            class="w-full h-full object-contain bg-black transition-transform duration-500 group-hover:scale-105"
-          ></video>
-        
-            </div>
-          </div>
-        </div>
       </div>
 
       <div class="lg:col-span-4 flex flex-col gap-5 items-center lg:items-middle justify-center reveal-up order-2 lg:order-3 -mt-2 md:mt-0">
@@ -1358,66 +1275,8 @@
 </main>
 
     <!-- 4.11 Contact/Footer -->
-    <footer id="contacto" class="bg-[var(--bg-body)] border-t border-white/10 pt-20 pb-10">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
-                <!-- Brand Column -->
-                <div>
-                    <div class="flex items-center gap-2 mb-6">
-                        <img src="IMG/isologokayso.webp" alt="KA&SO" class="h-10 w-auto object-contain">
-                    </div>
-                    <p class="text-[var(--text-muted)] mb-8 max-w-sm">
-                        Agencia de marketing digital e IA enfocada en datos y creatividad. Transformamos tu presencia digital en resultados medibles.
-                    </p>
-                    <h3 class="font-bold mb-4">¡Seguinos!</h3>
-                    <div class="flex gap-4">
-                        <a href="https://www.instagram.com/kayso_marketing.ia" class="w-12 h-12 rounded-full crystal-glass flex items-center justify-center text-xl hover:text-brand-red hover:border-brand-red transition-all group" title="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://wa.me/5493517064753" target="_blank" class="w-12 h-12 rounded-full crystal-glass flex items-center justify-center text-xl hover:text-green-500 hover:border-green-500 transition-all" title="WhatsApp">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                    </div>
-                    
-                </div>
+  <div id="site-footer"></div>
 
-                <!-- Contact Column -->
-                <div>
-                    <h3 class="text-xl font-bold mb-8">Contacto</h3>
-                    <ul class="space-y-6">
-                        <li class="flex items-start gap-4">
-                            <i class="far fa-envelope mt-1 text-brand-red"></i>
-                            <a href="mailto:info@kayso-oficial.com" class="text-[var(--text-muted)] hover:text-white transition-colors">info@kayso-oficial.com</a>
-                        </li>
-                        <li class="flex items-start gap-4">
-                            <i class="fab fa-whatsapp mt-1 text-brand-red"></i>
-                            <a href="https://wa.me/5493517064753" target="_blank" class="text-[var(--text-muted)] hover:text-white transition-colors">+54 9 351 706-4753 ↗</a>
-                        </li>
-                        <li class="flex items-start gap-4">
-                            <i class="fas fa-map-marker-alt mt-1 text-brand-red"></i>
-                            <span class="text-[var(--text-muted)]">Blvd. Pte. Arturo Umberto Illia 343,<br>X5000ASC Córdoba</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Nav Column -->
-                <div>
-                    <h3 class="text-xl font-bold mb-8">Servicios</h3>
-                    <ul class="space-y-4">
-                        <li><a href="/" class="text-[var(--text-muted)] hover:text-brand-red transition-colors">Inicio</a></li>
-                        <li><a href="desarrollo-web.html" class="text-[var(--text-muted)] hover:text-brand-red transition-colors">Desarrollo Web</a></li>
-                        <li><a href="branding-digital.html" class="text-[var(--text-muted)] hover:text-brand-red transition-colors">Branding Digital</a></li>
-                        <li><a href="redes-sociales.html" class="text-[var(--text-muted)] hover:text-brand-red transition-colors">Redes Sociales</a></li>
-                        <li><a href="publicidad.html" class="text-[var(--text-muted)] hover:text-brand-red transition-colors">Publicidad</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="border-t border-white/5 pt-8 text-center text-sm text-[var(--text-muted)]">
-                <p>&copy; KA&SO 2025 · Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </footer>
 
 
     <a href="https://wa.me/5493517064753?text=Hola,%20vi%20su%20web%20y%20me%20interesa%20mejorar%20mis%20redes." 
