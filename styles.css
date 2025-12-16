@@ -433,7 +433,7 @@ body {
   height: 100%;
   position: absolute;
   transform-style: preserve-3d;
-  animation: rotateVertical 13s linear infinite;
+  animation: rotateVertical 23s linear infinite;
 }
 
 .v-item {
@@ -674,7 +674,7 @@ body {
   display: flex;
   gap: 1.5rem; 
   width: max-content;
-  animation: projects-scroll 25s linear infinite;
+  animation: projects-scroll 30s linear infinite;
 }
 @keyframes projects-scroll {
   0% { transform: translateX(0); }
@@ -691,11 +691,11 @@ body {
 }
 .social-row--right {
   animation-name: social-scroll-right;
-  animation-duration: 25s;  
+  animation-duration: 35s;  
 }
 .social-row--left {
   animation-name: social-scroll-left;
-  animation-duration: 25s;  
+  animation-duration: 35s;  
 }
 @keyframes social-scroll-right {
   0%   { transform: translateX(-50%); }
