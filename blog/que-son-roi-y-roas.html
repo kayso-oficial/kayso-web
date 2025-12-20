@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>¿Qué son ROI y ROAS? Fórmulas y Diferencias Clave | KA&SO</title>
+  <meta name="description" content="Aprendé la diferencia real entre ROI (rentabilidad) y ROAS (eficiencia). Fórmulas exactas, ejemplos prácticos y cómo medir si ganás plata con tus anuncios." />
+  <link rel="canonical" href="https://kayso-oficial.com/blog/que-son-roi-y-roas.html" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/IMG/isologokayso-01.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/IMG/isologokayso-01.png">
+  <link rel="apple-touch-icon" href="/IMG/isologokayso-01.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="/styles.css" />
+
+  <script>
+    (function () {
+      try {
+        const saved = localStorage.getItem("theme");
+        if (saved === "light" || saved === "dark") {
+          document.documentElement.setAttribute("data-theme", saved);
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <style>
+    .post-prose p { margin: 0.85rem 0; line-height: 1.85; }
+    .post-prose h2 { margin-top: 2.2rem; margin-bottom: 0.8rem; }
+    .post-prose h3 { margin-top: 1.6rem; margin-bottom: 0.6rem; }
+    .post-prose ul { margin: 0.9rem 0; }
+    .post-prose hr { border-color: rgba(255,255,255,0.10); }
+    /* Ajuste para modo claro en HR */
+    html[data-theme="light"] .post-prose hr { border-color: rgba(0,0,0,0.10); }
+  </style>
+</head>
+
+<body class="font-sans antialiased overflow-x-hidden selection:bg-brand-red selection:text-white bg-[var(--bg-body)] text-[var(--text-main)]">
+
+  <div id="site-header"></div>
+
+  <main class="w-full relative">
+
+    <section class="section-block relative pt-32 pb-20">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[650px] bg-brand-red/5 rounded-full blur-[160px] pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10">
+
+        <article class="lg:col-span-8">
+
+          <nav aria-label="Breadcrumb" class="text-sm text-[var(--text-muted)]">
+            <ol class="flex items-center gap-2">
+              <li><a href="/index.html" class="hover:text-brand-red transition-colors">Inicio</a></li>
+              <li><span class="text-[var(--text-muted)]">/</span></li>
+              <li><a href="/blog.html" class="hover:text-brand-red transition-colors">Blog</a></li>
+              <li><span class="text-[var(--text-muted)]">/</span></li>
+              <li class="text-[var(--text-main)] font-semibold" aria-current="page">Performance Marketing</li>
+            </ol>
+          </nav>
+
+          <header class="mb-8 border-b border-gray-200 dark:border-white/10 pb-8">
+            <div class="flex flex-wrap items-center gap-4 text-xs font-bold tracking-widest uppercase text-[var(--text-muted)] mb-4">
+              <span class="text-brand-red">Métricas & Estrategia</span>
+              <span>•</span>
+              <time datetime="2025-10-25">25 Oct, 2025</time>
+              <span>•</span>
+              <span>Por Agustín Soria</span>
+              <span>•</span>
+              <span>8 min lectura</span>
+            </div>
+
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-5 text-[var(--text-main)]">
+              ¿Qué son el ROI y el ROAS? Diferencias y fórmulas para no perder dinero
+            </h1>
+
+            <p class="text-lg text-[var(--text-muted)]">
+              Es el escenario clásico en Argentina: abrís el administrador de anuncios, ves números verdes y pensás que ganaste. Pero cuando llega el contador a fin de mes, la caja no cierra. En <strong>KA&SO</strong> sabemos que confundir "vender" (ROAS) con "ganar" (ROI) es el error número uno que funde campañas.
+            </p>
+          </header>
+
+          <figure class="my-8">
+            <img
+              src="/IMG/roi-vs-roas-cover.webp"
+              alt="Gráfico comparativo entre ROI y ROAS en marketing digital"
+              class="w-full rounded-2xl border border-gray-200 dark:border-white/10"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption class="text-xs text-[var(--text-muted)] mt-3">
+              Un ROAS alto no siempre garantiza un ROI positivo si los márgenes son bajos.
+            </figcaption>
+          </figure>
+
+          <div class="post-prose text-[var(--text-muted)]">
+
+            <div class="p-6 bg-gray-50 dark:bg-white/5 rounded-xl border-l-4 border-brand-red mb-8">
+              <h3 class="text-lg font-bold text-[var(--text-main)] mb-2 mt-0">Respuesta Rápida: ROI vs ROAS</h3>
+              <p class="text-sm text-[var(--text-muted)] m-0">
+                El <strong>ROAS</strong> (Return on Ad Spend) mide la <em>eficiencia</em> de tus anuncios: cuántos ingresos brutos generaste por cada peso gastado en publicidad. El <strong>ROI</strong> (Return on Investment) mide la <em>rentabilidad</em> real del negocio: considera la ganancia neta después de restar todos los costos (producto, agencia, impuestos, envíos). Podés tener un ROAS positivo y estar perdiendo dinero (ROI negativo).
+              </p>
+            </div>
+
+            <h2 class="text-2xl font-bold text-[var(--text-main)]">¿Qué son el ROI y el ROAS?</h2>
+            <p>
+              Aunque ambos son indicadores de rendimiento, responden a preguntas distintas. El ROAS le habla al equipo de marketing ("¿Qué tan bien funcionan los anuncios?"); el ROI le habla al dueño del negocio ("¿Estamos ganando plata de verdad?").
+            </p>
+             
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+              <div class="p-5 rounded-lg border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-black/20">
+                <h4 class="text-brand-red font-bold text-lg mb-2">ROAS (Eficiencia)</h4>
+                <p class="text-sm mb-3 text-[var(--text-muted)]">Se centra exclusivamente en los ingresos generados por la publicidad directa.</p>
+                <code class="block bg-gray-200 dark:bg-black/40 p-2 rounded text-xs font-mono text-[var(--text-main)]">
+                  ROAS = Ingresos por Ventas / Gasto Publicitario
+                </code>
+              </div>
+              <div class="p-5 rounded-lg border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-black/20">
+                <h4 class="text-brand-red font-bold text-lg mb-2">ROI (Rentabilidad)</h4>
+                <p class="text-sm mb-3 text-[var(--text-muted)]">Considera la "foto completa" del negocio, incluyendo márgenes y costos operativos.</p>
+                <code class="block bg-gray-200 dark:bg-black/40 p-2 rounded text-xs font-mono text-[var(--text-main)]">
+                  ROI = ((Ganancia Neta - Costos) / Costos) x 100
+                </code>
+              </div>
+            </div>
+
+            <h2 class="text-2xl font-bold text-[var(--text-main)]">¿Qué indica el ROI?</h2>
+            <p>
+              El <strong>ROI (Return On Investment)</strong> indica la salud financiera de tu inversión. Un ROI positivo significa que la campaña generó más dinero del que consumió (después de pagar todo). Un ROI negativo es una alerta roja inmediata.
+            </p>
+             
+            <h3 class="text-lg font-bold text-[var(--text-main)] mt-4">Ejemplo Realista:</h3>
+            <ul class="list-disc pl-5 space-y-2 text-[var(--text-muted)]">
+              <li>Vendés zapatillas a <strong>$100.000 ARS</strong>.</li>
+              <li>El costo de fábrica + envío + impuestos es <strong>$60.000 ARS</strong>.</li>
+              <li>Gastaste <strong>$20.000 ARS</strong> en publicidad para vender ese par.</li>
+              <li>Tu costo total es $80.000 ($60k producto + $20k ads).</li>
+            </ul>
+            <p class="mt-2 text-[var(--text-muted)]">
+              <strong>Cálculo de ROI:</strong> (($100.000 - $80.000) / $80.000) x 100 = <strong>25%</strong>.
+              <br><em>Interpretación:</em> Por cada peso que pusiste en total, recuperaste el peso y ganaste 25 centavos extra de beneficio real.
+            </p>
+
+            <h2 class="text-2xl font-bold text-[var(--text-main)]">¿Qué es el ROAS?</h2>
+            <p>
+              El <strong>ROAS (Return on Ad Spend)</strong> es la métrica favorita de las plataformas como Meta y Google. Indica la capacidad bruta de los anuncios para generar facturación. Se expresa como un número (ej: 4.0) o porcentaje (400%).
+            </p>
+             <h3 class="text-lg font-bold text-[var(--text-main)] mt-4">Ejemplo Numérico:</h3>
+            <ul class="list-disc pl-5 space-y-2 text-[var(--text-muted)]">
+              <li>Invertiste <strong>$1.000.000 ARS</strong> en Google Ads.</li>
+              <li>Esos anuncios generaron ventas por <strong>$5.000.000 ARS</strong>.</li>
+            </ul>
+            <p class="mt-2 text-[var(--text-muted)]">
+              <strong>Cálculo de ROAS:</strong> $5.000.000 / $1.000.000 = <strong>5 (o 500%)</strong>.
+              <br><em>Interpretación:</em> Por cada peso puesto en pauta, entraron 5 pesos a la caja. ¡Ojo! Esto no significa que hayas ganado dinero, porque el ROAS ignora cuánto te costó fabricar el producto.
+            </p>
+
+            <h2 class="text-2xl font-bold text-[var(--text-main)]">¿Qué es y para qué sirve el ROI?</h2>
+            <p>
+              El ROI sirve para tomar decisiones estratégicas de negocio, no solo de campaña. Mientras el ROAS te dice qué anuncio pausar, el ROI te dice si tu modelo de negocio es viable. Sirve para:
+            </p>
+            <ul class="list-disc pl-5 space-y-2 text-[var(--text-muted)]">
+              <li>Decidir el presupuesto anual de marketing.</li>
+              <li>Evaluar si podés contratar una agencia o más personal.</li>
+              <li>Comparar la rentabilidad de Marketing vs. otros departamentos.</li>
+            </ul>
+
+            <h2 class="text-2xl font-bold text-[var(--text-main)]">¿Cuál es el ROI ideal?</h2>
+            <p>
+              Esta es la pregunta del millón y la respuesta honesta es: <strong>depende de tu margen</strong>. No existe un "ROI ideal" universal. Sin embargo, para evaluar tus campañas, primero necesitás conocer tu <strong>ROAS de Punto de Equilibrio (Break-even ROAS)</strong>.
+            </p>
+            <p>
+              Si tu margen de ganancia es bajo (ej: electrónica, 10%), necesitás un ROAS altísimo (10x) solo para no perder plata. Si tu margen es alto (ej: cursos online, 80%), con un ROAS bajo (1.25x) ya sos rentable.
+            </p>
+
+            <div class="p-4 bg-white-500/10 border border-white-500/20 rounded-lg mt-4">
+              <p class="text-sm font-bold text-purple-800 dark:text-purple-400">
+                💡 Regla de oro: No persigas un número mágico de la industria. Calculá tu propio punto de equilibrio: 1 / (Margen de ganancia %). Ese es tu piso. Todo lo que esté arriba, es ganancia.
+              </p>
+            </div>
+
+            <h2 class="text-2xl font-bold text-[var(--text-main)]">Cómo medirlo bien (sin trampas)</h2>
+            <p>
+              Para que estos números sean reales, tenés que configurar bien la medición técnica. En <strong>KA&SO</strong> auditamos esto frecuentemente y encontramos errores graves:
+            </p>
+            <ul class="list-disc pl-5 space-y-2 text-[var(--text-muted)]">
+              <li><strong>Modelos de Atribución:</strong> ¿Le das el crédito al primer clic o al último? Google y Meta suelen atribuirse ventas cruzadas.</li>
+              <li><strong>Conversiones Post-view:</strong> Ojo con contar ventas de gente que solo vio el anuncio pero no hizo clic (View-through attribution), suelen inflar el ROAS.</li>
+              <li><strong>Costos Ocultos:</strong> Al calcular ROI, no olvides restar el fee de la agencia, el costo de las herramientas y las devoluciones de producto.</li>
+            </ul>
+
+            <h2 class="text-2xl font-bold text-[var(--text-main)]">Checklist: ¿Tus métricas dicen la verdad?</h2>
+            <ul class="space-y-2 bg-gray-50 dark:bg-black/20 p-6 rounded-xl border border-gray-200 dark:border-white/5 text-[var(--text-muted)]">
+              <li class="flex items-start gap-2"><i class="fas fa-check text-brand-red mt-1"></i> <span>¿Tenés configurada la API de Conversiones (CAPI) en Meta?</span></li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-brand-red mt-1"></i> <span>¿Estás descontando el IVA de la inversión publicitaria en tus cálculos internos?</span></li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-brand-red mt-1"></i> <span>¿Tu "valor de conversión" en Google Ads es el ticket real o un promedio?</span></li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-brand-red mt-1"></i> <span>¿Conocés tu margen de ganancia por producto exacto?</span></li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-brand-red mt-1"></i> <span>¿Restás las devoluciones/cancelaciones del cálculo de ROAS mensual?</span></li>
+            </ul>
+
+            <hr class="my-12" />
+
+            <h2 class="text-2xl font-bold text-[var(--text-main)]">Fuentes consultadas</h2>
+            <ul class="space-y-3 text-sm text-[var(--text-muted)]">
+              <li>
+                <a class="text-brand-red font-semibold hover:underline" href="https://support.google.com/google-ads/answer/14090?hl=es" target="_blank" rel="noopener noreferrer">
+                  Ayuda de Google Ads: Información sobre el retorno de la inversión (ROI)
+                </a>
+              </li>
+              <li>
+                <a class="text-brand-red font-semibold hover:underline" href="https://www.shopify.com/es/blog/roas" target="_blank" rel="noopener noreferrer">
+                  Shopify: Qué es el ROAS y cómo calcularlo para tu tienda
+                </a>
+              </li>
+              <li>
+                <a class="text-brand-red font-semibold hover:underline" href="https://www.investopedia.com/terms/r/returnoninvestment.asp" target="_blank" rel="noopener noreferrer">
+                  Investopedia: Return on Investment (ROI) Formula
+                </a>
+              </li>
+              <li>
+                 <a class="text-brand-red font-semibold hover:underline" href="https://www.bigcommerce.com/ecommerce-answers/what-is-roas-return-on-ad-spend/" target="_blank" rel="noopener noreferrer">
+                  BigCommerce: What is ROAS? Calculation & Definition
+                </a>
+              </li>
+            </ul>
+
+          </div>
+
+          <section class="mt-16 p-10 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 shadow-sm dark:shadow-none">
+            <h2 class="text-2xl font-bold text-[var(--text-main)] mb-4">
+              ¿Tus campañas venden pero la caja no crece?
+            </h2>
+            <p class="text-[var(--text-muted)]">
+              En <strong>KA&SO</strong> no prometemos ROAS mágicos. Analizamos tus datos reales, configuramos la medición correctamente y optimizamos para rentabilidad (ROI), no solo para clicks.
+            </p>
+            <div class="btn-row mt-6">
+              <a href="/contacto.html" class="btn-cta btn-cta--primary">
+                <span>Solicitar diagnóstico express</span>
+                <i class="fas fa-arrow-right text-xs"></i>
+              </a>
+              <a href="/servicios.html" class="btn-cta btn-cta--secondary">
+                <span>Ver cómo trabajamos</span>
+                <i class="fas fa-arrow-right text-xs"></i>
+              </a>
+            </div>
+          </section>
+
+        </article>
+
+        <aside class="lg:col-span-4 self-start">
+          <div class="lg:sticky lg:top-32">
+
+            <div class="rounded-2xl p-8 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 shadow-lg dark:shadow-[0_0_30px_rgba(0,0,0,0.25)]">
+              <p class="text-xs font-bold tracking-widest uppercase text-[var(--text-muted)] mb-3">
+                Key Takeaways
+              </p>
+
+              <h3 class="text-xl font-bold text-[var(--text-main)] mb-3">
+                Resumen Ejecutivo
+              </h3>
+
+              <div class="space-y-4 my-6">
+                <div class="flex gap-3">
+                  <div class="flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 dark:bg-white/5 flex items-center justify-center border border-gray-200 dark:border-white/10">
+                    <span class="text-brand-red font-bold text-xs">1</span>
+                  </div>
+                  <div>
+                    <h4 class="text-[var(--text-main)] font-bold text-xs mb-1">ROAS = Eficiencia</h4>
+                    <p class="text-xs text-[var(--text-muted)]">
+                      Mide el ingreso bruto sobre la inversión en ads. Ideal para optimizar campañas diarias.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-3">
+                  <div class="flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 dark:bg-white/5 flex items-center justify-center border border-gray-200 dark:border-white/10">
+                    <span class="text-brand-red font-bold text-xs">2</span>
+                  </div>
+                  <div>
+                    <h4 class="text-[var(--text-main)] font-bold text-xs mb-1">ROI = Negocio</h4>
+                    <p class="text-xs text-[var(--text-muted)]">
+                      Mide la ganancia neta real descontando costos. Es la métrica que le importa al dueño.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-3">
+                  <div class="flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 dark:bg-white/5 flex items-center justify-center border border-gray-200 dark:border-white/10">
+                    <span class="text-brand-red font-bold text-xs">3</span>
+                  </div>
+                  <div>
+                    <h4 class="text-[var(--text-main)] font-bold text-xs mb-1">Cuidado con el Margen</h4>
+                    <p class="text-xs text-[var(--text-muted)]">
+                      Con márgenes bajos, necesitás un ROAS muy alto para no perder dinero (ROI negativo).
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <a href="/contacto.html"
+                 class="block w-full text-center py-3 rounded-full bg-brand-red text-white font-bold text-sm hover:shadow-[0_0_20px_rgba(190,24,37,0.35)] transition-all">
+                Auditar mis Campañas
+              </a>
+
+            </div>
+
+             <div class="mt-8 p-6 rounded-2xl border border-gray-200 dark:border-white/5 bg-gray-50 dark:bg-black/20">
+              <h4 class="text-sm font-bold text-[var(--text-main)] mb-4">¿Sabías qué?</h4>
+              <p class="text-xs text-[var(--text-muted)] mb-3">
+                Muchas plataformas usan modelos de <strong>atribución "View-through"</strong> por defecto.
+              </p>
+              <p class="text-xs text-[var(--text-muted)] pl-2 border-l border-brand-red">
+                Esto significa que si alguien vio tu anuncio, no hizo clic, pero compró al día siguiente orgánicamente, la plataforma se atribuye la venta, inflando tu ROAS artificialmente.
+              </p>
+            </div>
+
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

@@ -11,6 +11,8 @@ export default defineConfig({
         tendencias: resolve(__dirname, "blog/tendencias-2025.html"),
         meli: resolve(__dirname, "blog/caso-meli-navidad.html"),
         google: resolve(__dirname, "blog/google-jarvis-seo.html"),
+        community: resolve(__dirname, "blog/que-hace-un-community-manager.html"),
+        roi : resolve(__dirname, "blog/que-son-roi-y-roas.html"),
         instagram: resolve(__dirname, "blog/instagram-reels-20min.html"),
         contacto: resolve(__dirname, "contacto.html"),
         branding: resolve(__dirname, "branding-digital.html"),
