@@ -10,6 +10,7 @@ export default defineConfig({
         navidad: resolve(__dirname, "blog/navidad.html"),
         tendencias: resolve(__dirname, "blog/tendencias-2025.html"),
         meli: resolve(__dirname, "blog/caso-meli-navidad.html"),
+        google: resolve(__dirname, "blog/google-jarvis-seo.html"),
         contacto: resolve(__dirname, "contacto.html"),
         branding: resolve(__dirname, "branding-digital.html"),
         desarrollo: resolve(__dirname, "desarrollo-web.html"),
