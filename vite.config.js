@@ -9,6 +9,7 @@ export default defineConfig({
         blog: resolve(__dirname, "blog.html"),
         navidad: resolve(__dirname, "blog/navidad.html"),
         tendencias: resolve(__dirname, "blog/tendencias-2025.html"),
+        financiacion: resolve(__dirname, "blog/financiacion-es-producto.html"),
         meli: resolve(__dirname, "blog/caso-meli-navidad.html"),
         google: resolve(__dirname, "blog/google-jarvis-seo.html"),
         community: resolve(__dirname, "blog/que-hace-un-community-manager.html"),
