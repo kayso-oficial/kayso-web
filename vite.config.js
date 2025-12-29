@@ -11,6 +11,7 @@ export default defineConfig({
         tendencias: resolve(__dirname, "blog/tendencias-2025.html"),
         financiacion: resolve(__dirname, "blog/financiacion-es-producto.html"),
         geolocalizacion: resolve(__dirname, "blog/google-gems-guia-negocios.html"),
+        perplexity: resolve(__dirname, "blog/perplexity-at-work-guia-pdf-espanol.html"),
         meli: resolve(__dirname, "blog/caso-meli-navidad.html"),
         google: resolve(__dirname, "blog/google-jarvis-seo.html"),
         community: resolve(__dirname, "blog/que-hace-un-community-manager.html"),
