@@ -14,6 +14,7 @@ export default defineConfig({
         perplexity: resolve(__dirname, "blog/perplexity-at-work-guia-pdf-espanol.html"),
         meli: resolve(__dirname, "blog/caso-meli-navidad.html"),
         google: resolve(__dirname, "blog/google-jarvis-seo.html"),
+        estudios: resolve(__dirname, "blog/estudio-redes-sociales-2026-metricool.html"),
         community: resolve(__dirname, "blog/que-hace-un-community-manager.html"),
         roi : resolve(__dirname, "blog/que-son-roi-y-roas.html"),
         instagram: resolve(__dirname, "blog/instagram-reels-20min.html"),
