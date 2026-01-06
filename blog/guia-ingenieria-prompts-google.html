@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark" class="scroll-smooth">
+<head>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5KP8F83T');</script>
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Ingeniería de Prompts: Guía Práctica y Técnicas Avanzadas | KA&SO</title>
+    <meta name="description" content="Dominá el Prompt Engineering con las técnicas oficiales de Google. Aprendé sobre Chain-of-Thought, ReAct, configuración de temperatura y outputs estructurados JSON." />
+    <meta name="keywords" content="Prompt Engineering, Ingeniería de Prompts, Chain of Thought, ReAct, LLM Tuning, Google Gemini, JSON Schemas" />
+    
+    <link rel="canonical" href="https://kayso-oficial.com/blog/guia-ingenieria-prompts-google.html" />
+    <link rel="icon" href="/favicon.ico?v=999" sizes="any">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="/styles.css" />
+
+    <script>
+      (function () {
+        try {
+          const saved = localStorage.getItem("theme");
+          if (saved === "light" || saved === "dark") {
+            document.documentElement.setAttribute("data-theme", saved);
+          }
+        } catch (e) {}
+      })();
+    </script>
+</head>
+
+<body class="font-sans antialiased selection:bg-brand-red selection:text-white bg-[var(--bg-body)] text-[var(--text-main)]">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5KP8F83T"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div id="site-header"></div>
+
+  <main class="w-full relative">
+
+    <section class="section-block relative pt-32 pb-20">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[650px] bg-brand-red/5 rounded-full blur-[160px] pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10">
+
+        <article class="lg:col-span-8">
+
+          <nav aria-label="Breadcrumb" class="text-sm text-[var(--text-muted)]">
+            <ol class="flex items-center gap-2">
+              <li><a href="/index.html" class="hover:text-brand-red transition-colors">Inicio</a></li>
+              <li><span class="text-white/20">/</span></li>
+              <li><a href="/blog.html" class="hover:text-brand-red transition-colors">Blog</a></li>
+              <li><span class="text-white/20">/</span></li>
+              <li class="text-[var(--text-main)] font-semibold" aria-current="page">Desarrollo & IA</li>
+            </ol>
+          </nav>
+
+          <header class="mb-8 border-b border-white/10 pb-8">
+            <div class="flex flex-wrap items-center gap-4 text-xs font-bold tracking-widest uppercase text-[var(--text-muted)] mb-4">
+              <span class="text-brand-red">Guías Técnicas</span>
+              <span>•</span>
+              <time datetime="2026-01-06">06 Ene, 2026</time>
+              <span>•</span>
+              <span>Por Equipo de Devs KA&SO</span>
+              <span>•</span>
+              <span>10 min lectura</span>
+            </div>
+
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-5 text-[var(--text-main)]">
+              Ingeniería de Prompts: Guía Práctica de Google
+            </h1>
+
+            <p class="text-lg text-[var(--text-muted)]">
+              No hace falta ser científico de datos para escribir un buen prompt, pero sí necesitás técnica. Analizamos el whitepaper oficial de Google sobre cómo configurar salidas, estructurar contextos y usar razonamiento avanzado en LLMs.
+            </p>
+          </header>
+
+          <figure class="my-8">
+            <img
+              src="/IMG/cover-prompt-engineering-google.webp"
+              alt="Diagrama de flujo de un Tree of Thoughts en Prompt Engineering"
+              class="w-full rounded-2xl border border-white/10"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption class="text-xs text-[var(--text-muted)] mt-3">
+              Fuente: "Prompt Engineering Guide", Google.
+            </figcaption>
+          </figure>
+
+          <div class="post-prose text-[var(--text-muted)]">
+
+            <p>
+              La ingeniería de prompts es mucho más que escribir una frase en un chat; es un proceso iterativo de diseño, prueba y ajuste. [cite_start]Los Modelos de Lenguaje Grande (LLMs) son motores de predicción: toman un texto de entrada y calculan cuál es el token (pieza de palabra) más probable para continuar la secuencia[cite: 30, 32].
+            </p>
+            <p>
+              En esta guía, basada en la documentación técnica de Google, desglosamos cómo controlar estas predicciones para pasar de respuestas genéricas a soluciones de ingeniería precisas.
+            </p>
+
+            <h2 class="text-2xl font-bold text-[var(--text-main)] mt-8 mb-4">Configuración de Salida: El Control del Motor</h2>
+            <p>
+              Antes de escribir una sola palabra, debés entender los parámetros que controlan la "creatividad" del modelo. Si usás la API de Gemini o Vertex AI, esto es crucial:
+            </p>
+            <ul class="list-disc pl-5 space-y-2 mb-6">
+                <li><strong>Temperatura:</strong> Controla la aleatoriedad. [cite_start]Una temperatura baja (cercana a 0) hace que el modelo sea determinista (ideal para código o matemáticas)[cite: 82, 84]. [cite_start]Una temperatura alta fomenta la diversidad y creatividad, pero aumenta el riesgo de alucinaciones[cite: 83].</li>
+                <li><strong>Top-K y Top-P:</strong> Son filtros de selección. [cite_start]<em>Top-K</em> elige entre las K fichas más probables (ej. las 3 mejores)[cite: 98]. [cite_start]<em>Top-P</em> selecciona el conjunto mínimo de fichas cuya probabilidad acumulada no supera un valor P (ej. 0.95)[cite: 105]. Jugar con estos valores ajusta cuán "obvia" o "inesperada" será la siguiente palabra.</li>
+            </ul>
+
+            <h2 class="text-2xl font-bold text-[var(--text-main)] mt-8 mb-4">Técnicas de Prompting Esenciales</h2>
+            
+            <h3 class="text-xl font-semibold text-[var(--text-main)] mt-6 mb-3">1. Zero-shot vs. Few-shot</h3>
+            <p>
+              [cite_start]El enfoque más básico es el <strong>Zero-shot</strong>: simplemente pedir lo que querés sin ejemplos[cite: 148]. Sin embargo, para tareas complejas, el estándar de oro es el <strong>Few-shot prompting</strong>: proporcionar al modelo 3 a 5 ejemplos de entrada/salida deseada antes de tu petición real. [cite_start]Esto enseña al modelo el patrón, formato y estilo que debe imitar[cite: 175, 182].
+            </p>
+
+            <h3 class="text-xl font-semibold text-[var(--text-main)] mt-6 mb-3">2. Sistema, Contexto y Rol</h3>
+            <p>
+              [cite_start]Una estructura robusta divide el prompt en tres capas[cite: 216]:
+            </p>
+            <ul class="list-disc pl-5 space-y-2 mb-6">
+                [cite_start]<li><strong>Prompt del Sistema:</strong> Define el "panorama general" y las reglas inquebrantables (ej. "Sos un experto en Python, devolvé solo código JSON")[cite: 217, 243].</li>
+                [cite_start]<li><strong>Contexto:</strong> Información de fondo relevante para la tarea actual[cite: 219].</li>
+                [cite_start]<li><strong>Rol:</strong> Asignar una identidad (ej. "Actuá como un guía turístico sarcástico") ayuda al modelo a ajustar el tono y vocabulario[cite: 221, 295].</li>
+            </ul>
+
+            <h2 class="text-2xl font-bold text-[var(--text-main)] mt-8 mb-4">Razonamiento Avanzado</h2>
+            <p>
+              Cuando los modelos fallan en lógica o matemáticas, no es por falta de conocimiento, sino de proceso.
+            </p>
+            
+            <h3 class="text-xl font-semibold text-[var(--text-main)] mt-6 mb-3">Chain-of-Thought (CoT)</h3>
+            <p>
+              [cite_start]Esta técnica fuerza al modelo a generar "pasos intermedios de razonamiento" antes de dar la respuesta final[cite: 445]. Es tan simple como agregar "Pensemos paso a paso" al final del prompt, o dar ejemplos donde se desglose la lógica. [cite_start]Esto mejora drásticamente la precisión en problemas aritméticos o lógicos[cite: 446, 453].
+            </p>
+
+            <h3 class="text-xl font-semibold text-[var(--text-main)] mt-6 mb-3">ReAct (Reason & Act)</h3>
+            <p>
+              [cite_start]ReAct es el paradigma que permite a los LLMs actuar como agentes[cite: 585]. Combina el razonamiento verbal con el uso de herramientas externas (como búsqueda en Google o ejecutar código Python). [cite_start]El modelo "piensa" qué necesita, "actúa" (ejecuta una búsqueda), "observa" el resultado y vuelve a pensar[cite: 588, 590].
+            </p>
+
+            <h2 class="text-2xl font-bold text-[var(--text-main)] mt-8 mb-4">Automatización y Salidas Estructuradas</h2>
+            <p>
+              Para integrar LLMs en software real, el texto libre es un problema. [cite_start]La mejor práctica es forzar salidas en <strong>JSON</strong> definiendo un esquema claro en el prompt[cite: 973, 976]. Esto facilita el parseo y reduce alucinaciones. [cite_start]Además, existe la Ingeniería de Prompts Automática (APE), donde usamos un LLM para escribir y optimizar los prompts de otro LLM[cite: 645, 646].
+            </p>
+
+            <div class="my-12 p-8 rounded-2xl crystal-glass border border-white/5">
+              <h3 class="text-xl font-bold text-[var(--text-main)] mb-4">
+                <i class="fas fa-check-circle text-brand-red mr-2"></i> Action Points: Tu Checklist de Calidad
+              </h3>
+              <p class="mb-4 text-sm">Antes de desplegar un prompt en producción, verificá estos puntos:</p>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                      <h4 class="font-bold text-[var(--text-main)] text-sm mb-2">Usá Instrucciones Positivas</h4>
+                      <p class="text-xs text-[var(--text-muted)]">Decile al modelo "lo que debe hacer" en lugar de una lista larga de restricciones sobre "lo que no debe hacer". [cite_start]Evita confusiones[cite: 912, 916].</p>
+                  </div>
+                  <div>
+                      <h4 class="font-bold text-[var(--text-main)] text-sm mb-2">Estructurá con Ejemplos</h4>
+                      <p class="text-xs text-[var(--text-muted)]">Incluí siempre 3-5 ejemplos (Few-shot) de alta calidad. [cite_start]Es la herramienta de enseñanza más potente para el modelo[cite: 870, 966].</p>
+                  </div>
+                  <div>
+                      <h4 class="font-bold text-[var(--text-main)] text-sm mb-2">Especificá el Formato</h4>
+                      [cite_start]<p class="text-xs text-[var(--text-muted)]">Si necesitás datos, pedí JSON o XML explícitamente y proporcioná un esquema o plantilla vacía[cite: 973, 997].</p>
+                  </div>
+                  <div>
+                      <h4 class="font-bold text-[var(--text-main)] text-sm mb-2">Documentá e Iterá</h4>
+                      [cite_start]<p class="text-xs text-[var(--text-muted)]">Mantené un registro (como una hoja de cálculo) con versiones del prompt, temperatura usada y calidad de la salida[cite: 1045, 1052].</p>
+                  </div>
+              </div>
+            </div>
+
+            <h2 class="text-2xl font-bold text-[var(--text-main)] mt-8 mb-4">Conclusión</h2>
+            <p>
+              La ingeniería de prompts se está moviendo de un arte oscuro a una disciplina de ingeniería sistemática. [cite_start]Ya sea usando <em>Tree of Thoughts</em> para explorar múltiples vías de solución [cite: 569] [cite_start]o <em>Step-back prompting</em> para abstraer problemas[cite: 382], la clave está en guiar al modelo con claridad, contexto y restricciones estructuradas.
+            </p>
+
+          </div>
+
+          <section class="mt-8 p-6 lg:p-10 rounded-2xl border text-center relative overflow-hidden transition-colors duration-500 bg-[var(--surface-card)] border-[var(--glass-border)]">
+    
+            <div class="absolute top-0 right-0 w-32 h-32 bg-brand-red/10 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <h2 class="text-2xl font-bold mb-6 relative z-10 text-[var(--text-main)]">
+              Descargar Guía Completa (PDF)
+            </h2>
+            
+            <div class="w-full mb-8 relative z-10 hidden md:block">
+               <div class="rounded-t-xl py-2 px-4 flex items-center gap-2 border-b-0 bg-[var(--input-bg)] border-[var(--input-border)]">
+                  <i class="fas fa-eye text-brand-red text-xs"></i>
+                  <span class="text-xs font-bold uppercase tracking-wider text-[var(--text-muted)]">Previsualización: PDF Español</span>
+               </div>
+               
+               <iframe 
+                  src="/downloads/google-prompt-engineering-es.pdf" 
+                  class="w-full h-[600px] rounded-b-xl border border-[var(--input-border)] bg-[var(--bg-body)]"
+                  title="Visor PDF Prompt Engineering Google">
+               </iframe>
+            </div>
+          
+            <p class="mb-8 max-w-lg mx-auto relative z-10 text-[var(--text-muted)]">
+              Accedé al documento original traducido para profundizar en los ejemplos de código Python y las tablas comparativas.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
+              
+              <a href="/downloads/google-prompt-engineering-es.pdf" target="_blank" class="btn-cta btn-cta--primary w-full sm:w-auto justify-center group !text-white">
+                <i class="fas fa-file-pdf text-lg"></i>
+                <div class="text-left">
+                  <span class="block text-xs font-normal opacity-80">Versión en Español</span>
+                  <span class="block font-bold">Descargar PDF</span>
+                </div>
+                <i class="fas fa-download ml-2 group-hover:translate-y-1 transition-transform"></i>
+              </a>
+          
+              <a href="/downloads/google-prompt-engineering-en.pdf" target="_blank" class="btn-cta btn-cta--secondary w-full sm:w-auto justify-center group border-[var(--glass-border)] hover:bg-[var(--input-bg)] text-[var(--text-main)]">
+                <i class="fas fa-file-alt text-lg"></i>
+                <div class="text-left">
+                  <span class="block text-xs font-normal opacity-80">English Version</span>
+                  <span class="block font-bold">Original PDF</span>
+                </div>
+                <i class="fas fa-external-link-alt ml-2 text-xs"></i>
+              </a>
+            </div>
+          
+          </section>
+
+        </article>
+
+        <aside class="lg:col-span-4 lg:self-start lg:sticky lg:top-32 h-fit">
+          
+          <div>
+            <div class="crystal-glass rounded-2xl p-8 border border-white/10 shadow-[0_0_30px_rgba(0,0,0,0.25)]">
+              <p class="text-xs font-bold tracking-widest uppercase text-[var(--text-muted)] mb-3">
+                Key Takeaways
+              </p>
+
+              <h3 class="text-xl font-bold text-[var(--text-main)] mb-3">
+                Resumen Técnico
+              </h3>
+
+              <p class="text-sm text-[var(--text-muted)] mb-4">
+                Conceptos clave para dominar la API de Gemini y otros LLMs:
+              </p>
+
+              <ul class="space-y-3 mb-7 mt-4 text-sm text-[var(--text-muted)]">
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-thermometer-half text-brand-red mt-1"></i>
+                  <span><strong>Temperatura:</strong> Usá 0 para lógica/código; 0.7+ para creatividad.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-layer-group text-brand-red mt-1"></i>
+                  <span><strong>Few-Shot:</strong> Dar ejemplos mejora drásticamente la adherencia al formato.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-brain text-brand-red mt-1"></i>
+                  <span><strong>CoT:</strong> "Pensemos paso a paso" reduce errores lógicos.</span>
+                </li>
+                 <li class="flex items-start gap-3">
+                  <i class="fas fa-code text-brand-red mt-1"></i>
+                  <span><strong>JSON:</strong> Usá esquemas para integrar salidas en aplicaciones.</span>
+                </li>
+              </ul>
+
+              <a href="/contacto.html" 
+                 class="block w-full text-center py-3 rounded-full bg-brand-red text-white font-bold text-sm hover:shadow-[0_0_20px_rgba(190,24,37,0.35)] transition-all">
+                Consultar por Automatización IA
+              </a>
+
+              <p class="text-center text-xs text-[var(--text-muted)] mt-4">
+                Implementación KA&SO
+              </p>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
