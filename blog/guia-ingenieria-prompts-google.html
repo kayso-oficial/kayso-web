@@ -94,7 +94,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="post-prose text-[var(--text-muted)]">
 
             <p>
-              La ingeniería de prompts es mucho más que escribir una frase en un chat; es un proceso iterativo de diseño, prueba y ajuste. [cite_start]Los Modelos de Lenguaje Grande (LLMs) son motores de predicción: toman un texto de entrada y calculan cuál es el token (pieza de palabra) más probable para continuar la secuencia[cite: 30, 32].
+              La ingeniería de prompts es mucho más que escribir una frase en un chat; es un proceso iterativo de diseño, prueba y ajuste. Los Modelos de Lenguaje Grande (LLMs) son motores de predicción: toman un texto de entrada y calculan cuál es el token (pieza de palabra) más probable para continuar la secuencia.
             </p>
             <p>
               En esta guía, basada en la documentación técnica de Google, desglosamos cómo controlar estas predicciones para pasar de respuestas genéricas a soluciones de ingeniería precisas.
@@ -105,25 +105,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               Antes de escribir una sola palabra, debés entender los parámetros que controlan la "creatividad" del modelo. Si usás la API de Gemini o Vertex AI, esto es crucial:
             </p>
             <ul class="list-disc pl-5 space-y-2 mb-6">
-                <li><strong>Temperatura:</strong> Controla la aleatoriedad. [cite_start]Una temperatura baja (cercana a 0) hace que el modelo sea determinista (ideal para código o matemáticas)[cite: 82, 84]. [cite_start]Una temperatura alta fomenta la diversidad y creatividad, pero aumenta el riesgo de alucinaciones[cite: 83].</li>
-                <li><strong>Top-K y Top-P:</strong> Son filtros de selección. [cite_start]<em>Top-K</em> elige entre las K fichas más probables (ej. las 3 mejores)[cite: 98]. [cite_start]<em>Top-P</em> selecciona el conjunto mínimo de fichas cuya probabilidad acumulada no supera un valor P (ej. 0.95)[cite: 105]. Jugar con estos valores ajusta cuán "obvia" o "inesperada" será la siguiente palabra.</li>
+                <li><strong>Temperatura:</strong> Controla la aleatoriedad. Una temperatura baja (cercana a 0) hace que el modelo sea determinista (ideal para código o matemáticas). Una temperatura alta fomenta la diversidad y creatividad, pero aumenta el riesgo de alucinaciones.</li>
+                <li><strong>Top-K y Top-P:</strong> Son filtros de selección. <em>Top-K</em> elige entre las K fichas más probables (ej. las 3 mejores). <em>Top-P</em> selecciona el conjunto mínimo de fichas cuya probabilidad acumulada no supera un valor P (ej. 0.95). Jugar con estos valores ajusta cuán "obvia" o "inesperada" será la siguiente palabra.</li>
             </ul>
 
             <h2 class="text-2xl font-bold text-[var(--text-main)] mt-8 mb-4">Técnicas de Prompting Esenciales</h2>
             
             <h3 class="text-xl font-semibold text-[var(--text-main)] mt-6 mb-3">1. Zero-shot vs. Few-shot</h3>
             <p>
-              [cite_start]El enfoque más básico es el <strong>Zero-shot</strong>: simplemente pedir lo que querés sin ejemplos[cite: 148]. Sin embargo, para tareas complejas, el estándar de oro es el <strong>Few-shot prompting</strong>: proporcionar al modelo 3 a 5 ejemplos de entrada/salida deseada antes de tu petición real. [cite_start]Esto enseña al modelo el patrón, formato y estilo que debe imitar[cite: 175, 182].
+              El enfoque más básico es el <strong>Zero-shot</strong>: simplemente pedir lo que querés sin ejemplos. Sin embargo, para tareas complejas, el estándar de oro es el <strong>Few-shot prompting</strong>: proporcionar al modelo 3 a 5 ejemplos de entrada/salida deseada antes de tu petición real. Esto enseña al modelo el patrón, formato y estilo que debe imitar.
             </p>
 
             <h3 class="text-xl font-semibold text-[var(--text-main)] mt-6 mb-3">2. Sistema, Contexto y Rol</h3>
             <p>
-              [cite_start]Una estructura robusta divide el prompt en tres capas[cite: 216]:
+              Una estructura robusta divide el prompt en tres capas:
             </p>
             <ul class="list-disc pl-5 space-y-2 mb-6">
-                [cite_start]<li><strong>Prompt del Sistema:</strong> Define el "panorama general" y las reglas inquebrantables (ej. "Sos un experto en Python, devolvé solo código JSON")[cite: 217, 243].</li>
-                [cite_start]<li><strong>Contexto:</strong> Información de fondo relevante para la tarea actual[cite: 219].</li>
-                [cite_start]<li><strong>Rol:</strong> Asignar una identidad (ej. "Actuá como un guía turístico sarcástico") ayuda al modelo a ajustar el tono y vocabulario[cite: 221, 295].</li>
+                <li><strong>Prompt del Sistema:</strong> Define el "panorama general" y las reglas inquebrantables (ej. "Sos un experto en Python, devolvé solo código JSON").</li>
+                <li><strong>Contexto:</strong> Información de fondo relevante para la tarea actual.</li>
+                <li><strong>Rol:</strong> Asignar una identidad (ej. "Actuá como un guía turístico sarcástico") ayuda al modelo a ajustar el tono y vocabulario.</li>
             </ul>
 
             <h2 class="text-2xl font-bold text-[var(--text-main)] mt-8 mb-4">Razonamiento Avanzado</h2>
@@ -133,17 +133,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             <h3 class="text-xl font-semibold text-[var(--text-main)] mt-6 mb-3">Chain-of-Thought (CoT)</h3>
             <p>
-              [cite_start]Esta técnica fuerza al modelo a generar "pasos intermedios de razonamiento" antes de dar la respuesta final[cite: 445]. Es tan simple como agregar "Pensemos paso a paso" al final del prompt, o dar ejemplos donde se desglose la lógica. [cite_start]Esto mejora drásticamente la precisión en problemas aritméticos o lógicos[cite: 446, 453].
+              Esta técnica fuerza al modelo a generar "pasos intermedios de razonamiento" antes de dar la respuesta final. Es tan simple como agregar "Pensemos paso a paso" al final del prompt, o dar ejemplos donde se desglose la lógica. Esto mejora drásticamente la precisión en problemas aritméticos o lógicos.
             </p>
 
             <h3 class="text-xl font-semibold text-[var(--text-main)] mt-6 mb-3">ReAct (Reason & Act)</h3>
             <p>
-              [cite_start]ReAct es el paradigma que permite a los LLMs actuar como agentes[cite: 585]. Combina el razonamiento verbal con el uso de herramientas externas (como búsqueda en Google o ejecutar código Python). [cite_start]El modelo "piensa" qué necesita, "actúa" (ejecuta una búsqueda), "observa" el resultado y vuelve a pensar[cite: 588, 590].
+              ReAct es el paradigma que permite a los LLMs actuar como agentes. Combina el razonamiento verbal con el uso de herramientas externas (como búsqueda en Google o ejecutar código Python). El modelo "piensa" qué necesita, "actúa" (ejecuta una búsqueda), "observa" el resultado y vuelve a pensar.
             </p>
 
             <h2 class="text-2xl font-bold text-[var(--text-main)] mt-8 mb-4">Automatización y Salidas Estructuradas</h2>
             <p>
-              Para integrar LLMs en software real, el texto libre es un problema. [cite_start]La mejor práctica es forzar salidas en <strong>JSON</strong> definiendo un esquema claro en el prompt[cite: 973, 976]. Esto facilita el parseo y reduce alucinaciones. [cite_start]Además, existe la Ingeniería de Prompts Automática (APE), donde usamos un LLM para escribir y optimizar los prompts de otro LLM[cite: 645, 646].
+              Para integrar LLMs en software real, el texto libre es un problema. La mejor práctica es forzar salidas en <strong>JSON</strong> definiendo un esquema claro en el prompt. Esto facilita el parseo y reduce alucinaciones. Además, existe la Ingeniería de Prompts Automática (APE), donde usamos un LLM para escribir y optimizar los prompts de otro LLM.
             </p>
 
             <div class="my-12 p-8 rounded-2xl crystal-glass border border-white/5">
@@ -155,26 +155,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                       <h4 class="font-bold text-[var(--text-main)] text-sm mb-2">Usá Instrucciones Positivas</h4>
-                      <p class="text-xs text-[var(--text-muted)]">Decile al modelo "lo que debe hacer" en lugar de una lista larga de restricciones sobre "lo que no debe hacer". [cite_start]Evita confusiones[cite: 912, 916].</p>
+                      <p class="text-xs text-[var(--text-muted)]">Decile al modelo "lo que debe hacer" en lugar de una lista larga de restricciones sobre "lo que no debe hacer". Evita confusiones.</p>
                   </div>
                   <div>
                       <h4 class="font-bold text-[var(--text-main)] text-sm mb-2">Estructurá con Ejemplos</h4>
-                      <p class="text-xs text-[var(--text-muted)]">Incluí siempre 3-5 ejemplos (Few-shot) de alta calidad. [cite_start]Es la herramienta de enseñanza más potente para el modelo[cite: 870, 966].</p>
+                      <p class="text-xs text-[var(--text-muted)]">Incluí siempre 3-5 ejemplos (Few-shot) de alta calidad. Es la herramienta de enseñanza más potente para el modelo.</p>
                   </div>
                   <div>
                       <h4 class="font-bold text-[var(--text-main)] text-sm mb-2">Especificá el Formato</h4>
-                      [cite_start]<p class="text-xs text-[var(--text-muted)]">Si necesitás datos, pedí JSON o XML explícitamente y proporcioná un esquema o plantilla vacía[cite: 973, 997].</p>
+                      <p class="text-xs text-[var(--text-muted)]">Si necesitás datos, pedí JSON o XML explícitamente y proporcioná un esquema o plantilla vacía.</p>
                   </div>
                   <div>
                       <h4 class="font-bold text-[var(--text-main)] text-sm mb-2">Documentá e Iterá</h4>
-                      [cite_start]<p class="text-xs text-[var(--text-muted)]">Mantené un registro (como una hoja de cálculo) con versiones del prompt, temperatura usada y calidad de la salida[cite: 1045, 1052].</p>
+                      <p class="text-xs text-[var(--text-muted)]">Mantené un registro (como una hoja de cálculo) con versiones del prompt, temperatura usada y calidad de la salida.</p>
                   </div>
               </div>
             </div>
 
             <h2 class="text-2xl font-bold text-[var(--text-main)] mt-8 mb-4">Conclusión</h2>
             <p>
-              La ingeniería de prompts se está moviendo de un arte oscuro a una disciplina de ingeniería sistemática. [cite_start]Ya sea usando <em>Tree of Thoughts</em> para explorar múltiples vías de solución [cite: 569] [cite_start]o <em>Step-back prompting</em> para abstraer problemas[cite: 382], la clave está en guiar al modelo con claridad, contexto y restricciones estructuradas.
+              La ingeniería de prompts se está moviendo de un arte oscuro a una disciplina de ingeniería sistemática. Ya sea usando <em>Tree of Thoughts</em> para explorar múltiples vías de solución o <em>Step-back prompting</em> para abstraer problemas, la clave está en guiar al modelo con claridad, contexto y restricciones estructuradas.
             </p>
 
           </div>
