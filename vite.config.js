@@ -13,6 +13,7 @@ export default defineConfig({
         geolocalizacion: resolve(__dirname, "blog/google-gems-guia-negocios.html"),
         perplexity: resolve(__dirname, "blog/perplexity-at-work-guia-pdf-espanol.html"),
         googlepromt: resolve(__dirname, "blog/guia-ingenieria-prompts-google.html"),
+        agenteopenai: resolve(__dirname, "blog/guia-construccion-agentes-ia.html"),
         meli: resolve(__dirname, "blog/caso-meli-navidad.html"),
         google: resolve(__dirname, "blog/google-jarvis-seo.html"),
         estudios: resolve(__dirname, "blog/estudio-redes-sociales-2026-metricool.html"),
