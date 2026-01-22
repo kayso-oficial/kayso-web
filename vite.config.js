@@ -19,6 +19,7 @@ export default defineConfig({
         estudios: resolve(__dirname, "blog/estudio-redes-sociales-2026-metricool.html"),
         marketing: resolve(__dirname, "blog/marketing-trends-2026-meltwater.html"),
         community: resolve(__dirname, "blog/que-hace-un-community-manager.html"),
+        instagram2026: resolve(__dirname, "blog/instagram-updates-enero-2026.html"),
         roi : resolve(__dirname, "blog/que-son-roi-y-roas.html"),
         instagram: resolve(__dirname, "blog/instagram-reels-20min.html"),
         contacto: resolve(__dirname, "contacto.html"),
