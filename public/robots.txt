@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /downloads/protegido/
 
 Sitemap: https://www.kayso-oficial.com/sitemap.xml

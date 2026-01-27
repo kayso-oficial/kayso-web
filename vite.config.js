@@ -22,6 +22,8 @@ export default defineConfig({
         instagram2026: resolve(__dirname, "blog/instagram-updates-enero-2026.html"),
         roi : resolve(__dirname, "blog/que-son-roi-y-roas.html"),
         instagram: resolve(__dirname, "blog/instagram-reels-20min.html"),
+        objetosia: resolve(__dirname, "blog/objetos-que-hablan-ia.html"),
+        descarga: resolve(__dirname, "descarga-exito-x9z.html"),
         contacto: resolve(__dirname, "contacto.html"),
         branding: resolve(__dirname, "branding-digital.html"),
         desarrollo: resolve(__dirname, "desarrollo-web.html"),
