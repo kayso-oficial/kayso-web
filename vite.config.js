@@ -7,6 +7,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "index.html"),
         blog: resolve(__dirname, "blog.html"),
+        ugc : resolve(__dirname, "blog/ugc-2026-guia-estrategia-ia.html"),
         navidad: resolve(__dirname, "blog/navidad.html"),
         tendencias: resolve(__dirname, "blog/tendencias-2025.html"),
         financiacion: resolve(__dirname, "blog/financiacion-es-producto.html"),
