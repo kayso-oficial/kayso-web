@@ -12,6 +12,8 @@ export default defineConfig({
         tendencias: resolve(__dirname, "blog/tendencias-2025.html"),
         financiacion: resolve(__dirname, "blog/financiacion-es-producto.html"),
         geolocalizacion: resolve(__dirname, "blog/google-gems-guia-negocios.html"),
+        carrousel: resolve(__dirname, "blog/automatizar-carrouseles-gems.html"),
+        descargas: resolve(__dirname, "descarga-carrousel-gracias.html"),
         perplexity: resolve(__dirname, "blog/perplexity-at-work-guia-pdf-espanol.html"),
         googlepromt: resolve(__dirname, "blog/guia-ingenieria-prompts-google.html"),
         agenteopenai: resolve(__dirname, "blog/guia-construccion-agentes-ia.html"),
