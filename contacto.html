@@ -202,15 +202,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
 
                     <!-- Item 2: Email -->
-                    <div class="glass-separator h-full flex flex-col justify-start">
-                        <div class="flex items-center gap-3 mb-3">
-                            <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-500">
-                                <i class="far fa-envelope text-xl"></i>
-                            </div>
-                            <span class="text-sm font-bold uppercase text-[var(--text-muted)] tracking-wider">Email</span>
-                        </div>
-                        <p class="text-[var(--text-main)] font-semibold text-lg break-all">info@kayso.com.ar</p>
-                    </div>
+<div class="glass-separator h-full flex flex-col justify-start">
+    <div class="flex items-center gap-3 mb-3">
+        <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-500">
+            <i class="far fa-envelope text-xl"></i>
+        </div>
+        <span class="text-sm font-bold uppercase text-[var(--text-muted)] tracking-wider">Email</span>
+    </div>
+    <!-- Reemplazamos la etiqueta <p> por un enlace <a> -->
+    <a href="mailto:info@kayso.com.ar" class="text-[var(--text-main)] hover:text-blue-500 font-semibold text-lg break-all transition-colors">
+        info@kayso.com.ar
+    </a>
+</div>
 
                     <!-- Item 3: Horarios -->
                     <div class="glass-separator h-full flex flex-col justify-start">
@@ -267,7 +270,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const statusTxt = document.getElementById('formStatus');
     const submitBtn = document.getElementById('submitBtn');
 
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzsYMhzo9KfEM7rFQuE6RzJ8aO6GeN2mx9jyW7xpDvFYmguKMNCA2sP9ueNpvRbyopi/exec";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwm0ZH6wGcHYFSuO1h0kL115sAbTw_EpyZNWsX8EF8yavE7KZVT6HgBrw72kUOae7wfbw/exec";
 
     if (form && submitBtn && statusTxt) {
       form.addEventListener('submit', (e) => {
