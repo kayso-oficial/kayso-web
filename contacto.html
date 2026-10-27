@@ -76,10 +76,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <!-- 1. HERO (TOP PART) -->
             <div class="text-center max-w-3xl mx-auto mb-16 reveal-up">
                 <!-- Badge -->
-                <div class="neon-badge inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
-    <i class="fas fa-check-circle"></i>
-    Respondemos en menos de 24 hs
-</div>
+                
 
                 <!-- Titles -->
                 <h1 class="heading-hero mb-6 text-[var(--text-main)]">
@@ -102,7 +99,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <!-- El formulario -->
         <form id="contactForm" method="POST" class="space-y-6">
-            
+
+            <!-- ANTI-SPAM: trampa para bots (honeypot). Una persona nunca ve este campo;
+                 los bots lo completan solos y así los descartamos. NO BORRAR. -->
+            <div aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;">
+                <label for="website">Si sos humano, dejá este campo vacío</label>
+                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" value="">
+            </div>
+            <input type="hidden" name="_ts" id="_ts" value="">
+            <input type="hidden" name="_tk" id="_tk" value="">
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Nombre -->
                 <div>
@@ -241,6 +247,105 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
     </section>
+
+    <!-- ============================================
+         TRABAJÁ CON NOSOTROS (postulaciones con CV/portafolio en PDF)
+         Se envía al mismo Apps Script con tipo=postulacion
+         ============================================ -->
+    <section id="trabaja" class="py-24 relative overflow-hidden border-t border-black/5 dark:border-white/5 scroll-mt-24">
+        <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-brand-red/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
+
+            <!-- Texto -->
+            <div class="lg:col-span-2 reveal-up">
+                <span class="text-brand-red text-sm font-bold tracking-[0.2em] uppercase block mb-3">Sumate al equipo</span>
+                <h2 class="heading-section text-[var(--text-main)] mb-5">Trabajá con nosotros</h2>
+                <p class="text-[var(--text-muted)] mb-8 leading-relaxed">
+                    Siempre estamos buscando gente creativa para sumar a proyectos de KA&amp;SO.
+                    Contanos qué hacés y mandanos tu CV o portafolio en PDF. Lo revisamos y, si encaja con algún proyecto, te escribimos.
+                </p>
+                <ul class="space-y-3 text-sm text-[var(--text-muted)]">
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-brand-red mt-1"></i><span>Diseño gráfico, edición de video, community management, desarrollo web y más.</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-brand-red mt-1"></i><span>Trabajo remoto, por proyecto o fijo.</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-brand-red mt-1"></i><span>Un solo PDF de hasta 5 MB. Si tu portafolio es más pesado, dejanos el link.</span></li>
+                </ul>
+            </div>
+
+            <!-- Formulario -->
+            <div class="lg:col-span-3 reveal-up delay-100">
+                <div class="rounded-2xl bg-[var(--surface-card)] shadow-lg md:shadow-xl border border-black/5 dark:border-white/5 p-6 md:p-8">
+                    <form id="cvForm" class="space-y-6">
+
+                        <!-- ANTI-SPAM: trampa para bots. NO BORRAR. -->
+                        <div aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;">
+                            <label for="cv_website">Si sos humano, dejá este campo vacío</label>
+                            <input type="text" id="cv_website" name="website" tabindex="-1" autocomplete="off" value="">
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="cv_nombre" class="block text-sm font-bold text-[var(--text-main)] mb-2">Nombre completo</label>
+                                <input type="text" id="cv_nombre" name="nombre" class="w-full px-4 py-3 rounded-xl form-input" placeholder="Tu nombre" required>
+                            </div>
+                            <div>
+                                <label for="cv_email" class="block text-sm font-bold text-[var(--text-main)] mb-2">Email</label>
+                                <input type="email" id="cv_email" name="email" class="w-full px-4 py-3 rounded-xl form-input" placeholder="tu@email.com" required>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="area" class="block text-sm font-bold text-[var(--text-main)] mb-2">¿A qué te dedicás?</label>
+                                <div class="relative">
+                                    <select id="area" name="area" class="w-full px-4 py-3 rounded-xl form-input appearance-none cursor-pointer" required>
+                                        <option value="" disabled selected>Seleccioná un área</option>
+                                        <option value="Diseño gráfico">Diseño gráfico</option>
+                                        <option value="Edición de video">Edición de video</option>
+                                        <option value="Community manager">Community manager</option>
+                                        <option value="Fotografía / Audiovisual">Fotografía / Audiovisual</option>
+                                        <option value="Copywriting">Copywriting / Redacción</option>
+                                        <option value="Publicidad (Ads)">Publicidad (Meta / Google Ads)</option>
+                                        <option value="Desarrollo web">Desarrollo web</option>
+                                        <option value="Ventas / Comercial">Ventas / Comercial</option>
+                                        <option value="Otro">Otro</option>
+                                    </select>
+                                    <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-[var(--text-muted)]">
+                                        <i class="fas fa-chevron-down text-xs"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="cv_portfolio" class="block text-sm font-bold text-[var(--text-main)] mb-2">Link a portafolio <span class="font-normal text-[var(--text-muted)]">(opcional)</span></label>
+                                <input type="url" id="cv_portfolio" name="portfolio" class="w-full px-4 py-3 rounded-xl form-input" placeholder="Behance, Drive, Instagram...">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="cv_mensaje" class="block text-sm font-bold text-[var(--text-main)] mb-2">Contanos un poco de vos <span class="font-normal text-[var(--text-muted)]">(opcional)</span></label>
+                            <textarea id="cv_mensaje" name="mensaje" rows="3" class="w-full px-4 py-3 rounded-xl form-input resize-none" placeholder="Experiencia, herramientas que usás, disponibilidad..."></textarea>
+                        </div>
+
+                        <!-- PDF -->
+                        <div>
+                            <span class="block text-sm font-bold text-[var(--text-main)] mb-2">CV o portafolio (PDF)</span>
+                            <label id="cvDrop" for="cv_archivo" class="cv-drop flex flex-col items-center justify-center gap-2 w-full rounded-xl px-4 py-8 text-center cursor-pointer">
+                                <i class="fas fa-file-pdf text-3xl text-brand-red"></i>
+                                <span id="cvDropText" class="text-sm font-semibold text-[var(--text-main)]">Tocá para elegir el PDF o arrastralo acá</span>
+                                <span class="text-xs text-[var(--text-muted)]">Solo PDF · máximo 5 MB</span>
+                            </label>
+                            <input type="file" id="cv_archivo" accept="application/pdf,.pdf" class="sr-only">
+                        </div>
+
+                        <div class="pt-2">
+                            <button id="cvSubmit" type="submit" class="btn-cta btn-cta--primary w-full">Enviar postulación</button>
+                            <p id="cvStatus" class="text-center text-sm mt-4" style="display:none;"></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
     <!-- Footer -->
   <div id="site-footer"></div>
@@ -263,7 +368,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- JS compartido para TODO el sitio -->
 <script type="module" src="/src/main.js"></script>
 
-<!-- Solo la lógica del formulario (Google Apps Script) -->
+<!-- Solo la lógica del formulario (Google Apps Script) + anti-spam -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('contactForm');
@@ -272,34 +377,174 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwm0ZH6wGcHYFSuO1h0kL115sAbTw_EpyZNWsX8EF8yavE7KZVT6HgBrw72kUOae7wfbw/exec";
 
-    if (form && submitBtn && statusTxt) {
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        submitBtn.innerText = "ENVIANDO...";
-        submitBtn.style.opacity = "0.5";
+    if (!form || !submitBtn || !statusTxt) return;
 
-        fetch(SCRIPT_URL, {
-          method: 'POST',
-          body: new FormData(form)
-        })
-        .then(() => {
-          statusTxt.style.display = "block";
-          statusTxt.style.color = "#4CAF50";
-          statusTxt.innerText = "¡Mensaje enviado con éxito!";
-          form.reset();
-          submitBtn.innerText = "ENVIAR MENSAJE";
-          submitBtn.style.opacity = "1";
-          setTimeout(() => { statusTxt.style.display = "none"; }, 5000);
-        })
-        .catch(() => {
-          statusTxt.style.display = "block";
-          statusTxt.style.color = "red";
-          statusTxt.innerText = "Error al enviar. Intenta por WhatsApp.";
-          submitBtn.innerText = "ENVIAR MENSAJE";
-          submitBtn.style.opacity = "1";
-        });
+    // --- ANTI-SPAM ---------------------------------------------------------
+    // 1) Hora en que se cargó el formulario (un bot lo manda en menos de 1 segundo).
+    // 2) Token que solo se genera cuando una persona interactúa (teclado, mouse o toque).
+    //    Los bots que mandan el formulario "a ciegas" no lo tienen.
+    // 3) Campo trampa "website" (oculto): si viene completo, es un bot.
+    // El Apps Script vuelve a revisar todo esto del lado del servidor.
+    const MIN_SEGUNDOS = 4;
+    const ts = Date.now();
+    const tsInput = document.getElementById('_ts');
+    const tkInput = document.getElementById('_tk');
+    const honeypot = document.getElementById('website');
+    tsInput.value = String(ts);
+
+    const marcarHumano = () => { tkInput.value = 'ks-' + (ts % 9973).toString(36); };
+    ['keydown', 'pointerdown', 'touchstart'].forEach((ev) =>
+      form.addEventListener(ev, marcarHumano, { once: true, passive: true })
+    );
+
+    const textoOriginal = submitBtn.innerText;
+    let enviando = false;
+
+    const mostrarEstado = (texto, color) => {
+      statusTxt.style.display = "block";
+      statusTxt.style.color = color;
+      statusTxt.innerText = texto;
+    };
+
+    const finalizarOk = () => {
+      mostrarEstado("¡Mensaje enviado con éxito!", "#4CAF50");
+      form.reset();
+      tsInput.value = String(ts);
+      submitBtn.innerText = textoOriginal;
+      submitBtn.style.opacity = "1";
+      enviando = false;
+      setTimeout(() => { statusTxt.style.display = "none"; }, 5000);
+    };
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (enviando) return;
+
+      const segundos = (Date.now() - ts) / 1000;
+      const esBot = (honeypot && honeypot.value.trim() !== '') || segundos < MIN_SEGUNDOS || !tkInput.value;
+
+      // Al bot le mostramos "éxito" para que no reintente, pero no se envía nada.
+      if (esBot) { finalizarOk(); return; }
+
+      enviando = true;
+      submitBtn.innerText = "ENVIANDO...";
+      submitBtn.style.opacity = "0.5";
+
+      fetch(SCRIPT_URL, {
+        method: 'POST',
+        body: new FormData(form)
+      })
+      .then(finalizarOk)
+      .catch(() => {
+        mostrarEstado("Error al enviar. Intenta por WhatsApp.", "red");
+        submitBtn.innerText = textoOriginal;
+        submitBtn.style.opacity = "1";
+        enviando = false;
       });
-    }
+    });
+  });
+</script>
+
+<!-- Trabajá con nosotros: envío de postulación + PDF al Apps Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('cvForm');
+    if (!form) return;
+
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwm0ZH6wGcHYFSuO1h0kL115sAbTw_EpyZNWsX8EF8yavE7KZVT6HgBrw72kUOae7wfbw/exec";
+    const MAX_MB = 5;
+
+    const fileInput = document.getElementById('cv_archivo');
+    const drop = document.getElementById('cvDrop');
+    const dropText = document.getElementById('cvDropText');
+    const btn = document.getElementById('cvSubmit');
+    const status = document.getElementById('cvStatus');
+    const honeypot = document.getElementById('cv_website');
+    const textoBtn = btn.innerText;
+
+    // Anti-spam (igual que el formulario de contacto)
+    const ts = Date.now();
+    let tk = '';
+    ['keydown', 'pointerdown', 'touchstart'].forEach((ev) =>
+      form.addEventListener(ev, () => { tk = 'ks-' + (ts % 9973).toString(36); }, { once: true, passive: true })
+    );
+
+    const mostrar = (txt, color) => { status.style.display = 'block'; status.style.color = color; status.innerText = txt; };
+
+    const validarPdf = (f) => {
+      if (!f) return 'Elegí tu CV o portafolio en PDF.';
+      const esPdf = f.type === 'application/pdf' || /\.pdf$/i.test(f.name);
+      if (!esPdf) return 'El archivo tiene que ser PDF.';
+      if (f.size > MAX_MB * 1024 * 1024) return 'El PDF pesa más de ' + MAX_MB + ' MB. Comprimilo o dejanos el link en "Link a portafolio".';
+      return '';
+    };
+
+    const mostrarArchivo = () => {
+      const f = fileInput.files[0];
+      const err = validarPdf(f);
+      drop.classList.toggle('has-file', !!f && !err);
+      dropText.innerText = f ? (err ? err : '📄 ' + f.name + ' (' + (f.size / 1024 / 1024).toFixed(1) + ' MB)') : 'Tocá para elegir el PDF o arrastralo acá';
+      dropText.style.color = f && err ? 'red' : '';
+    };
+    fileInput.addEventListener('change', mostrarArchivo);
+
+    // Arrastrar y soltar
+    ['dragenter', 'dragover'].forEach((ev) => drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.add('is-dragging'); }));
+    ['dragleave', 'drop'].forEach((ev) => drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.remove('is-dragging'); }));
+    drop.addEventListener('drop', (e) => {
+      if (e.dataTransfer.files.length) { fileInput.files = e.dataTransfer.files; mostrarArchivo(); }
+      tk = tk || 'ks-' + (ts % 9973).toString(36);
+    });
+
+    const aBase64 = (f) => new Promise((ok, mal) => {
+      const r = new FileReader();
+      r.onload = () => ok(String(r.result).split(',')[1]);
+      r.onerror = mal;
+      r.readAsDataURL(f);
+    });
+
+    const terminar = () => {
+      mostrar('¡Gracias! Recibimos tu postulación. Si hay un proyecto para vos, te escribimos.', '#4CAF50');
+      form.reset(); mostrarArchivo();
+      btn.innerText = textoBtn; btn.disabled = false; btn.style.opacity = '1';
+    };
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (btn.disabled) return;
+
+      const f = fileInput.files[0];
+      const err = validarPdf(f);
+      if (err) { mostrar(err, 'red'); return; }
+
+      // Bot: le mostramos "gracias" pero no mandamos nada
+      if ((honeypot && honeypot.value) || (Date.now() - ts) < 4000 || !tk) { terminar(); return; }
+
+      btn.disabled = true; btn.style.opacity = '0.5'; btn.innerText = 'SUBIENDO PDF...';
+      try {
+        const datos = new URLSearchParams();
+        datos.append('tipo', 'postulacion');
+        datos.append('nombre', form.nombre.value);
+        datos.append('email', form.email.value);
+        datos.append('area', form.area.value);
+        datos.append('portfolio', form.portfolio.value);
+        datos.append('mensaje', form.mensaje.value);
+        datos.append('website', honeypot ? honeypot.value : '');
+        datos.append('_ts', String(ts));
+        datos.append('_tk', tk);
+        datos.append('archivo_nombre', f.name);
+        datos.append('archivo_base64', await aBase64(f));
+
+        const r = await fetch(SCRIPT_URL, { method: 'POST', body: datos });
+        let res = null;
+        try { res = await r.json(); } catch (_) {}
+        if (res && res.result === 'error') throw new Error(res.message || 'error');
+        terminar();
+      } catch (er) {
+        mostrar('No pudimos enviar tu postulación' + (er && er.message && er.message !== 'Failed to fetch' ? ' (' + er.message + ')' : '') + '. Probá de nuevo o escribinos a info@kayso.com.ar.', 'red');
+        btn.innerText = textoBtn; btn.disabled = false; btn.style.opacity = '1';
+      }
+    });
   });
 </script>
 </body>

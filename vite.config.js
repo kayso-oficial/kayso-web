@@ -1,38 +1,60 @@
 import { defineConfig } from "vite";
 import { resolve } from "path";
+import fs from "fs";
+import { generarBlog } from "./scripts/blog.mjs";
+
+// 1) Antes de arrancar, armamos el blog desde contenido/blog/*.md
+generarBlog();
+
+// 2) Todas las páginas .html de la raíz y de blog/ entran solas al build.
+//    (Ya no hace falta agregar cada artículo nuevo a mano en esta lista.)
+const paginas = {};
+for (const carpeta of ["", "blog"]) {
+  for (const f of fs.readdirSync(resolve(__dirname, carpeta || "."))) {
+    if (!f.endsWith(".html")) continue;
+    const nombre = (carpeta ? carpeta + "/" : "") + f.replace(/\.html$/, "");
+    paginas[nombre] = resolve(__dirname, carpeta, f);
+  }
+}
+
+// 3) Mientras trabajás con `npm run dev`, si cambiás un .md o una plantilla,
+//    el blog se vuelve a armar y el navegador se recarga solo.
+function blogEnVivo() {
+  return {
+    name: "kayso-blog",
+    configureServer(server) {
+      const dir = resolve(__dirname, "contenido");
+      const normal = (p) => p.replace(/\\/g, "/").toLowerCase();
+      server.watcher.add(dir);
+      // En local, /blog -> /blog/ (igual que en GitHub Pages)
+      server.middlewares.use((req, res, next) => {
+        if (req.url === "/blog" || req.url?.startsWith("/blog?")) {
+          res.writeHead(301, { Location: req.url.replace("/blog", "/blog/") });
+          return res.end();
+        }
+        next();
+      });
+      const rearmar = (archivo) => {
+        if (!normal(archivo).startsWith(normal(dir))) return;
+        try {
+          generarBlog();
+          server.ws.send({ type: "full-reload" });
+        } catch (e) {
+          console.error("❌ [blog]", e.message);
+        }
+      };
+      server.watcher.on("change", rearmar);
+      server.watcher.on("add", rearmar);
+      server.watcher.on("unlink", rearmar);
+    },
+  };
+}
 
 export default defineConfig({
+  plugins: [blogEnVivo()],
   build: {
     rollupOptions: {
-      input: {
-        main: resolve(__dirname, "index.html"),
-        blog: resolve(__dirname, "blog.html"),
-        ugc : resolve(__dirname, "blog/ugc-2026-guia-estrategia-ia.html"),
-        navidad: resolve(__dirname, "blog/navidad.html"),
-        tendencias: resolve(__dirname, "blog/tendencias-2025.html"),
-        financiacion: resolve(__dirname, "blog/financiacion-es-producto.html"),
-        geolocalizacion: resolve(__dirname, "blog/google-gems-guia-negocios.html"),
-        carrousel: resolve(__dirname, "blog/automatizar-carrouseles-gems.html"),
-        descargas: resolve(__dirname, "descarga-carrousel-gracias.html"),
-        perplexity: resolve(__dirname, "blog/perplexity-at-work-guia-pdf-espanol.html"),
-        googlepromt: resolve(__dirname, "blog/guia-ingenieria-prompts-google.html"),
-        agenteopenai: resolve(__dirname, "blog/guia-construccion-agentes-ia.html"),
-        meli: resolve(__dirname, "blog/caso-meli-navidad.html"),
-        google: resolve(__dirname, "blog/google-jarvis-seo.html"),
-        estudios: resolve(__dirname, "blog/estudio-redes-sociales-2026-metricool.html"),
-        marketing: resolve(__dirname, "blog/marketing-trends-2026-meltwater.html"),
-        community: resolve(__dirname, "blog/que-hace-un-community-manager.html"),
-        instagram2026: resolve(__dirname, "blog/instagram-updates-enero-2026.html"),
-        roi : resolve(__dirname, "blog/que-son-roi-y-roas.html"),
-        instagram: resolve(__dirname, "blog/instagram-reels-20min.html"),
-        objetosia: resolve(__dirname, "blog/objetos-que-hablan-ia.html"),
-        descarga: resolve(__dirname, "descarga-exito-x9z.html"),
-        contacto: resolve(__dirname, "contacto.html"),
-        branding: resolve(__dirname, "branding-digital.html"),
-        desarrollo: resolve(__dirname, "desarrollo-web.html"),
-        publicidad: resolve(__dirname, "publicidad.html"),
-        redes: resolve(__dirname, "redes-sociales.html"),
-      },
+      input: paginas,
     },
   },
 });
